@@ -25,13 +25,13 @@ namespace InterfaceUsuario {
         /// </summary>
         private void InitializeComponent() {
             this.chk2Funcao = new System.Windows.Forms.CheckBox();
-            this.label4 = new System.Windows.Forms.Label();
+            this.lblAngulo = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.optGrado = new System.Windows.Forms.RadioButton();
             this.optRadiano = new System.Windows.Forms.RadioButton();
             this.optGrau = new System.Windows.Forms.RadioButton();
             this.txtVisor = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lblEstatistica = new System.Windows.Forms.Label();
             this.btnApagarVisor = new System.Windows.Forms.Button();
             this.btnLimparTudo = new System.Windows.Forms.Button();
             this.btnLogaritmoNeperiano = new System.Windows.Forms.Button();
@@ -94,9 +94,9 @@ namespace InterfaceUsuario {
             this.mnsSair = new System.Windows.Forms.ToolStripMenuItem();
             this.mnsPersonalizar = new System.Windows.Forms.ToolStripMenuItem();
             this.mnsSeparadorDecimal = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnsTema = new System.Windows.Forms.ToolStripMenuItem();
             this.mnsPonto = new System.Windows.Forms.ToolStripMenuItem();
             this.mnsVirgula = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnsTema = new System.Windows.Forms.ToolStripMenuItem();
             this.mnsClaro = new System.Windows.Forms.ToolStripMenuItem();
             this.mnsEscuro = new System.Windows.Forms.ToolStripMenuItem();
             this.mnsAjuda = new System.Windows.Forms.ToolStripMenuItem();
@@ -118,16 +118,16 @@ namespace InterfaceUsuario {
             this.chk2Funcao.Text = "2ª Função";
             this.chk2Funcao.UseVisualStyleBackColor = false;
             // 
-            // label4
+            // lblAngulo
             // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(154, 119);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(47, 17);
-            this.label4.TabIndex = 122;
-            this.label4.Text = "Ângulo";
+            this.lblAngulo.AutoSize = true;
+            this.lblAngulo.BackColor = System.Drawing.Color.Transparent;
+            this.lblAngulo.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAngulo.Location = new System.Drawing.Point(154, 119);
+            this.lblAngulo.Name = "lblAngulo";
+            this.lblAngulo.Size = new System.Drawing.Size(47, 17);
+            this.lblAngulo.TabIndex = 122;
+            this.lblAngulo.Text = "Ângulo";
             // 
             // panel3
             // 
@@ -178,6 +178,7 @@ namespace InterfaceUsuario {
             // 
             // txtVisor
             // 
+            this.txtVisor.BackColor = System.Drawing.Color.White;
             this.txtVisor.Font = new System.Drawing.Font("Microsoft Sans Serif", 45F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtVisor.Location = new System.Drawing.Point(12, 38);
             this.txtVisor.MaxLength = 10;
@@ -188,18 +189,18 @@ namespace InterfaceUsuario {
             this.txtVisor.Text = "0123456789";
             this.txtVisor.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // label3
+            // lblEstatistica
             // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label3.Font = new System.Drawing.Font("Calibri", 8.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(377, 359);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(14, 154);
-            this.label3.TabIndex = 121;
-            this.label3.Text = "E\r\ns\r\nt\r\na\r\nt\r\ní\r\ns\r\nt\r\ni\r\nc\r\na";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblEstatistica.AutoSize = true;
+            this.lblEstatistica.BackColor = System.Drawing.Color.Transparent;
+            this.lblEstatistica.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblEstatistica.Font = new System.Drawing.Font("Calibri", 8.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEstatistica.Location = new System.Drawing.Point(377, 359);
+            this.lblEstatistica.Name = "lblEstatistica";
+            this.lblEstatistica.Size = new System.Drawing.Size(14, 154);
+            this.lblEstatistica.TabIndex = 121;
+            this.lblEstatistica.Text = "E\r\ns\r\nt\r\na\r\nt\r\ní\r\ns\r\nt\r\ni\r\nc\r\na";
+            this.lblEstatistica.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnApagarVisor
             // 
@@ -1091,19 +1092,22 @@ namespace InterfaceUsuario {
             this.mnsCopiarVisor,
             this.mnsSair});
             this.mnsArquivo.Name = "mnsArquivo";
+            this.mnsArquivo.ShowShortcutKeys = false;
             this.mnsArquivo.Size = new System.Drawing.Size(61, 20);
             this.mnsArquivo.Text = "Arquivo";
             // 
             // mnsCopiarVisor
             // 
             this.mnsCopiarVisor.Name = "mnsCopiarVisor";
-            this.mnsCopiarVisor.Size = new System.Drawing.Size(180, 22);
+            this.mnsCopiarVisor.ShowShortcutKeys = false;
+            this.mnsCopiarVisor.Size = new System.Drawing.Size(131, 22);
             this.mnsCopiarVisor.Text = "Copiar Visor";
             // 
             // mnsSair
             // 
             this.mnsSair.Name = "mnsSair";
-            this.mnsSair.Size = new System.Drawing.Size(180, 22);
+            this.mnsSair.ShowShortcutKeys = false;
+            this.mnsSair.Size = new System.Drawing.Size(131, 22);
             this.mnsSair.Text = "Sair";
             // 
             // mnsPersonalizar
@@ -1112,6 +1116,7 @@ namespace InterfaceUsuario {
             this.mnsSeparadorDecimal,
             this.mnsTema});
             this.mnsPersonalizar.Name = "mnsPersonalizar";
+            this.mnsPersonalizar.ShowShortcutKeys = false;
             this.mnsPersonalizar.Size = new System.Drawing.Size(82, 20);
             this.mnsPersonalizar.Text = "Personalizar";
             // 
@@ -1121,8 +1126,23 @@ namespace InterfaceUsuario {
             this.mnsPonto,
             this.mnsVirgula});
             this.mnsSeparadorDecimal.Name = "mnsSeparadorDecimal";
-            this.mnsSeparadorDecimal.Size = new System.Drawing.Size(180, 22);
+            this.mnsSeparadorDecimal.ShowShortcutKeys = false;
+            this.mnsSeparadorDecimal.Size = new System.Drawing.Size(166, 22);
             this.mnsSeparadorDecimal.Text = "Separador Decimal";
+            // 
+            // mnsPonto
+            // 
+            this.mnsPonto.Name = "mnsPonto";
+            this.mnsPonto.ShowShortcutKeys = false;
+            this.mnsPonto.Size = new System.Drawing.Size(104, 22);
+            this.mnsPonto.Text = "Ponto";
+            // 
+            // mnsVirgula
+            // 
+            this.mnsVirgula.Name = "mnsVirgula";
+            this.mnsVirgula.ShowShortcutKeys = false;
+            this.mnsVirgula.Size = new System.Drawing.Size(104, 22);
+            this.mnsVirgula.Text = "Vírgula";
             // 
             // mnsTema
             // 
@@ -1130,31 +1150,22 @@ namespace InterfaceUsuario {
             this.mnsClaro,
             this.mnsEscuro});
             this.mnsTema.Name = "mnsTema";
-            this.mnsTema.Size = new System.Drawing.Size(180, 22);
+            this.mnsTema.ShowShortcutKeys = false;
+            this.mnsTema.Size = new System.Drawing.Size(166, 22);
             this.mnsTema.Text = "Tema";
-            // 
-            // mnsPonto
-            // 
-            this.mnsPonto.Name = "mnsPonto";
-            this.mnsPonto.Size = new System.Drawing.Size(180, 22);
-            this.mnsPonto.Text = "Ponto";
-            // 
-            // mnsVirgula
-            // 
-            this.mnsVirgula.Name = "mnsVirgula";
-            this.mnsVirgula.Size = new System.Drawing.Size(180, 22);
-            this.mnsVirgula.Text = "Vírgula";
             // 
             // mnsClaro
             // 
             this.mnsClaro.Name = "mnsClaro";
-            this.mnsClaro.Size = new System.Drawing.Size(180, 22);
+            this.mnsClaro.ShowShortcutKeys = false;
+            this.mnsClaro.Size = new System.Drawing.Size(102, 22);
             this.mnsClaro.Text = "Claro";
             // 
             // mnsEscuro
             // 
             this.mnsEscuro.Name = "mnsEscuro";
-            this.mnsEscuro.Size = new System.Drawing.Size(180, 22);
+            this.mnsEscuro.ShowShortcutKeys = false;
+            this.mnsEscuro.Size = new System.Drawing.Size(102, 22);
             this.mnsEscuro.Text = "Escuro";
             // 
             // mnsAjuda
@@ -1163,19 +1174,22 @@ namespace InterfaceUsuario {
             this.mnsManual,
             this.mnsSobre});
             this.mnsAjuda.Name = "mnsAjuda";
+            this.mnsAjuda.ShowShortcutKeys = false;
             this.mnsAjuda.Size = new System.Drawing.Size(50, 20);
             this.mnsAjuda.Text = "Ajuda";
             // 
             // mnsManual
             // 
             this.mnsManual.Name = "mnsManual";
-            this.mnsManual.Size = new System.Drawing.Size(180, 22);
+            this.mnsManual.ShowShortcutKeys = false;
+            this.mnsManual.Size = new System.Drawing.Size(107, 22);
             this.mnsManual.Text = "Manual";
             // 
             // mnsSobre
             // 
             this.mnsSobre.Name = "mnsSobre";
-            this.mnsSobre.Size = new System.Drawing.Size(180, 22);
+            this.mnsSobre.ShowShortcutKeys = false;
+            this.mnsSobre.Size = new System.Drawing.Size(107, 22);
             this.mnsSobre.Text = "Sobre";
             // 
             // FrmCalculadoraCientifica
@@ -1189,10 +1203,10 @@ namespace InterfaceUsuario {
             this.Controls.Add(this.btnMediaAritmetica);
             this.Controls.Add(this.btnNumeroDados);
             this.Controls.Add(this.chk2Funcao);
-            this.Controls.Add(this.label4);
+            this.Controls.Add(this.lblAngulo);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.txtVisor);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.lblEstatistica);
             this.Controls.Add(this.btnApagarVisor);
             this.Controls.Add(this.btnLimparTudo);
             this.Controls.Add(this.btnLogaritmoNeperiano);
@@ -1246,6 +1260,7 @@ namespace InterfaceUsuario {
             this.Controls.Add(this.btnSomaQuadradosValores);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.mnsMenuPrincipal);
+            this.ForeColor = System.Drawing.Color.Black;
             this.MainMenuStrip = this.mnsMenuPrincipal;
             this.MaximizeBox = false;
             this.Name = "FrmCalculadoraCientifica";
@@ -1264,13 +1279,13 @@ namespace InterfaceUsuario {
         #endregion
 
         private System.Windows.Forms.CheckBox chk2Funcao;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lblAngulo;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.RadioButton optGrado;
         private System.Windows.Forms.RadioButton optRadiano;
         private System.Windows.Forms.RadioButton optGrau;
         private System.Windows.Forms.TextBox txtVisor;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblEstatistica;
         private System.Windows.Forms.Button btnApagarVisor;
         private System.Windows.Forms.Button btnLimparTudo;
         private System.Windows.Forms.Button btnLogaritmoNeperiano;
