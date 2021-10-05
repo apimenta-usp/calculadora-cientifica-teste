@@ -204,13 +204,15 @@ namespace InterfaceUsuario {
             // 
             // btnApagarVisor
             // 
-            this.btnApagarVisor.BackColor = System.Drawing.Color.Maroon;
+            this.btnApagarVisor.BackColor = System.Drawing.Color.Transparent;
+            this.btnApagarVisor.BackgroundImage = global::InterfaceUsuario.Properties.Resources.ApagarVisorTemaClaroNormal;
             this.btnApagarVisor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnApagarVisor.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnApagarVisor.FlatAppearance.BorderSize = 0;
             this.btnApagarVisor.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btnApagarVisor.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnApagarVisor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnApagarVisor.ForeColor = System.Drawing.Color.Transparent;
             this.btnApagarVisor.Location = new System.Drawing.Point(322, 193);
             this.btnApagarVisor.Name = "btnApagarVisor";
             this.btnApagarVisor.Size = new System.Drawing.Size(56, 40);
@@ -219,7 +221,8 @@ namespace InterfaceUsuario {
             // 
             // btnLimparTudo
             // 
-            this.btnLimparTudo.BackColor = System.Drawing.Color.Maroon;
+            this.btnLimparTudo.BackColor = System.Drawing.Color.Transparent;
+            this.btnLimparTudo.BackgroundImage = global::InterfaceUsuario.Properties.Resources.LimparTudoTemaClaro;
             this.btnLimparTudo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnLimparTudo.Enabled = false;
             this.btnLimparTudo.FlatAppearance.BorderColor = System.Drawing.Color.PeachPuff;
@@ -227,6 +230,7 @@ namespace InterfaceUsuario {
             this.btnLimparTudo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btnLimparTudo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnLimparTudo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLimparTudo.ForeColor = System.Drawing.Color.Transparent;
             this.btnLimparTudo.Location = new System.Drawing.Point(336, 173);
             this.btnLimparTudo.Name = "btnLimparTudo";
             this.btnLimparTudo.Size = new System.Drawing.Size(28, 20);
@@ -236,13 +240,15 @@ namespace InterfaceUsuario {
             // 
             // btnLogaritmoNeperiano
             // 
-            this.btnLogaritmoNeperiano.BackColor = System.Drawing.Color.Maroon;
+            this.btnLogaritmoNeperiano.BackColor = System.Drawing.Color.Transparent;
+            this.btnLogaritmoNeperiano.BackgroundImage = global::InterfaceUsuario.Properties.Resources.LogaritmoNeperianoTemaClaroNormal;
             this.btnLogaritmoNeperiano.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnLogaritmoNeperiano.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnLogaritmoNeperiano.FlatAppearance.BorderSize = 0;
             this.btnLogaritmoNeperiano.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btnLogaritmoNeperiano.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnLogaritmoNeperiano.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLogaritmoNeperiano.ForeColor = System.Drawing.Color.Transparent;
             this.btnLogaritmoNeperiano.Location = new System.Drawing.Point(322, 257);
             this.btnLogaritmoNeperiano.Name = "btnLogaritmoNeperiano";
             this.btnLogaritmoNeperiano.Size = new System.Drawing.Size(56, 40);
@@ -251,7 +257,8 @@ namespace InterfaceUsuario {
             // 
             // btnPotenciaNeperiana
             // 
-            this.btnPotenciaNeperiana.BackColor = System.Drawing.Color.Maroon;
+            this.btnPotenciaNeperiana.BackColor = System.Drawing.Color.Transparent;
+            this.btnPotenciaNeperiana.BackgroundImage = global::InterfaceUsuario.Properties.Resources.PotenciaNeperianaTemaClaro;
             this.btnPotenciaNeperiana.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnPotenciaNeperiana.Enabled = false;
             this.btnPotenciaNeperiana.FlatAppearance.BorderColor = System.Drawing.Color.PeachPuff;
@@ -259,6 +266,7 @@ namespace InterfaceUsuario {
             this.btnPotenciaNeperiana.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btnPotenciaNeperiana.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnPotenciaNeperiana.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPotenciaNeperiana.ForeColor = System.Drawing.Color.Transparent;
             this.btnPotenciaNeperiana.Location = new System.Drawing.Point(336, 237);
             this.btnPotenciaNeperiana.Name = "btnPotenciaNeperiana";
             this.btnPotenciaNeperiana.Size = new System.Drawing.Size(28, 20);
@@ -268,13 +276,15 @@ namespace InterfaceUsuario {
             // 
             // btnNumeroDados
             // 
-            this.btnNumeroDados.BackColor = System.Drawing.Color.Maroon;
+            this.btnNumeroDados.BackColor = System.Drawing.Color.Transparent;
+            this.btnNumeroDados.BackgroundImage = global::InterfaceUsuario.Properties.Resources.NumeroDadosTemaClaroNormal;
             this.btnNumeroDados.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnNumeroDados.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnNumeroDados.FlatAppearance.BorderSize = 0;
             this.btnNumeroDados.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btnNumeroDados.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnNumeroDados.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNumeroDados.ForeColor = System.Drawing.Color.Transparent;
             this.btnNumeroDados.Location = new System.Drawing.Point(322, 321);
             this.btnNumeroDados.Name = "btnNumeroDados";
             this.btnNumeroDados.Size = new System.Drawing.Size(56, 40);
@@ -283,7 +293,8 @@ namespace InterfaceUsuario {
             // 
             // btnSomaValores
             // 
-            this.btnSomaValores.BackColor = System.Drawing.Color.Maroon;
+            this.btnSomaValores.BackColor = System.Drawing.Color.Transparent;
+            this.btnSomaValores.BackgroundImage = global::InterfaceUsuario.Properties.Resources.SomatoriaXTemaClaro;
             this.btnSomaValores.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnSomaValores.Enabled = false;
             this.btnSomaValores.FlatAppearance.BorderColor = System.Drawing.Color.PeachPuff;
@@ -291,6 +302,7 @@ namespace InterfaceUsuario {
             this.btnSomaValores.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btnSomaValores.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnSomaValores.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSomaValores.ForeColor = System.Drawing.Color.Transparent;
             this.btnSomaValores.Location = new System.Drawing.Point(336, 301);
             this.btnSomaValores.Name = "btnSomaValores";
             this.btnSomaValores.Size = new System.Drawing.Size(28, 20);
@@ -300,13 +312,15 @@ namespace InterfaceUsuario {
             // 
             // btnRemover
             // 
-            this.btnRemover.BackColor = System.Drawing.Color.Maroon;
+            this.btnRemover.BackColor = System.Drawing.Color.Transparent;
+            this.btnRemover.BackgroundImage = global::InterfaceUsuario.Properties.Resources.RemoverTemaClaroNormal;
             this.btnRemover.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnRemover.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnRemover.FlatAppearance.BorderSize = 0;
             this.btnRemover.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btnRemover.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnRemover.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRemover.ForeColor = System.Drawing.Color.Transparent;
             this.btnRemover.Location = new System.Drawing.Point(260, 193);
             this.btnRemover.Name = "btnRemover";
             this.btnRemover.Size = new System.Drawing.Size(56, 40);
@@ -315,7 +329,8 @@ namespace InterfaceUsuario {
             // 
             // btnPorcentagem
             // 
-            this.btnPorcentagem.BackColor = System.Drawing.Color.Maroon;
+            this.btnPorcentagem.BackColor = System.Drawing.Color.Transparent;
+            this.btnPorcentagem.BackgroundImage = global::InterfaceUsuario.Properties.Resources.PorcentagemTemaClaro;
             this.btnPorcentagem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnPorcentagem.Enabled = false;
             this.btnPorcentagem.FlatAppearance.BorderColor = System.Drawing.Color.PeachPuff;
@@ -323,6 +338,7 @@ namespace InterfaceUsuario {
             this.btnPorcentagem.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btnPorcentagem.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnPorcentagem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPorcentagem.ForeColor = System.Drawing.Color.Transparent;
             this.btnPorcentagem.Location = new System.Drawing.Point(274, 173);
             this.btnPorcentagem.Name = "btnPorcentagem";
             this.btnPorcentagem.Size = new System.Drawing.Size(28, 20);
@@ -332,13 +348,15 @@ namespace InterfaceUsuario {
             // 
             // btnLogaritmoDecimal
             // 
-            this.btnLogaritmoDecimal.BackColor = System.Drawing.Color.Maroon;
+            this.btnLogaritmoDecimal.BackColor = System.Drawing.Color.Transparent;
+            this.btnLogaritmoDecimal.BackgroundImage = global::InterfaceUsuario.Properties.Resources.LogaritmoDecimalTemaClaroNormal;
             this.btnLogaritmoDecimal.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnLogaritmoDecimal.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnLogaritmoDecimal.FlatAppearance.BorderSize = 0;
             this.btnLogaritmoDecimal.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btnLogaritmoDecimal.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnLogaritmoDecimal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLogaritmoDecimal.ForeColor = System.Drawing.Color.Transparent;
             this.btnLogaritmoDecimal.Location = new System.Drawing.Point(260, 257);
             this.btnLogaritmoDecimal.Name = "btnLogaritmoDecimal";
             this.btnLogaritmoDecimal.Size = new System.Drawing.Size(56, 40);
@@ -347,7 +365,8 @@ namespace InterfaceUsuario {
             // 
             // btnPotenciaDecimal
             // 
-            this.btnPotenciaDecimal.BackColor = System.Drawing.Color.Maroon;
+            this.btnPotenciaDecimal.BackColor = System.Drawing.Color.Transparent;
+            this.btnPotenciaDecimal.BackgroundImage = global::InterfaceUsuario.Properties.Resources.PotenciaDecimalTemaClaro;
             this.btnPotenciaDecimal.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnPotenciaDecimal.Enabled = false;
             this.btnPotenciaDecimal.FlatAppearance.BorderColor = System.Drawing.Color.PeachPuff;
@@ -355,6 +374,7 @@ namespace InterfaceUsuario {
             this.btnPotenciaDecimal.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btnPotenciaDecimal.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnPotenciaDecimal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPotenciaDecimal.ForeColor = System.Drawing.Color.Transparent;
             this.btnPotenciaDecimal.Location = new System.Drawing.Point(274, 237);
             this.btnPotenciaDecimal.Name = "btnPotenciaDecimal";
             this.btnPotenciaDecimal.Size = new System.Drawing.Size(28, 20);
@@ -364,13 +384,15 @@ namespace InterfaceUsuario {
             // 
             // btnMemoriaSubstituir
             // 
-            this.btnMemoriaSubstituir.BackColor = System.Drawing.Color.Maroon;
+            this.btnMemoriaSubstituir.BackColor = System.Drawing.Color.Transparent;
+            this.btnMemoriaSubstituir.BackgroundImage = global::InterfaceUsuario.Properties.Resources.MemoriaSubstituirTemaClaroNormal;
             this.btnMemoriaSubstituir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnMemoriaSubstituir.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnMemoriaSubstituir.FlatAppearance.BorderSize = 0;
             this.btnMemoriaSubstituir.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btnMemoriaSubstituir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnMemoriaSubstituir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMemoriaSubstituir.ForeColor = System.Drawing.Color.Transparent;
             this.btnMemoriaSubstituir.Location = new System.Drawing.Point(260, 321);
             this.btnMemoriaSubstituir.Name = "btnMemoriaSubstituir";
             this.btnMemoriaSubstituir.Size = new System.Drawing.Size(56, 40);
@@ -379,7 +401,8 @@ namespace InterfaceUsuario {
             // 
             // btnRandom
             // 
-            this.btnRandom.BackColor = System.Drawing.Color.Maroon;
+            this.btnRandom.BackColor = System.Drawing.Color.Transparent;
+            this.btnRandom.BackgroundImage = global::InterfaceUsuario.Properties.Resources.RandomTemaClaro;
             this.btnRandom.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnRandom.Enabled = false;
             this.btnRandom.FlatAppearance.BorderColor = System.Drawing.Color.PeachPuff;
@@ -387,6 +410,7 @@ namespace InterfaceUsuario {
             this.btnRandom.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btnRandom.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnRandom.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRandom.ForeColor = System.Drawing.Color.Transparent;
             this.btnRandom.Location = new System.Drawing.Point(274, 301);
             this.btnRandom.Name = "btnRandom";
             this.btnRandom.Size = new System.Drawing.Size(28, 20);
@@ -396,13 +420,15 @@ namespace InterfaceUsuario {
             // 
             // btnTangente
             // 
-            this.btnTangente.BackColor = System.Drawing.Color.Maroon;
+            this.btnTangente.BackColor = System.Drawing.Color.Transparent;
+            this.btnTangente.BackgroundImage = global::InterfaceUsuario.Properties.Resources.TangenteTemaClaroNormal;
             this.btnTangente.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnTangente.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnTangente.FlatAppearance.BorderSize = 0;
             this.btnTangente.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btnTangente.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnTangente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTangente.ForeColor = System.Drawing.Color.Transparent;
             this.btnTangente.Location = new System.Drawing.Point(198, 193);
             this.btnTangente.Name = "btnTangente";
             this.btnTangente.Size = new System.Drawing.Size(56, 40);
@@ -411,7 +437,8 @@ namespace InterfaceUsuario {
             // 
             // btnTangenteInversa
             // 
-            this.btnTangenteInversa.BackColor = System.Drawing.Color.Maroon;
+            this.btnTangenteInversa.BackColor = System.Drawing.Color.Transparent;
+            this.btnTangenteInversa.BackgroundImage = global::InterfaceUsuario.Properties.Resources.TangenteInversaTemaClaro;
             this.btnTangenteInversa.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnTangenteInversa.Enabled = false;
             this.btnTangenteInversa.FlatAppearance.BorderColor = System.Drawing.Color.PeachPuff;
@@ -419,6 +446,7 @@ namespace InterfaceUsuario {
             this.btnTangenteInversa.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btnTangenteInversa.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnTangenteInversa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTangenteInversa.ForeColor = System.Drawing.Color.Transparent;
             this.btnTangenteInversa.Location = new System.Drawing.Point(212, 173);
             this.btnTangenteInversa.Name = "btnTangenteInversa";
             this.btnTangenteInversa.Size = new System.Drawing.Size(28, 20);
@@ -428,13 +456,15 @@ namespace InterfaceUsuario {
             // 
             // btnInversao
             // 
-            this.btnInversao.BackColor = System.Drawing.Color.Maroon;
+            this.btnInversao.BackColor = System.Drawing.Color.Transparent;
+            this.btnInversao.BackgroundImage = global::InterfaceUsuario.Properties.Resources.InversaoTemaClaroNormal;
             this.btnInversao.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnInversao.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnInversao.FlatAppearance.BorderSize = 0;
             this.btnInversao.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btnInversao.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnInversao.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnInversao.ForeColor = System.Drawing.Color.Transparent;
             this.btnInversao.Location = new System.Drawing.Point(198, 257);
             this.btnInversao.Name = "btnInversao";
             this.btnInversao.Size = new System.Drawing.Size(56, 40);
@@ -443,7 +473,8 @@ namespace InterfaceUsuario {
             // 
             // btnRaizCubica
             // 
-            this.btnRaizCubica.BackColor = System.Drawing.Color.Maroon;
+            this.btnRaizCubica.BackColor = System.Drawing.Color.Transparent;
+            this.btnRaizCubica.BackgroundImage = global::InterfaceUsuario.Properties.Resources.RaizCubicaTemaClaro;
             this.btnRaizCubica.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnRaizCubica.Enabled = false;
             this.btnRaizCubica.FlatAppearance.BorderColor = System.Drawing.Color.PeachPuff;
@@ -451,6 +482,7 @@ namespace InterfaceUsuario {
             this.btnRaizCubica.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btnRaizCubica.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnRaizCubica.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRaizCubica.ForeColor = System.Drawing.Color.Transparent;
             this.btnRaizCubica.Location = new System.Drawing.Point(212, 237);
             this.btnRaizCubica.Name = "btnRaizCubica";
             this.btnRaizCubica.Size = new System.Drawing.Size(28, 20);
@@ -460,13 +492,15 @@ namespace InterfaceUsuario {
             // 
             // btnDivisao
             // 
-            this.btnDivisao.BackColor = System.Drawing.Color.Maroon;
+            this.btnDivisao.BackColor = System.Drawing.Color.Transparent;
+            this.btnDivisao.BackgroundImage = global::InterfaceUsuario.Properties.Resources.DividirTemaClaroNormal;
             this.btnDivisao.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnDivisao.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnDivisao.FlatAppearance.BorderSize = 0;
             this.btnDivisao.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btnDivisao.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnDivisao.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDivisao.ForeColor = System.Drawing.Color.Transparent;
             this.btnDivisao.Location = new System.Drawing.Point(198, 321);
             this.btnDivisao.Name = "btnDivisao";
             this.btnDivisao.Size = new System.Drawing.Size(56, 40);
@@ -475,13 +509,15 @@ namespace InterfaceUsuario {
             // 
             // btnCosseno
             // 
-            this.btnCosseno.BackColor = System.Drawing.Color.Maroon;
+            this.btnCosseno.BackColor = System.Drawing.Color.Transparent;
+            this.btnCosseno.BackgroundImage = global::InterfaceUsuario.Properties.Resources.CossenoTemaClaroNormal;
             this.btnCosseno.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnCosseno.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnCosseno.FlatAppearance.BorderSize = 0;
             this.btnCosseno.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btnCosseno.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnCosseno.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCosseno.ForeColor = System.Drawing.Color.Transparent;
             this.btnCosseno.Location = new System.Drawing.Point(136, 193);
             this.btnCosseno.Name = "btnCosseno";
             this.btnCosseno.Size = new System.Drawing.Size(56, 40);
@@ -490,7 +526,8 @@ namespace InterfaceUsuario {
             // 
             // btnCossenoInverso
             // 
-            this.btnCossenoInverso.BackColor = System.Drawing.Color.Maroon;
+            this.btnCossenoInverso.BackColor = System.Drawing.Color.Transparent;
+            this.btnCossenoInverso.BackgroundImage = global::InterfaceUsuario.Properties.Resources.CossenoInversoTemaClaro;
             this.btnCossenoInverso.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnCossenoInverso.Enabled = false;
             this.btnCossenoInverso.FlatAppearance.BorderColor = System.Drawing.Color.PeachPuff;
@@ -498,6 +535,7 @@ namespace InterfaceUsuario {
             this.btnCossenoInverso.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btnCossenoInverso.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnCossenoInverso.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCossenoInverso.ForeColor = System.Drawing.Color.Transparent;
             this.btnCossenoInverso.Location = new System.Drawing.Point(150, 173);
             this.btnCossenoInverso.Name = "btnCossenoInverso";
             this.btnCossenoInverso.Size = new System.Drawing.Size(28, 20);
@@ -507,13 +545,15 @@ namespace InterfaceUsuario {
             // 
             // btnRaizQuadrada
             // 
-            this.btnRaizQuadrada.BackColor = System.Drawing.Color.Maroon;
+            this.btnRaizQuadrada.BackColor = System.Drawing.Color.Transparent;
+            this.btnRaizQuadrada.BackgroundImage = global::InterfaceUsuario.Properties.Resources.RaizQuadradaTemaClaroNormal;
             this.btnRaizQuadrada.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnRaizQuadrada.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnRaizQuadrada.FlatAppearance.BorderSize = 0;
             this.btnRaizQuadrada.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btnRaizQuadrada.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnRaizQuadrada.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRaizQuadrada.ForeColor = System.Drawing.Color.Transparent;
             this.btnRaizQuadrada.Location = new System.Drawing.Point(136, 257);
             this.btnRaizQuadrada.Name = "btnRaizQuadrada";
             this.btnRaizQuadrada.Size = new System.Drawing.Size(56, 40);
@@ -522,7 +562,8 @@ namespace InterfaceUsuario {
             // 
             // btnXQuadrado
             // 
-            this.btnXQuadrado.BackColor = System.Drawing.Color.Maroon;
+            this.btnXQuadrado.BackColor = System.Drawing.Color.Transparent;
+            this.btnXQuadrado.BackgroundImage = global::InterfaceUsuario.Properties.Resources.XQuadradoTemaClaro;
             this.btnXQuadrado.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnXQuadrado.Enabled = false;
             this.btnXQuadrado.FlatAppearance.BorderColor = System.Drawing.Color.PeachPuff;
@@ -530,6 +571,7 @@ namespace InterfaceUsuario {
             this.btnXQuadrado.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btnXQuadrado.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnXQuadrado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnXQuadrado.ForeColor = System.Drawing.Color.Transparent;
             this.btnXQuadrado.Location = new System.Drawing.Point(150, 237);
             this.btnXQuadrado.Name = "btnXQuadrado";
             this.btnXQuadrado.Size = new System.Drawing.Size(28, 20);
@@ -539,13 +581,15 @@ namespace InterfaceUsuario {
             // 
             // btn9
             // 
-            this.btn9.BackColor = System.Drawing.Color.Maroon;
+            this.btn9.BackColor = System.Drawing.Color.Transparent;
+            this.btn9.BackgroundImage = global::InterfaceUsuario.Properties.Resources.NoveTemaClaroNormal;
             this.btn9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btn9.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btn9.FlatAppearance.BorderSize = 0;
             this.btn9.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btn9.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btn9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn9.ForeColor = System.Drawing.Color.Transparent;
             this.btn9.Location = new System.Drawing.Point(136, 321);
             this.btn9.Name = "btn9";
             this.btn9.Size = new System.Drawing.Size(56, 40);
@@ -554,13 +598,15 @@ namespace InterfaceUsuario {
             // 
             // btnSeno
             // 
-            this.btnSeno.BackColor = System.Drawing.Color.Maroon;
+            this.btnSeno.BackColor = System.Drawing.Color.Transparent;
+            this.btnSeno.BackgroundImage = global::InterfaceUsuario.Properties.Resources.SenoTemaClaroNormal;
             this.btnSeno.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnSeno.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnSeno.FlatAppearance.BorderSize = 0;
             this.btnSeno.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btnSeno.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnSeno.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSeno.ForeColor = System.Drawing.Color.Transparent;
             this.btnSeno.Location = new System.Drawing.Point(74, 193);
             this.btnSeno.Name = "btnSeno";
             this.btnSeno.Size = new System.Drawing.Size(56, 40);
@@ -569,7 +615,8 @@ namespace InterfaceUsuario {
             // 
             // btnSenoInverso
             // 
-            this.btnSenoInverso.BackColor = System.Drawing.Color.Maroon;
+            this.btnSenoInverso.BackColor = System.Drawing.Color.Transparent;
+            this.btnSenoInverso.BackgroundImage = global::InterfaceUsuario.Properties.Resources.SenoInversoTemaClaro;
             this.btnSenoInverso.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnSenoInverso.Enabled = false;
             this.btnSenoInverso.FlatAppearance.BorderColor = System.Drawing.Color.PeachPuff;
@@ -577,6 +624,7 @@ namespace InterfaceUsuario {
             this.btnSenoInverso.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btnSenoInverso.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnSenoInverso.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSenoInverso.ForeColor = System.Drawing.Color.Transparent;
             this.btnSenoInverso.Location = new System.Drawing.Point(88, 173);
             this.btnSenoInverso.Name = "btnSenoInverso";
             this.btnSenoInverso.Size = new System.Drawing.Size(28, 20);
@@ -586,13 +634,15 @@ namespace InterfaceUsuario {
             // 
             // btnPotenciacao
             // 
-            this.btnPotenciacao.BackColor = System.Drawing.Color.Maroon;
+            this.btnPotenciacao.BackColor = System.Drawing.Color.Transparent;
+            this.btnPotenciacao.BackgroundImage = global::InterfaceUsuario.Properties.Resources.PotenciacaoTemaClaroNormal;
             this.btnPotenciacao.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnPotenciacao.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnPotenciacao.FlatAppearance.BorderSize = 0;
             this.btnPotenciacao.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btnPotenciacao.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnPotenciacao.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPotenciacao.ForeColor = System.Drawing.Color.Transparent;
             this.btnPotenciacao.Location = new System.Drawing.Point(74, 257);
             this.btnPotenciacao.Name = "btnPotenciacao";
             this.btnPotenciacao.Size = new System.Drawing.Size(56, 40);
@@ -601,7 +651,8 @@ namespace InterfaceUsuario {
             // 
             // btnRadiciacao
             // 
-            this.btnRadiciacao.BackColor = System.Drawing.Color.Maroon;
+            this.btnRadiciacao.BackColor = System.Drawing.Color.Transparent;
+            this.btnRadiciacao.BackgroundImage = global::InterfaceUsuario.Properties.Resources.RadiciacaoTemaClaro;
             this.btnRadiciacao.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnRadiciacao.Enabled = false;
             this.btnRadiciacao.FlatAppearance.BorderColor = System.Drawing.Color.PeachPuff;
@@ -609,6 +660,7 @@ namespace InterfaceUsuario {
             this.btnRadiciacao.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btnRadiciacao.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnRadiciacao.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRadiciacao.ForeColor = System.Drawing.Color.Transparent;
             this.btnRadiciacao.Location = new System.Drawing.Point(88, 237);
             this.btnRadiciacao.Name = "btnRadiciacao";
             this.btnRadiciacao.Size = new System.Drawing.Size(28, 20);
@@ -618,13 +670,15 @@ namespace InterfaceUsuario {
             // 
             // btn8
             // 
-            this.btn8.BackColor = System.Drawing.Color.Maroon;
+            this.btn8.BackColor = System.Drawing.Color.Transparent;
+            this.btn8.BackgroundImage = global::InterfaceUsuario.Properties.Resources.OitoTemaClaroNormal;
             this.btn8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btn8.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btn8.FlatAppearance.BorderSize = 0;
             this.btn8.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btn8.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btn8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn8.ForeColor = System.Drawing.Color.Transparent;
             this.btn8.Location = new System.Drawing.Point(74, 321);
             this.btn8.Name = "btn8";
             this.btn8.Size = new System.Drawing.Size(56, 40);
@@ -633,13 +687,15 @@ namespace InterfaceUsuario {
             // 
             // btnDecimalCientifico
             // 
-            this.btnDecimalCientifico.BackColor = System.Drawing.Color.Maroon;
+            this.btnDecimalCientifico.BackColor = System.Drawing.Color.Transparent;
+            this.btnDecimalCientifico.BackgroundImage = global::InterfaceUsuario.Properties.Resources.DecimalCientificoTemaClaroNormal;
             this.btnDecimalCientifico.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnDecimalCientifico.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnDecimalCientifico.FlatAppearance.BorderSize = 0;
             this.btnDecimalCientifico.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btnDecimalCientifico.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnDecimalCientifico.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDecimalCientifico.ForeColor = System.Drawing.Color.Transparent;
             this.btnDecimalCientifico.Location = new System.Drawing.Point(12, 193);
             this.btnDecimalCientifico.Name = "btnDecimalCientifico";
             this.btnDecimalCientifico.Size = new System.Drawing.Size(56, 40);
@@ -648,7 +704,8 @@ namespace InterfaceUsuario {
             // 
             // btnFatorial
             // 
-            this.btnFatorial.BackColor = System.Drawing.Color.Maroon;
+            this.btnFatorial.BackColor = System.Drawing.Color.Transparent;
+            this.btnFatorial.BackgroundImage = global::InterfaceUsuario.Properties.Resources.FatorialTemaClaro;
             this.btnFatorial.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnFatorial.Enabled = false;
             this.btnFatorial.FlatAppearance.BorderColor = System.Drawing.Color.PeachPuff;
@@ -656,6 +713,7 @@ namespace InterfaceUsuario {
             this.btnFatorial.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btnFatorial.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnFatorial.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFatorial.ForeColor = System.Drawing.Color.Transparent;
             this.btnFatorial.Location = new System.Drawing.Point(26, 173);
             this.btnFatorial.Name = "btnFatorial";
             this.btnFatorial.Size = new System.Drawing.Size(28, 20);
@@ -665,13 +723,15 @@ namespace InterfaceUsuario {
             // 
             // btnExponencial
             // 
-            this.btnExponencial.BackColor = System.Drawing.Color.Maroon;
+            this.btnExponencial.BackColor = System.Drawing.Color.Transparent;
+            this.btnExponencial.BackgroundImage = global::InterfaceUsuario.Properties.Resources.ExponencialTemaClaroNormal;
             this.btnExponencial.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnExponencial.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnExponencial.FlatAppearance.BorderSize = 0;
             this.btnExponencial.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btnExponencial.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnExponencial.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExponencial.ForeColor = System.Drawing.Color.Transparent;
             this.btnExponencial.Location = new System.Drawing.Point(12, 257);
             this.btnExponencial.Name = "btnExponencial";
             this.btnExponencial.Size = new System.Drawing.Size(56, 40);
@@ -680,7 +740,8 @@ namespace InterfaceUsuario {
             // 
             // btnPi
             // 
-            this.btnPi.BackColor = System.Drawing.Color.Maroon;
+            this.btnPi.BackColor = System.Drawing.Color.Transparent;
+            this.btnPi.BackgroundImage = global::InterfaceUsuario.Properties.Resources.PiTemaClaro;
             this.btnPi.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnPi.Enabled = false;
             this.btnPi.FlatAppearance.BorderColor = System.Drawing.Color.PeachPuff;
@@ -688,6 +749,7 @@ namespace InterfaceUsuario {
             this.btnPi.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btnPi.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnPi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPi.ForeColor = System.Drawing.Color.Transparent;
             this.btnPi.Location = new System.Drawing.Point(26, 237);
             this.btnPi.Name = "btnPi";
             this.btnPi.Size = new System.Drawing.Size(28, 20);
@@ -697,13 +759,15 @@ namespace InterfaceUsuario {
             // 
             // btn7
             // 
-            this.btn7.BackColor = System.Drawing.Color.Maroon;
+            this.btn7.BackColor = System.Drawing.Color.Transparent;
+            this.btn7.BackgroundImage = global::InterfaceUsuario.Properties.Resources.SeteTemaClaroNormal;
             this.btn7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btn7.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btn7.FlatAppearance.BorderSize = 0;
             this.btn7.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btn7.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btn7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn7.ForeColor = System.Drawing.Color.Transparent;
             this.btn7.Location = new System.Drawing.Point(12, 321);
             this.btn7.Name = "btn7";
             this.btn7.Size = new System.Drawing.Size(56, 40);
@@ -712,13 +776,15 @@ namespace InterfaceUsuario {
             // 
             // btnMediaAritmetica
             // 
-            this.btnMediaAritmetica.BackColor = System.Drawing.Color.Maroon;
+            this.btnMediaAritmetica.BackColor = System.Drawing.Color.Transparent;
+            this.btnMediaAritmetica.BackgroundImage = global::InterfaceUsuario.Properties.Resources.MediaAritmeticaTemaClaroNormal;
             this.btnMediaAritmetica.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnMediaAritmetica.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnMediaAritmetica.FlatAppearance.BorderSize = 0;
             this.btnMediaAritmetica.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btnMediaAritmetica.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnMediaAritmetica.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMediaAritmetica.ForeColor = System.Drawing.Color.Transparent;
             this.btnMediaAritmetica.Location = new System.Drawing.Point(322, 382);
             this.btnMediaAritmetica.Name = "btnMediaAritmetica";
             this.btnMediaAritmetica.Size = new System.Drawing.Size(56, 40);
@@ -727,13 +793,15 @@ namespace InterfaceUsuario {
             // 
             // btnDesvioAmostral
             // 
-            this.btnDesvioAmostral.BackColor = System.Drawing.Color.Maroon;
+            this.btnDesvioAmostral.BackColor = System.Drawing.Color.Transparent;
+            this.btnDesvioAmostral.BackgroundImage = global::InterfaceUsuario.Properties.Resources.DesvioAmostralTemaClaroNormal;
             this.btnDesvioAmostral.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnDesvioAmostral.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnDesvioAmostral.FlatAppearance.BorderSize = 0;
             this.btnDesvioAmostral.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btnDesvioAmostral.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnDesvioAmostral.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDesvioAmostral.ForeColor = System.Drawing.Color.Transparent;
             this.btnDesvioAmostral.Location = new System.Drawing.Point(322, 446);
             this.btnDesvioAmostral.Name = "btnDesvioAmostral";
             this.btnDesvioAmostral.Size = new System.Drawing.Size(56, 40);
@@ -742,7 +810,8 @@ namespace InterfaceUsuario {
             // 
             // btnDesvioPopulacional
             // 
-            this.btnDesvioPopulacional.BackColor = System.Drawing.Color.Maroon;
+            this.btnDesvioPopulacional.BackColor = System.Drawing.Color.Transparent;
+            this.btnDesvioPopulacional.BackgroundImage = global::InterfaceUsuario.Properties.Resources.DesvioPopulacionalTemaClaro;
             this.btnDesvioPopulacional.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnDesvioPopulacional.Enabled = false;
             this.btnDesvioPopulacional.FlatAppearance.BorderColor = System.Drawing.Color.PeachPuff;
@@ -750,6 +819,7 @@ namespace InterfaceUsuario {
             this.btnDesvioPopulacional.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btnDesvioPopulacional.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnDesvioPopulacional.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDesvioPopulacional.ForeColor = System.Drawing.Color.Transparent;
             this.btnDesvioPopulacional.Location = new System.Drawing.Point(336, 426);
             this.btnDesvioPopulacional.Name = "btnDesvioPopulacional";
             this.btnDesvioPopulacional.Size = new System.Drawing.Size(28, 20);
@@ -759,13 +829,15 @@ namespace InterfaceUsuario {
             // 
             // btnInserirDados
             // 
-            this.btnInserirDados.BackColor = System.Drawing.Color.Maroon;
+            this.btnInserirDados.BackColor = System.Drawing.Color.Transparent;
+            this.btnInserirDados.BackgroundImage = global::InterfaceUsuario.Properties.Resources.InserirDadosTemaClaroNormal;
             this.btnInserirDados.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnInserirDados.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnInserirDados.FlatAppearance.BorderSize = 0;
             this.btnInserirDados.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btnInserirDados.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnInserirDados.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnInserirDados.ForeColor = System.Drawing.Color.Transparent;
             this.btnInserirDados.Location = new System.Drawing.Point(322, 510);
             this.btnInserirDados.Name = "btnInserirDados";
             this.btnInserirDados.Size = new System.Drawing.Size(56, 40);
@@ -774,7 +846,8 @@ namespace InterfaceUsuario {
             // 
             // btnLimparDados
             // 
-            this.btnLimparDados.BackColor = System.Drawing.Color.Maroon;
+            this.btnLimparDados.BackColor = System.Drawing.Color.Transparent;
+            this.btnLimparDados.BackgroundImage = global::InterfaceUsuario.Properties.Resources.LimparDadosTemaClaro;
             this.btnLimparDados.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnLimparDados.Enabled = false;
             this.btnLimparDados.FlatAppearance.BorderColor = System.Drawing.Color.PeachPuff;
@@ -782,6 +855,7 @@ namespace InterfaceUsuario {
             this.btnLimparDados.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btnLimparDados.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnLimparDados.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLimparDados.ForeColor = System.Drawing.Color.Transparent;
             this.btnLimparDados.Location = new System.Drawing.Point(336, 490);
             this.btnLimparDados.Name = "btnLimparDados";
             this.btnLimparDados.Size = new System.Drawing.Size(28, 20);
@@ -791,13 +865,15 @@ namespace InterfaceUsuario {
             // 
             // btnMemoriaRecuperar
             // 
-            this.btnMemoriaRecuperar.BackColor = System.Drawing.Color.Maroon;
+            this.btnMemoriaRecuperar.BackColor = System.Drawing.Color.Transparent;
+            this.btnMemoriaRecuperar.BackgroundImage = global::InterfaceUsuario.Properties.Resources.MemoriaRecuperarTemaClaroNormal;
             this.btnMemoriaRecuperar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnMemoriaRecuperar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnMemoriaRecuperar.FlatAppearance.BorderSize = 0;
             this.btnMemoriaRecuperar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btnMemoriaRecuperar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnMemoriaRecuperar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMemoriaRecuperar.ForeColor = System.Drawing.Color.Transparent;
             this.btnMemoriaRecuperar.Location = new System.Drawing.Point(260, 382);
             this.btnMemoriaRecuperar.Name = "btnMemoriaRecuperar";
             this.btnMemoriaRecuperar.Size = new System.Drawing.Size(56, 40);
@@ -806,7 +882,8 @@ namespace InterfaceUsuario {
             // 
             // btnMemoriaLimpar
             // 
-            this.btnMemoriaLimpar.BackColor = System.Drawing.Color.Maroon;
+            this.btnMemoriaLimpar.BackColor = System.Drawing.Color.Transparent;
+            this.btnMemoriaLimpar.BackgroundImage = global::InterfaceUsuario.Properties.Resources.MemoriaLimparTemaClaro;
             this.btnMemoriaLimpar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnMemoriaLimpar.Enabled = false;
             this.btnMemoriaLimpar.FlatAppearance.BorderColor = System.Drawing.Color.PeachPuff;
@@ -814,6 +891,7 @@ namespace InterfaceUsuario {
             this.btnMemoriaLimpar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btnMemoriaLimpar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnMemoriaLimpar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMemoriaLimpar.ForeColor = System.Drawing.Color.Transparent;
             this.btnMemoriaLimpar.Location = new System.Drawing.Point(274, 362);
             this.btnMemoriaLimpar.Name = "btnMemoriaLimpar";
             this.btnMemoriaLimpar.Size = new System.Drawing.Size(28, 20);
@@ -823,13 +901,15 @@ namespace InterfaceUsuario {
             // 
             // btnMemoriaAdicionar
             // 
-            this.btnMemoriaAdicionar.BackColor = System.Drawing.Color.Maroon;
+            this.btnMemoriaAdicionar.BackColor = System.Drawing.Color.Transparent;
+            this.btnMemoriaAdicionar.BackgroundImage = global::InterfaceUsuario.Properties.Resources.MemoriaMaisTemaClaroNormal;
             this.btnMemoriaAdicionar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnMemoriaAdicionar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnMemoriaAdicionar.FlatAppearance.BorderSize = 0;
             this.btnMemoriaAdicionar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btnMemoriaAdicionar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnMemoriaAdicionar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMemoriaAdicionar.ForeColor = System.Drawing.Color.Transparent;
             this.btnMemoriaAdicionar.Location = new System.Drawing.Point(260, 446);
             this.btnMemoriaAdicionar.Name = "btnMemoriaAdicionar";
             this.btnMemoriaAdicionar.Size = new System.Drawing.Size(56, 40);
@@ -838,7 +918,8 @@ namespace InterfaceUsuario {
             // 
             // btnMemoriaSubtrair
             // 
-            this.btnMemoriaSubtrair.BackColor = System.Drawing.Color.Maroon;
+            this.btnMemoriaSubtrair.BackColor = System.Drawing.Color.Transparent;
+            this.btnMemoriaSubtrair.BackgroundImage = global::InterfaceUsuario.Properties.Resources.MemoriaMenosTemaClaro;
             this.btnMemoriaSubtrair.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnMemoriaSubtrair.Enabled = false;
             this.btnMemoriaSubtrair.FlatAppearance.BorderColor = System.Drawing.Color.PeachPuff;
@@ -846,6 +927,7 @@ namespace InterfaceUsuario {
             this.btnMemoriaSubtrair.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btnMemoriaSubtrair.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnMemoriaSubtrair.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMemoriaSubtrair.ForeColor = System.Drawing.Color.Transparent;
             this.btnMemoriaSubtrair.Location = new System.Drawing.Point(274, 426);
             this.btnMemoriaSubtrair.Name = "btnMemoriaSubtrair";
             this.btnMemoriaSubtrair.Size = new System.Drawing.Size(28, 20);
@@ -855,13 +937,15 @@ namespace InterfaceUsuario {
             // 
             // btnIgual
             // 
-            this.btnIgual.BackColor = System.Drawing.Color.Maroon;
+            this.btnIgual.BackColor = System.Drawing.Color.Transparent;
+            this.btnIgual.BackgroundImage = global::InterfaceUsuario.Properties.Resources.IgualTemaClaroNormal;
             this.btnIgual.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnIgual.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnIgual.FlatAppearance.BorderSize = 0;
             this.btnIgual.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btnIgual.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnIgual.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnIgual.ForeColor = System.Drawing.Color.Transparent;
             this.btnIgual.Location = new System.Drawing.Point(260, 510);
             this.btnIgual.Name = "btnIgual";
             this.btnIgual.Size = new System.Drawing.Size(56, 40);
@@ -870,13 +954,15 @@ namespace InterfaceUsuario {
             // 
             // btnMultiplicacao
             // 
-            this.btnMultiplicacao.BackColor = System.Drawing.Color.Maroon;
+            this.btnMultiplicacao.BackColor = System.Drawing.Color.Transparent;
+            this.btnMultiplicacao.BackgroundImage = global::InterfaceUsuario.Properties.Resources.VezesTemaClaroNormal;
             this.btnMultiplicacao.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnMultiplicacao.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnMultiplicacao.FlatAppearance.BorderSize = 0;
             this.btnMultiplicacao.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btnMultiplicacao.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnMultiplicacao.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMultiplicacao.ForeColor = System.Drawing.Color.Transparent;
             this.btnMultiplicacao.Location = new System.Drawing.Point(198, 382);
             this.btnMultiplicacao.Name = "btnMultiplicacao";
             this.btnMultiplicacao.Size = new System.Drawing.Size(56, 40);
@@ -885,13 +971,15 @@ namespace InterfaceUsuario {
             // 
             // btnSubtracao
             // 
-            this.btnSubtracao.BackColor = System.Drawing.Color.Maroon;
+            this.btnSubtracao.BackColor = System.Drawing.Color.Transparent;
+            this.btnSubtracao.BackgroundImage = global::InterfaceUsuario.Properties.Resources.MenosTemaClaroNormal;
             this.btnSubtracao.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnSubtracao.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnSubtracao.FlatAppearance.BorderSize = 0;
             this.btnSubtracao.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btnSubtracao.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnSubtracao.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSubtracao.ForeColor = System.Drawing.Color.Transparent;
             this.btnSubtracao.Location = new System.Drawing.Point(198, 446);
             this.btnSubtracao.Name = "btnSubtracao";
             this.btnSubtracao.Size = new System.Drawing.Size(56, 40);
@@ -900,13 +988,15 @@ namespace InterfaceUsuario {
             // 
             // btnSoma
             // 
-            this.btnSoma.BackColor = System.Drawing.Color.Maroon;
+            this.btnSoma.BackColor = System.Drawing.Color.Transparent;
+            this.btnSoma.BackgroundImage = global::InterfaceUsuario.Properties.Resources.MaisTemaClaroNormal;
             this.btnSoma.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnSoma.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnSoma.FlatAppearance.BorderSize = 0;
             this.btnSoma.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btnSoma.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnSoma.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSoma.ForeColor = System.Drawing.Color.Transparent;
             this.btnSoma.Location = new System.Drawing.Point(198, 510);
             this.btnSoma.Name = "btnSoma";
             this.btnSoma.Size = new System.Drawing.Size(56, 40);
@@ -915,13 +1005,15 @@ namespace InterfaceUsuario {
             // 
             // btn6
             // 
-            this.btn6.BackColor = System.Drawing.Color.Maroon;
+            this.btn6.BackColor = System.Drawing.Color.Transparent;
+            this.btn6.BackgroundImage = global::InterfaceUsuario.Properties.Resources.SeisTemaClaroNormal;
             this.btn6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btn6.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btn6.FlatAppearance.BorderSize = 0;
             this.btn6.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btn6.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btn6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn6.ForeColor = System.Drawing.Color.Transparent;
             this.btn6.Location = new System.Drawing.Point(136, 382);
             this.btn6.Name = "btn6";
             this.btn6.Size = new System.Drawing.Size(56, 40);
@@ -930,13 +1022,15 @@ namespace InterfaceUsuario {
             // 
             // btn3
             // 
-            this.btn3.BackColor = System.Drawing.Color.Maroon;
+            this.btn3.BackColor = System.Drawing.Color.Transparent;
+            this.btn3.BackgroundImage = global::InterfaceUsuario.Properties.Resources.TresTemaClaroNormal;
             this.btn3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btn3.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btn3.FlatAppearance.BorderSize = 0;
             this.btn3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btn3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btn3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn3.ForeColor = System.Drawing.Color.Transparent;
             this.btn3.Location = new System.Drawing.Point(136, 446);
             this.btn3.Name = "btn3";
             this.btn3.Size = new System.Drawing.Size(56, 40);
@@ -945,13 +1039,15 @@ namespace InterfaceUsuario {
             // 
             // btnOposicao
             // 
-            this.btnOposicao.BackColor = System.Drawing.Color.Maroon;
+            this.btnOposicao.BackColor = System.Drawing.Color.Transparent;
+            this.btnOposicao.BackgroundImage = global::InterfaceUsuario.Properties.Resources.OposicaoTemaClaroNormal;
             this.btnOposicao.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnOposicao.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnOposicao.FlatAppearance.BorderSize = 0;
             this.btnOposicao.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btnOposicao.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnOposicao.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnOposicao.ForeColor = System.Drawing.Color.Transparent;
             this.btnOposicao.Location = new System.Drawing.Point(136, 510);
             this.btnOposicao.Name = "btnOposicao";
             this.btnOposicao.Size = new System.Drawing.Size(56, 40);
@@ -960,13 +1056,15 @@ namespace InterfaceUsuario {
             // 
             // btn5
             // 
-            this.btn5.BackColor = System.Drawing.Color.Maroon;
+            this.btn5.BackColor = System.Drawing.Color.Transparent;
+            this.btn5.BackgroundImage = global::InterfaceUsuario.Properties.Resources.CincoTemaClaroNormal;
             this.btn5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btn5.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btn5.FlatAppearance.BorderSize = 0;
             this.btn5.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btn5.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btn5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn5.ForeColor = System.Drawing.Color.Transparent;
             this.btn5.Location = new System.Drawing.Point(74, 382);
             this.btn5.Name = "btn5";
             this.btn5.Size = new System.Drawing.Size(56, 40);
@@ -975,13 +1073,15 @@ namespace InterfaceUsuario {
             // 
             // btn2
             // 
-            this.btn2.BackColor = System.Drawing.Color.Maroon;
+            this.btn2.BackColor = System.Drawing.Color.Transparent;
+            this.btn2.BackgroundImage = global::InterfaceUsuario.Properties.Resources.DoisTemaClaroNormal;
             this.btn2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btn2.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btn2.FlatAppearance.BorderSize = 0;
             this.btn2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btn2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btn2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn2.ForeColor = System.Drawing.Color.Transparent;
             this.btn2.Location = new System.Drawing.Point(74, 446);
             this.btn2.Name = "btn2";
             this.btn2.Size = new System.Drawing.Size(56, 40);
@@ -990,13 +1090,15 @@ namespace InterfaceUsuario {
             // 
             // btnSeparadorDecimal
             // 
-            this.btnSeparadorDecimal.BackColor = System.Drawing.Color.Maroon;
+            this.btnSeparadorDecimal.BackColor = System.Drawing.Color.Transparent;
+            this.btnSeparadorDecimal.BackgroundImage = global::InterfaceUsuario.Properties.Resources.PontoTemaClaroNormal;
             this.btnSeparadorDecimal.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnSeparadorDecimal.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnSeparadorDecimal.FlatAppearance.BorderSize = 0;
             this.btnSeparadorDecimal.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btnSeparadorDecimal.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnSeparadorDecimal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSeparadorDecimal.ForeColor = System.Drawing.Color.Transparent;
             this.btnSeparadorDecimal.Location = new System.Drawing.Point(74, 510);
             this.btnSeparadorDecimal.Name = "btnSeparadorDecimal";
             this.btnSeparadorDecimal.Size = new System.Drawing.Size(56, 40);
@@ -1005,13 +1107,15 @@ namespace InterfaceUsuario {
             // 
             // btn4
             // 
-            this.btn4.BackColor = System.Drawing.Color.Maroon;
+            this.btn4.BackColor = System.Drawing.Color.Transparent;
+            this.btn4.BackgroundImage = global::InterfaceUsuario.Properties.Resources.QuatroTemaClaroNormal;
             this.btn4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btn4.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btn4.FlatAppearance.BorderSize = 0;
             this.btn4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btn4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btn4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn4.ForeColor = System.Drawing.Color.Transparent;
             this.btn4.Location = new System.Drawing.Point(12, 382);
             this.btn4.Name = "btn4";
             this.btn4.Size = new System.Drawing.Size(56, 40);
@@ -1020,13 +1124,15 @@ namespace InterfaceUsuario {
             // 
             // btn1
             // 
-            this.btn1.BackColor = System.Drawing.Color.Maroon;
+            this.btn1.BackColor = System.Drawing.Color.Transparent;
+            this.btn1.BackgroundImage = global::InterfaceUsuario.Properties.Resources.UmTemaClaroNormal;
             this.btn1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btn1.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btn1.FlatAppearance.BorderSize = 0;
             this.btn1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btn1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btn1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn1.ForeColor = System.Drawing.Color.Transparent;
             this.btn1.Location = new System.Drawing.Point(12, 446);
             this.btn1.Name = "btn1";
             this.btn1.Size = new System.Drawing.Size(56, 40);
@@ -1035,13 +1141,15 @@ namespace InterfaceUsuario {
             // 
             // btn0
             // 
-            this.btn0.BackColor = System.Drawing.Color.Maroon;
+            this.btn0.BackColor = System.Drawing.Color.Transparent;
+            this.btn0.BackgroundImage = global::InterfaceUsuario.Properties.Resources.ZeroTemaClaroNormal;
             this.btn0.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btn0.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btn0.FlatAppearance.BorderSize = 0;
             this.btn0.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btn0.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btn0.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn0.ForeColor = System.Drawing.Color.Transparent;
             this.btn0.Location = new System.Drawing.Point(12, 510);
             this.btn0.Name = "btn0";
             this.btn0.Size = new System.Drawing.Size(56, 40);
@@ -1050,7 +1158,8 @@ namespace InterfaceUsuario {
             // 
             // btnSomaQuadradosValores
             // 
-            this.btnSomaQuadradosValores.BackColor = System.Drawing.Color.Maroon;
+            this.btnSomaQuadradosValores.BackColor = System.Drawing.Color.Transparent;
+            this.btnSomaQuadradosValores.BackgroundImage = global::InterfaceUsuario.Properties.Resources.SomatoriaXQuadradoTemaClaro;
             this.btnSomaQuadradosValores.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnSomaQuadradosValores.Enabled = false;
             this.btnSomaQuadradosValores.FlatAppearance.BorderColor = System.Drawing.Color.PeachPuff;
@@ -1058,6 +1167,7 @@ namespace InterfaceUsuario {
             this.btnSomaQuadradosValores.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btnSomaQuadradosValores.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnSomaQuadradosValores.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSomaQuadradosValores.ForeColor = System.Drawing.Color.Transparent;
             this.btnSomaQuadradosValores.Location = new System.Drawing.Point(336, 362);
             this.btnSomaQuadradosValores.Name = "btnSomaQuadradosValores";
             this.btnSomaQuadradosValores.Size = new System.Drawing.Size(28, 20);
