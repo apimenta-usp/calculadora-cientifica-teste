@@ -117,6 +117,7 @@ namespace InterfaceUsuario {
             this.chk2Funcao.TabIndex = 37;
             this.chk2Funcao.Text = "2ª Função";
             this.chk2Funcao.UseVisualStyleBackColor = false;
+            this.chk2Funcao.CheckedChanged += new System.EventHandler(this.chk2Funcao_CheckedChanged);
             // 
             // lblAngulo
             // 

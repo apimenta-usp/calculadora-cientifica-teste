@@ -20,8 +20,20 @@ namespace InterfaceUsuario {
         }
 
         private void Form1_Load(object sender, EventArgs e) {
-
+            Claro = true;
+            Virgula = false;
+            chk2Funcao.Checked = false;
+            TemaPrincipal(Claro, Virgula);
         }
+
+        #region Evento CheckedChanged
+        private void chk2Funcao_CheckedChanged(object sender, EventArgs e) {
+            TemaBotoesMemoria(Claro, chk2Funcao);
+            TemaBotoesEstatistica(Claro, chk2Funcao);
+            TemaBotoesFuncoes(Claro, chk2Funcao);
+            TemaBotaoLimpeza(Claro, chk2Funcao);
+        }
+        #endregion
 
         #region Outros Métodos
         private void TemaPrincipal(bool claro, bool virgula) {
@@ -222,6 +234,42 @@ namespace InterfaceUsuario {
             }
         }
 
+        private void TemaBotoesMemoria(bool claro, CheckBox funcao2) {
+            if (claro) {
+                if (!funcao2.Checked) {
+                    ControleDeImagens.DuasImagens(btnMemoriaAdicionar, MemoriaMaisTemaClaroNormal,
+                                                    btnMemoriaSubtrair, MemoriaMenosTemaClaro);
+                    ControleDeImagens.DuasImagens(btnMemoriaRecuperar, MemoriaRecuperarTemaClaroNormal,
+                                                    btnMemoriaLimpar, MemoriaLimparTemaClaro);
+                    ControleDeImagens.DuasImagens(btnMemoriaSubstituir, MemoriaSubstituirTemaClaroNormal,
+                                                    btnRandom, RandomTemaClaro);
+                } else {
+                    ControleDeImagens.DuasImagens(btnMemoriaAdicionar, MemoriaMenosTemaClaroNormal,
+                                                    btnMemoriaSubtrair, MemoriaMaisTemaClaro);
+                    ControleDeImagens.DuasImagens(btnMemoriaRecuperar, MemoriaLimparTemaClaroNormal,
+                                                    btnMemoriaLimpar, MemoriaRecuperarTemaClaro);
+                    ControleDeImagens.DuasImagens(btnMemoriaSubstituir, RandomTemaClaroNormal,
+                                                    btnRandom, MemoriaSubstituirTemaClaro);
+                }
+            } else {
+                if (!funcao2.Checked) {
+                    ControleDeImagens.DuasImagens(btnMemoriaAdicionar, MemoriaMaisTemaEscuroNormal,
+                                                    btnMemoriaSubtrair, MemoriaMenosTemaEscuro);
+                    ControleDeImagens.DuasImagens(btnMemoriaRecuperar, MemoriaRecuperarTemaEscuroNormal,
+                                                    btnMemoriaLimpar, MemoriaLimparTemaEscuro);
+                    ControleDeImagens.DuasImagens(btnMemoriaSubstituir, MemoriaSubstituirTemaEscuroNormal,
+                                                    btnRandom, RandomTemaEscuro);
+                } else {
+                    ControleDeImagens.DuasImagens(btnMemoriaAdicionar, MemoriaMenosTemaEscuroNormal,
+                                                    btnMemoriaSubtrair, MemoriaMaisTemaEscuro);
+                    ControleDeImagens.DuasImagens(btnMemoriaRecuperar, MemoriaLimparTemaEscuroNormal,
+                                                    btnMemoriaLimpar, MemoriaRecuperarTemaEscuro);
+                    ControleDeImagens.DuasImagens(btnMemoriaSubstituir, RandomTemaEscuroNormal,
+                                                    btnRandom, MemoriaSubstituirTemaEscuro);
+                }
+            }
+        }
+
         private void TemaBotoesEstatistica(bool claro, CheckBox funcao2) {
             if (claro) {
                 if (!funcao2.Checked) {
@@ -234,14 +282,14 @@ namespace InterfaceUsuario {
                     ControleDeImagens.DuasImagens(btnNumeroDados, NumeroDadosTemaClaroNormal,
                                                     btnSomaValores, SomatoriaXTemaClaro);
                 } else {
-                    ControleDeImagens.DuasImagens(btnLimparDados, LimparDadosTemaClaroNormal,
-                                                    btnInserirDados, InserirDadosTemaClaro);
-                    ControleDeImagens.DuasImagens(btnDesvioPopulacional, DesvioPopulacionalTemaClaroNormal,
-                                                    btnDesvioAmostral, DesvioAmostralTemaClaro);
-                    ControleDeImagens.DuasImagens(btnSomaQuadradosValores, SomatoriaXQuadradoTemaClaroNormal,
-                                                    btnMediaAritmetica, MediaAritmeticaTemaClaro);
-                    ControleDeImagens.DuasImagens(btnSomaValores, SomatoriaXTemaClaroNormal,
-                                                    btnNumeroDados, NumeroDadosTemaClaro);
+                    ControleDeImagens.DuasImagens(btnInserirDados, LimparDadosTemaClaroNormal,
+                                                    btnLimparDados, InserirDadosTemaClaro);
+                    ControleDeImagens.DuasImagens(btnDesvioAmostral, DesvioPopulacionalTemaClaroNormal,
+                                                    btnDesvioPopulacional, DesvioAmostralTemaClaro);
+                    ControleDeImagens.DuasImagens(btnMediaAritmetica, SomatoriaXQuadradoTemaClaroNormal,
+                                                    btnSomaQuadradosValores, MediaAritmeticaTemaClaro);
+                    ControleDeImagens.DuasImagens(btnNumeroDados, SomatoriaXTemaClaroNormal,
+                                                    btnSomaValores, NumeroDadosTemaClaro);
                 }
             } else {
                 if (!funcao2.Checked) {
@@ -254,50 +302,14 @@ namespace InterfaceUsuario {
                     ControleDeImagens.DuasImagens(btnNumeroDados, NumeroDadosTemaEscuroNormal,
                                                     btnSomaValores, SomatoriaXTemaEscuro);
                 } else {
-                    ControleDeImagens.DuasImagens(btnLimparDados, LimparDadosTemaEscuroNormal,
-                                                    btnInserirDados, InserirDadosTemaEscuro);
-                    ControleDeImagens.DuasImagens(btnDesvioPopulacional, DesvioPopulacionalTemaEscuroNormal,
-                                                    btnDesvioAmostral, DesvioAmostralTemaEscuro);
-                    ControleDeImagens.DuasImagens(btnSomaQuadradosValores, SomatoriaXQuadradoTemaEscuroNormal,
-                                                    btnMediaAritmetica, MediaAritmeticaTemaEscuro);
-                    ControleDeImagens.DuasImagens(btnSomaValores, SomatoriaXTemaEscuroNormal,
-                                                    btnNumeroDados, NumeroDadosTemaEscuro);
-                }
-            }
-        }
-
-        private void TemaBotoesMemoria(bool claro, CheckBox funcao2) {
-            if (claro) {
-                if (!funcao2.Checked) {
-                    ControleDeImagens.DuasImagens(btnMemoriaAdicionar, MemoriaMaisTemaClaroNormal,
-                                                    btnMemoriaSubtrair, MemoriaMenosTemaClaro);
-                    ControleDeImagens.DuasImagens(btnMemoriaRecuperar, MemoriaRecuperarTemaClaroNormal,
-                                                    btnMemoriaLimpar, MemoriaLimparTemaClaro);
-                    ControleDeImagens.DuasImagens(btnMemoriaSubstituir, MemoriaSubstituirTemaClaroNormal,
-                                                    btnRandom, RandomTemaClaro);
-                } else {
-                    ControleDeImagens.DuasImagens(btnMemoriaSubtrair, MemoriaMenosTemaClaroNormal,
-                                                    btnMemoriaAdicionar, MemoriaMaisTemaClaro);
-                    ControleDeImagens.DuasImagens(btnMemoriaLimpar, MemoriaLimparTemaClaroNormal,
-                                                    btnMemoriaRecuperar, MemoriaRecuperarTemaClaro);
-                    ControleDeImagens.DuasImagens(btnRandom, RandomTemaClaroNormal,
-                                                    btnMemoriaSubstituir, MemoriaSubstituirTemaClaro);
-                }
-            } else {
-                if (!funcao2.Checked) {
-                    ControleDeImagens.DuasImagens(btnMemoriaAdicionar, MemoriaMaisTemaEscuroNormal,
-                                                    btnMemoriaSubtrair, MemoriaMenosTemaEscuro);
-                    ControleDeImagens.DuasImagens(btnMemoriaRecuperar, MemoriaRecuperarTemaEscuroNormal,
-                                                    btnMemoriaLimpar, MemoriaLimparTemaEscuro);
-                    ControleDeImagens.DuasImagens(btnMemoriaSubstituir, MemoriaSubstituirTemaEscuroNormal,
-                                                    btnRandom, RandomTemaEscuro);
-                } else {
-                    ControleDeImagens.DuasImagens(btnMemoriaSubtrair, MemoriaMenosTemaEscuroNormal,
-                                                    btnMemoriaAdicionar, MemoriaMaisTemaEscuro);
-                    ControleDeImagens.DuasImagens(btnMemoriaLimpar, MemoriaLimparTemaEscuroNormal,
-                                                    btnMemoriaRecuperar, MemoriaRecuperarTemaEscuro);
-                    ControleDeImagens.DuasImagens(btnRandom, RandomTemaEscuroNormal,
-                                                    btnMemoriaSubstituir, MemoriaSubstituirTemaEscuro);
+                    ControleDeImagens.DuasImagens(btnInserirDados, LimparDadosTemaEscuroNormal,
+                                                    btnLimparDados, InserirDadosTemaEscuro);
+                    ControleDeImagens.DuasImagens(btnDesvioAmostral, DesvioPopulacionalTemaEscuroNormal,
+                                                    btnDesvioPopulacional, DesvioAmostralTemaEscuro);
+                    ControleDeImagens.DuasImagens(btnMediaAritmetica, SomatoriaXQuadradoTemaEscuroNormal,
+                                                    btnSomaQuadradosValores, MediaAritmeticaTemaEscuro);
+                    ControleDeImagens.DuasImagens(btnNumeroDados, SomatoriaXTemaEscuroNormal,
+                                                    btnSomaValores, NumeroDadosTemaEscuro);
                 }
             }
         }
@@ -328,28 +340,28 @@ namespace InterfaceUsuario {
                     ControleDeImagens.DuasImagens(btnRemover, RemoverTemaClaroNormal,
                                                     btnPorcentagem, PorcentagemTemaClaro);
                 } else {
-                    ControleDeImagens.DuasImagens(btnPotenciaNeperiana, PotenciaNeperianaTemaClaroNormal,
-                                                    btnLogaritmoNeperiano, LogaritmoNeperianoTemaClaro);
-                    ControleDeImagens.DuasImagens(btnPotenciaDecimal, PotenciaDecimalTemaClaroNormal,
-                                                    btnLogaritmoDecimal, LogaritmoDecimalTemaClaro);
-                    ControleDeImagens.DuasImagens(btnRaizCubica, RaizCubicaTemaClaroNormal,
-                                                    btnInversao, InversaoTemaClaro);
-                    ControleDeImagens.DuasImagens(btnXQuadrado, XQuadradoTemaClaroNormal,
-                                                    btnRaizQuadrada, RaizQuadradaTemaClaro);
-                    ControleDeImagens.DuasImagens(btnRadiciacao, RadiciacaoTemaClaroNormal,
-                                                    btnPotenciacao, PotenciacaoTemaClaro);
-                    ControleDeImagens.DuasImagens(btnPi, PiTemaClaroNormal,
-                                                    btnExponencial, ExponencialTemaClaro);
-                    ControleDeImagens.DuasImagens(btnFatorial, FatorialTemaClaroNormal,
-                                                    btnDecimalCientifico, DecimalCientificoTemaClaro);
-                    ControleDeImagens.DuasImagens(btnSenoInverso, SenoInversoTemaClaroNormal,
-                                                    btnSeno, SenoTemaClaro);
-                    ControleDeImagens.DuasImagens(btnCossenoInverso, CossenoInversoTemaClaroNormal,
-                                                    btnCosseno, CossenoTemaClaro);
-                    ControleDeImagens.DuasImagens(btnTangenteInversa, TangenteInversaTemaClaroNormal,
-                                                    btnTangente, TangenteTemaClaro);
-                    ControleDeImagens.DuasImagens(btnPorcentagem, PorcentagemTemaClaroNormal,
-                                                    btnRemover, RemoverTemaClaro);
+                    ControleDeImagens.DuasImagens(btnLogaritmoNeperiano, PotenciaNeperianaTemaClaroNormal,
+                                                    btnPotenciaNeperiana, LogaritmoNeperianoTemaClaro);
+                    ControleDeImagens.DuasImagens(btnLogaritmoDecimal, PotenciaDecimalTemaClaroNormal,
+                                                    btnPotenciaDecimal, LogaritmoDecimalTemaClaro);
+                    ControleDeImagens.DuasImagens(btnInversao, RaizCubicaTemaClaroNormal,
+                                                    btnRaizCubica, InversaoTemaClaro);
+                    ControleDeImagens.DuasImagens(btnRaizQuadrada, XQuadradoTemaClaroNormal,
+                                                    btnXQuadrado, RaizQuadradaTemaClaro);
+                    ControleDeImagens.DuasImagens(btnPotenciacao, RadiciacaoTemaClaroNormal,
+                                                    btnRadiciacao, PotenciacaoTemaClaro);
+                    ControleDeImagens.DuasImagens(btnExponencial, PiTemaClaroNormal,
+                                                    btnPi, ExponencialTemaClaro);
+                    ControleDeImagens.DuasImagens(btnDecimalCientifico, FatorialTemaClaroNormal,
+                                                    btnFatorial, DecimalCientificoTemaClaro);
+                    ControleDeImagens.DuasImagens(btnSeno, SenoInversoTemaClaroNormal,
+                                                    btnSenoInverso, SenoTemaClaro);
+                    ControleDeImagens.DuasImagens(btnCosseno, CossenoInversoTemaClaroNormal,
+                                                    btnCossenoInverso, CossenoTemaClaro);
+                    ControleDeImagens.DuasImagens(btnTangente, TangenteInversaTemaClaroNormal,
+                                                    btnTangenteInversa, TangenteTemaClaro);
+                    ControleDeImagens.DuasImagens(btnRemover, PorcentagemTemaClaroNormal,
+                                                    btnPorcentagem, RemoverTemaClaro);
                 }
             } else {
                 if (!funcao2.Checked) {
@@ -376,28 +388,28 @@ namespace InterfaceUsuario {
                     ControleDeImagens.DuasImagens(btnRemover, RemoverTemaEscuroNormal,
                                                     btnPorcentagem, PorcentagemTemaEscuro);
                 } else {
-                    ControleDeImagens.DuasImagens(btnPotenciaNeperiana, PotenciaNeperianaTemaEscuroNormal,
-                                                    btnLogaritmoNeperiano, LogaritmoNeperianoTemaEscuro);
-                    ControleDeImagens.DuasImagens(btnPotenciaDecimal, PotenciaDecimalTemaEscuroNormal,
-                                                    btnLogaritmoDecimal, LogaritmoDecimalTemaEscuro);
-                    ControleDeImagens.DuasImagens(btnRaizCubica, RaizCubicaTemaEscuroNormal,
-                                                    btnInversao, InversaoTemaEscuro);
-                    ControleDeImagens.DuasImagens(btnXQuadrado, XQuadradoTemaEscuroNormal,
-                                                    btnRaizQuadrada, RaizQuadradaTemaEscuro);
-                    ControleDeImagens.DuasImagens(btnRadiciacao, RadiciacaoTemaEscuroNormal,
-                                                    btnPotenciacao, PotenciacaoTemaEscuro);
-                    ControleDeImagens.DuasImagens(btnPi, PiTemaEscuroNormal,
-                                                    btnExponencial, ExponencialTemaEscuro);
-                    ControleDeImagens.DuasImagens(btnFatorial, FatorialTemaEscuroNormal,
-                                                    btnDecimalCientifico, DecimalCientificoTemaEscuro);
-                    ControleDeImagens.DuasImagens(btnSenoInverso, SenoInversoTemaEscuroNormal,
-                                                    btnSeno, SenoTemaEscuro);
-                    ControleDeImagens.DuasImagens(btnCossenoInverso, CossenoInversoTemaEscuroNormal,
-                                                    btnCosseno, CossenoTemaEscuro);
-                    ControleDeImagens.DuasImagens(btnTangenteInversa, TangenteInversaTemaEscuroNormal,
-                                                    btnTangente, TangenteTemaEscuro);
-                    ControleDeImagens.DuasImagens(btnPorcentagem, PorcentagemTemaEscuroNormal,
-                                                    btnRemover, RemoverTemaEscuro);
+                    ControleDeImagens.DuasImagens(btnLogaritmoNeperiano, PotenciaNeperianaTemaEscuroNormal,
+                                                    btnPotenciaNeperiana, LogaritmoNeperianoTemaEscuro);
+                    ControleDeImagens.DuasImagens(btnLogaritmoDecimal, PotenciaDecimalTemaEscuroNormal,
+                                                    btnPotenciaDecimal, LogaritmoDecimalTemaEscuro);
+                    ControleDeImagens.DuasImagens(btnInversao, RaizCubicaTemaEscuroNormal,
+                                                    btnRaizCubica, InversaoTemaEscuro);
+                    ControleDeImagens.DuasImagens(btnRaizQuadrada, XQuadradoTemaEscuroNormal,
+                                                    btnXQuadrado, RaizQuadradaTemaEscuro);
+                    ControleDeImagens.DuasImagens(btnPotenciacao, RadiciacaoTemaEscuroNormal,
+                                                    btnRadiciacao, PotenciacaoTemaEscuro);
+                    ControleDeImagens.DuasImagens(btnExponencial, PiTemaEscuroNormal,
+                                                    btnPi, ExponencialTemaEscuro);
+                    ControleDeImagens.DuasImagens(btnDecimalCientifico, FatorialTemaEscuroNormal,
+                                                    btnFatorial, DecimalCientificoTemaEscuro);
+                    ControleDeImagens.DuasImagens(btnSeno, SenoInversoTemaEscuroNormal,
+                                                    btnSenoInverso, SenoTemaEscuro);
+                    ControleDeImagens.DuasImagens(btnCosseno, CossenoInversoTemaEscuroNormal,
+                                                    btnCossenoInverso, CossenoTemaEscuro);
+                    ControleDeImagens.DuasImagens(btnTangente, TangenteInversaTemaEscuroNormal,
+                                                    btnTangenteInversa, TangenteTemaEscuro);
+                    ControleDeImagens.DuasImagens(btnRemover, PorcentagemTemaEscuroNormal,
+                                                    btnPorcentagem, RemoverTemaEscuro);
                 }
             }
         }
@@ -408,16 +420,16 @@ namespace InterfaceUsuario {
                     ControleDeImagens.DuasImagens(btnApagarVisor, ApagarVisorTemaClaroNormal,
                                                     btnLimparTudo, LimparTudoTemaClaro);
                 } else {
-                    ControleDeImagens.DuasImagens(btnLimparTudo, LimparTudoTemaClaroNormal,
-                                                    btnApagarVisor, ApagarVisorTemaClaro);
+                    ControleDeImagens.DuasImagens(btnApagarVisor, LimparTudoTemaClaroNormal,
+                                                    btnLimparTudo, ApagarVisorTemaClaro);
                 }
             } else {
                 if (!funcao2.Checked) {
                     ControleDeImagens.DuasImagens(btnApagarVisor, ApagarVisorTemaEscuroNormal,
                                                     btnLimparTudo, LimparTudoTemaEscuro);
                 } else {
-                    ControleDeImagens.DuasImagens(btnLimparTudo, LimparTudoTemaEscuroNormal,
-                                                    btnApagarVisor, ApagarVisorTemaEscuro);
+                    ControleDeImagens.DuasImagens(btnApagarVisor, LimparTudoTemaEscuroNormal,
+                                                    btnLimparTudo, ApagarVisorTemaEscuro);
                 }
             }            
         }
