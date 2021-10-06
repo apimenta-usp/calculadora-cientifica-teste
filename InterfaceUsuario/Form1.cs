@@ -22,9 +22,55 @@ namespace InterfaceUsuario {
         private void Form1_Load(object sender, EventArgs e) {
             Claro = true;
             Virgula = false;
+            mnsClaro.Checked = true;
+            mnsPonto.Checked = true;
             chk2Funcao.Checked = false;
+            //TemaClaro();
             TemaPrincipal(Claro, Virgula);
         }
+
+        #region Eventos Click
+        private void mnsCopiarVisor_Click(object sender, EventArgs e) {
+            if (txtVisor.Text.Trim().Equals(string.Empty)) {
+                return;
+            }
+            Clipboard.SetText(txtVisor.Text.Trim());
+        }
+
+        private void mnsSair_Click(object sender, EventArgs e) {
+            Application.Exit();
+        }
+
+        private void mnsPonto_Click(object sender, EventArgs e) {
+            Virgula = false;
+            txtVisor.Text = txtVisor.Text.Trim().Replace(',', '.');
+            if (Claro) ControleDeImagens.UmaImagem(btnSeparadorDecimal, PontoTemaClaroNormal);
+            else ControleDeImagens.UmaImagem(btnSeparadorDecimal, PontoTemaEscuroNormal);
+            mnsPonto.Checked = !Virgula;
+            mnsVirgula.Checked = Virgula;
+        }
+
+        private void mnsVirgula_Click(object sender, EventArgs e) {
+            Virgula = true;
+            txtVisor.Text = txtVisor.Text.Trim().Replace('.', ',');
+            if (Claro) ControleDeImagens.UmaImagem(btnSeparadorDecimal, VirgulaTemaClaroNormal);
+            else ControleDeImagens.UmaImagem(btnSeparadorDecimal, VirgulaTemaEscuroNormal);
+            mnsPonto.Checked = !Virgula;
+            mnsVirgula.Checked = Virgula;
+        }
+
+        private void mnsClaro_Click(object sender, EventArgs e) {
+            Claro = true;
+            //TemaClaro();
+            TemaPrincipal(Claro, Virgula);
+        }
+
+        private void mnsEscuro_Click(object sender, EventArgs e) {
+            Claro = false;
+            //TemaEscuro();
+            TemaPrincipal(Claro, Virgula);
+        }
+        #endregion
 
         #region Evento CheckedChanged
         private void chk2Funcao_CheckedChanged(object sender, EventArgs e) {
