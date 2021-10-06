@@ -1396,8 +1396,6 @@ namespace InterfaceUsuario {
         private System.Windows.Forms.RadioButton optGrau;
         private System.Windows.Forms.TextBox txtVisor;
         private System.Windows.Forms.Label lblEstatistica;
-        private System.Windows.Forms.Button btnApagarVisor;
-        private System.Windows.Forms.Button btnLimparTudo;
         private System.Windows.Forms.Button btnLogaritmoNeperiano;
         private System.Windows.Forms.Button btnPotenciaNeperiana;
         private System.Windows.Forms.Button btnNumeroDados;
@@ -1466,6 +1464,8 @@ namespace InterfaceUsuario {
         private System.Windows.Forms.ToolStripMenuItem mnsAjuda;
         private System.Windows.Forms.ToolStripMenuItem mnsManual;
         private System.Windows.Forms.ToolStripMenuItem mnsSobre;
+        public System.Windows.Forms.Button btnApagarVisor;
+        public System.Windows.Forms.Button btnLimparTudo;
     }
 }
 
