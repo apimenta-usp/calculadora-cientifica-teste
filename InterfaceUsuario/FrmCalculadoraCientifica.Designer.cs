@@ -24,6 +24,7 @@ namespace InterfaceUsuario {
         /// o conteúdo deste método com o editor de código.
         /// </summary>
         private void InitializeComponent() {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmCalculadoraCientifica));
             this.chk2Funcao = new System.Windows.Forms.CheckBox();
             this.lblAngulo = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -1211,7 +1212,7 @@ namespace InterfaceUsuario {
             // 
             this.mnsCopiarVisor.Name = "mnsCopiarVisor";
             this.mnsCopiarVisor.ShowShortcutKeys = false;
-            this.mnsCopiarVisor.Size = new System.Drawing.Size(180, 22);
+            this.mnsCopiarVisor.Size = new System.Drawing.Size(131, 22);
             this.mnsCopiarVisor.Text = "Copiar Visor";
             this.mnsCopiarVisor.Click += new System.EventHandler(this.mnsCopiarVisor_Click);
             // 
@@ -1219,7 +1220,7 @@ namespace InterfaceUsuario {
             // 
             this.mnsSair.Name = "mnsSair";
             this.mnsSair.ShowShortcutKeys = false;
-            this.mnsSair.Size = new System.Drawing.Size(180, 22);
+            this.mnsSair.Size = new System.Drawing.Size(131, 22);
             this.mnsSair.Text = "Sair";
             this.mnsSair.Click += new System.EventHandler(this.mnsSair_Click);
             // 
@@ -1240,7 +1241,7 @@ namespace InterfaceUsuario {
             this.mnsVirgula});
             this.mnsSeparadorDecimal.Name = "mnsSeparadorDecimal";
             this.mnsSeparadorDecimal.ShowShortcutKeys = false;
-            this.mnsSeparadorDecimal.Size = new System.Drawing.Size(180, 22);
+            this.mnsSeparadorDecimal.Size = new System.Drawing.Size(166, 22);
             this.mnsSeparadorDecimal.Text = "Separador Decimal";
             // 
             // mnsPonto
@@ -1249,7 +1250,7 @@ namespace InterfaceUsuario {
             this.mnsPonto.CheckState = System.Windows.Forms.CheckState.Checked;
             this.mnsPonto.Name = "mnsPonto";
             this.mnsPonto.ShowShortcutKeys = false;
-            this.mnsPonto.Size = new System.Drawing.Size(180, 22);
+            this.mnsPonto.Size = new System.Drawing.Size(104, 22);
             this.mnsPonto.Text = "Ponto";
             this.mnsPonto.Click += new System.EventHandler(this.mnsPonto_Click);
             // 
@@ -1257,7 +1258,7 @@ namespace InterfaceUsuario {
             // 
             this.mnsVirgula.Name = "mnsVirgula";
             this.mnsVirgula.ShowShortcutKeys = false;
-            this.mnsVirgula.Size = new System.Drawing.Size(180, 22);
+            this.mnsVirgula.Size = new System.Drawing.Size(104, 22);
             this.mnsVirgula.Text = "Vírgula";
             this.mnsVirgula.Click += new System.EventHandler(this.mnsVirgula_Click);
             // 
@@ -1268,7 +1269,7 @@ namespace InterfaceUsuario {
             this.mnsEscuro});
             this.mnsTema.Name = "mnsTema";
             this.mnsTema.ShowShortcutKeys = false;
-            this.mnsTema.Size = new System.Drawing.Size(180, 22);
+            this.mnsTema.Size = new System.Drawing.Size(166, 22);
             this.mnsTema.Text = "Tema";
             // 
             // mnsClaro
@@ -1277,7 +1278,7 @@ namespace InterfaceUsuario {
             this.mnsClaro.CheckState = System.Windows.Forms.CheckState.Checked;
             this.mnsClaro.Name = "mnsClaro";
             this.mnsClaro.ShowShortcutKeys = false;
-            this.mnsClaro.Size = new System.Drawing.Size(180, 22);
+            this.mnsClaro.Size = new System.Drawing.Size(102, 22);
             this.mnsClaro.Text = "Claro";
             this.mnsClaro.Click += new System.EventHandler(this.mnsClaro_Click);
             // 
@@ -1285,7 +1286,7 @@ namespace InterfaceUsuario {
             // 
             this.mnsEscuro.Name = "mnsEscuro";
             this.mnsEscuro.ShowShortcutKeys = false;
-            this.mnsEscuro.Size = new System.Drawing.Size(180, 22);
+            this.mnsEscuro.Size = new System.Drawing.Size(102, 22);
             this.mnsEscuro.Text = "Escuro";
             this.mnsEscuro.Click += new System.EventHandler(this.mnsEscuro_Click);
             // 
@@ -1382,12 +1383,13 @@ namespace InterfaceUsuario {
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.mnsMenuPrincipal);
             this.ForeColor = System.Drawing.Color.Black;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.mnsMenuPrincipal;
             this.MaximizeBox = false;
             this.Name = "FrmCalculadoraCientifica";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Calculadora Científica by ACP";
-            this.Load += new System.EventHandler(this.Form1_Load);
+            this.Load += new System.EventHandler(this.FrmCalculadoraCientifica_Load);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.mnsMenuPrincipal.ResumeLayout(false);

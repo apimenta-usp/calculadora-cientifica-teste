@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Utilities;
 
 namespace InterfaceUsuario {
     public partial class FrmCalculadoraCientifica : Form {
@@ -19,14 +20,31 @@ namespace InterfaceUsuario {
             InitializeComponent();
         }
 
-        private void Form1_Load(object sender, EventArgs e) {
+        private double numero1;
+        private double numero2;
+        private double memoria;
+        private string operacao;
+        private bool pressionouIgual;
+        private bool pressionouPotenciacao;
+        private bool pressionouMemoria;
+        globalKeyboardHook gkh = new globalKeyboardHook();
+
+        private void FrmCalculadoraCientifica_Load(object sender, EventArgs e) {
             Claro = true;
             Virgula = false;
             mnsClaro.Checked = true;
             mnsPonto.Checked = true;
             chk2Funcao.Checked = false;
+            memoria = 0;
+            pressionouMemoria = false;            
             //TemaClaro();
             TemaPrincipal(Claro, Virgula);
+            gkh.HookedKeys.Add(Keys.Enter);
+            gkh.KeyDown += new KeyEventHandler(gkh_KeyDown);
+        }
+
+        void gkh_KeyDown(object sender, KeyEventArgs e) {
+            e.Handled = true;
         }
 
         #region Eventos Click
