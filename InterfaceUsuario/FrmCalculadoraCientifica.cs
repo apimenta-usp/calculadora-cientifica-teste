@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Utilities;
+using System.Globalization;
 
 namespace InterfaceUsuario {
     public partial class FrmCalculadoraCientifica : Form {
@@ -29,12 +30,22 @@ namespace InterfaceUsuario {
         private bool pressionouMemoria;
         globalKeyboardHook gkh = new globalKeyboardHook();
 
+        private void LimparCampos() {
+            txtVisor.Clear();
+            numero1 = 0;
+            numero2 = 0;
+            operacao = string.Empty;
+            pressionouIgual = false;
+            pressionouPotenciacao = false;
+        }
+
         private void FrmCalculadoraCientifica_Load(object sender, EventArgs e) {
             Claro = true;
             Virgula = false;
             mnsClaro.Checked = true;
             mnsPonto.Checked = true;
             chk2Funcao.Checked = false;
+            LimparCampos();
             memoria = 0;
             pressionouMemoria = false;            
             //TemaClaro();
@@ -45,6 +56,31 @@ namespace InterfaceUsuario {
 
         void gkh_KeyDown(object sender, KeyEventArgs e) {
             e.Handled = true;
+        }
+
+        private void AdicionarCaracterNumerico(string caracter) {
+            sbyte tamanho;
+            if (txtVisor.Text.Trim().Contains(",") || txtVisor.Text.Trim().Contains("."))
+                tamanho = 11;
+            else
+                tamanho = 10;
+            if (pressionouIgual || pressionouMemoria) {
+                txtVisor.Clear();
+                pressionouIgual = false;
+                pressionouMemoria = false;
+            }
+            if (txtVisor.Text.Trim().Equals("0") || txtVisor.Text.Trim().Equals("-0"))
+                txtVisor.Text = caracter;
+            else if (txtVisor.Text.Trim().Length < tamanho)
+                txtVisor.Text += caracter;
+        }
+
+        private void AdicionarCaracterOperacao(string caracter) {
+            if (!txtVisor.Text.Trim().Equals(string.Empty)) {
+                numero1 = Convert.ToDouble(txtVisor.Text.Trim(), CultureInfo.InvariantCulture);
+                operacao = caracter;
+                txtVisor.Clear();
+            }
         }
 
         #region Eventos Click
@@ -90,51 +126,82 @@ namespace InterfaceUsuario {
         }
 
         private void btn0_Click(object sender, EventArgs e) {
-
+            sbyte tamanho;
+            if (txtVisor.Text.Trim().Contains(",") || txtVisor.Text.Trim().Contains("."))
+                tamanho = 11;
+            else
+                tamanho = 10;
+            if (pressionouIgual || pressionouMemoria) {
+                txtVisor.Clear();
+                pressionouIgual = false;
+                pressionouMemoria = false;
+            }
+            if (txtVisor.Text.Trim().Equals("0") || txtVisor.Text.Trim().Equals("-0"))
+                txtVisor.Text = "0";
+            else if (txtVisor.Text.Trim().Length < tamanho)
+                txtVisor.Text += "0";
         }
 
         private void btn1_Click(object sender, EventArgs e) {
-
+            AdicionarCaracterNumerico("1");
         }
 
         private void btn2_Click(object sender, EventArgs e) {
-
+            AdicionarCaracterNumerico("2");
         }
 
         private void btn3_Click(object sender, EventArgs e) {
-
+            AdicionarCaracterNumerico("3");
         }
 
         private void btn4_Click(object sender, EventArgs e) {
-
+            AdicionarCaracterNumerico("4");
         }
 
         private void btn5_Click(object sender, EventArgs e) {
-
+            AdicionarCaracterNumerico("5");
         }
 
         private void btn6_Click(object sender, EventArgs e) {
-
+            AdicionarCaracterNumerico("6");
         }
 
         private void btn7_Click(object sender, EventArgs e) {
-
+            AdicionarCaracterNumerico("7");
         }
 
         private void btn8_Click(object sender, EventArgs e) {
-
+            AdicionarCaracterNumerico("8");
         }
 
         private void btn9_Click(object sender, EventArgs e) {
-
+            AdicionarCaracterNumerico("9");
         }
 
         private void btnSeparadorDecimal_Click(object sender, EventArgs e) {
-
+            if (pressionouIgual || pressionouMemoria) {
+                txtVisor.Clear();
+                pressionouIgual = false;
+                pressionouMemoria = false;
+            }
+            if (txtVisor.Text.Trim().Equals(string.Empty) || txtVisor.Text.Trim() == "-") {
+                if (!Virgula) txtVisor.Text = "0.";
+                else txtVisor.Text = "0,";
+                return;
+            }
+            if (txtVisor.Text.Contains(".") || txtVisor.Text.Contains(",")) return;
+            if (txtVisor.Text.Trim().Length > 9) return;
+            if (!Virgula)
+                txtVisor.Text += ".";
+            else
+                txtVisor.Text += ",";
         }
 
         private void btnOposicao_Click(object sender, EventArgs e) {
-
+            if (!txtVisor.Text.Trim().Equals(string.Empty)) {
+                double visor = (Visor.CapturarVisor(txtVisor.Text.Trim(), Virgula)) * (-1);
+                txtVisor.Text = Visor.MostrarNoVisor(visor, Virgula);
+            }
         }
 
         private void btnSoma_Click(object sender, EventArgs e) {
@@ -226,11 +293,28 @@ namespace InterfaceUsuario {
         }
 
         private void btnRemover_Click(object sender, EventArgs e) {
-
+            if (!chk2Funcao.Checked) {
+                if (pressionouIgual) {
+                    LimparCampos();
+                    return;
+                }
+                if ((txtVisor.Text.Trim().Length == 2 && txtVisor.Text.Trim().Contains("-")) ||
+                    (txtVisor.Text.Trim() == "-0." || txtVisor.Text.Trim() == "-0,")) {
+                    txtVisor.Clear();
+                    return;
+                }
+                if (!txtVisor.Text.Trim().Equals(string.Empty)) {
+                    sbyte tamanho = (sbyte)txtVisor.Text.Trim().Length;
+                    txtVisor.Text = txtVisor.Text.Trim().Remove((tamanho - 1));
+                }
+            }
         }
 
         private void btnApagarVisor_Click(object sender, EventArgs e) {
-
+            if (!chk2Funcao.Checked) {
+                if (operacao.Equals(string.Empty) || pressionouIgual) LimparCampos();
+                else txtVisor.Clear();
+            } else LimparCampos();
         }
         #endregion
 

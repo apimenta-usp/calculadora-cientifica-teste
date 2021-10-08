@@ -1,18 +1,22 @@
-﻿using System.Globalization;
+﻿using System;
+using System.Globalization;
 
 namespace InterfaceUsuario.Personalizacao {
     public class Visor {
-        public static string MostrarNoVisor(double resultado) {
-            bool virgula = true;
+        public static string MostrarNoVisor(double resultado, bool virgula) {            
             string visor = resultado.ToString(CultureInfo.InvariantCulture);
-            /* Obs.: Este método vai substituir (replace) 
-               o ponto por vírgula, caso o separador decimal 
-               "vírgula" esteja ativado. 
-               Ou seja, o booleano Virgula for true. */
             if (virgula) {
-                visor.Replace('.', ',');
+                visor = visor.Replace('.', ',');
             }
             return visor;
+        }
+
+        public static double CapturarVisor(string visor, bool virgula) {
+            if (virgula) {
+                visor = visor.Replace(',', '.');
+            }
+            double numero = Convert.ToDouble(visor, CultureInfo.InvariantCulture);
+            return numero;
         }
     }
 }
