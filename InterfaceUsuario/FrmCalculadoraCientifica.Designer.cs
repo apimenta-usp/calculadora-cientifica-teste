@@ -220,6 +220,9 @@ namespace InterfaceUsuario {
             this.btnApagarVisor.Size = new System.Drawing.Size(56, 40);
             this.btnApagarVisor.TabIndex = 36;
             this.btnApagarVisor.UseVisualStyleBackColor = false;
+            this.btnApagarVisor.Click += new System.EventHandler(this.btnApagarVisor_Click);
+            this.btnApagarVisor.MouseEnter += new System.EventHandler(this.btnApagarVisor_MouseEnter);
+            this.btnApagarVisor.MouseLeave += new System.EventHandler(this.btnApagarVisor_MouseLeave);
             // 
             // btnLimparTudo
             // 
@@ -256,6 +259,9 @@ namespace InterfaceUsuario {
             this.btnLogaritmoNeperiano.Size = new System.Drawing.Size(56, 40);
             this.btnLogaritmoNeperiano.TabIndex = 25;
             this.btnLogaritmoNeperiano.UseVisualStyleBackColor = false;
+            this.btnLogaritmoNeperiano.Click += new System.EventHandler(this.btnLogaritmoNeperiano_Click);
+            this.btnLogaritmoNeperiano.MouseEnter += new System.EventHandler(this.btnLogaritmoNeperiano_MouseEnter);
+            this.btnLogaritmoNeperiano.MouseLeave += new System.EventHandler(this.btnLogaritmoNeperiano_MouseLeave);
             // 
             // btnPotenciaNeperiana
             // 
@@ -292,6 +298,9 @@ namespace InterfaceUsuario {
             this.btnNumeroDados.Size = new System.Drawing.Size(56, 40);
             this.btnNumeroDados.TabIndex = 24;
             this.btnNumeroDados.UseVisualStyleBackColor = false;
+            this.btnNumeroDados.Click += new System.EventHandler(this.btnNumeroDados_Click);
+            this.btnNumeroDados.MouseEnter += new System.EventHandler(this.btnNumeroDados_MouseEnter);
+            this.btnNumeroDados.MouseLeave += new System.EventHandler(this.btnNumeroDados_MouseLeave);
             // 
             // btnSomaValores
             // 
@@ -328,6 +337,9 @@ namespace InterfaceUsuario {
             this.btnRemover.Size = new System.Drawing.Size(56, 40);
             this.btnRemover.TabIndex = 35;
             this.btnRemover.UseVisualStyleBackColor = false;
+            this.btnRemover.Click += new System.EventHandler(this.btnRemover_Click);
+            this.btnRemover.MouseEnter += new System.EventHandler(this.btnRemover_MouseEnter);
+            this.btnRemover.MouseLeave += new System.EventHandler(this.btnRemover_MouseLeave);
             // 
             // btnPorcentagem
             // 
@@ -364,6 +376,9 @@ namespace InterfaceUsuario {
             this.btnLogaritmoDecimal.Size = new System.Drawing.Size(56, 40);
             this.btnLogaritmoDecimal.TabIndex = 26;
             this.btnLogaritmoDecimal.UseVisualStyleBackColor = false;
+            this.btnLogaritmoDecimal.Click += new System.EventHandler(this.btnLogaritmoDecimal_Click);
+            this.btnLogaritmoDecimal.MouseEnter += new System.EventHandler(this.btnLogaritmoDecimal_MouseEnter);
+            this.btnLogaritmoDecimal.MouseLeave += new System.EventHandler(this.btnLogaritmoDecimal_MouseLeave);
             // 
             // btnPotenciaDecimal
             // 
@@ -400,6 +415,9 @@ namespace InterfaceUsuario {
             this.btnMemoriaSubstituir.Size = new System.Drawing.Size(56, 40);
             this.btnMemoriaSubstituir.TabIndex = 20;
             this.btnMemoriaSubstituir.UseVisualStyleBackColor = false;
+            this.btnMemoriaSubstituir.Click += new System.EventHandler(this.btnMemoriaSubstituir_Click);
+            this.btnMemoriaSubstituir.MouseEnter += new System.EventHandler(this.btnMemoriaSubstituir_MouseEnter);
+            this.btnMemoriaSubstituir.MouseLeave += new System.EventHandler(this.btnMemoriaSubstituir_MouseLeave);
             // 
             // btnRandom
             // 
@@ -436,6 +454,9 @@ namespace InterfaceUsuario {
             this.btnTangente.Size = new System.Drawing.Size(56, 40);
             this.btnTangente.TabIndex = 34;
             this.btnTangente.UseVisualStyleBackColor = false;
+            this.btnTangente.Click += new System.EventHandler(this.btnTangente_Click);
+            this.btnTangente.MouseEnter += new System.EventHandler(this.btnTangente_MouseEnter);
+            this.btnTangente.MouseLeave += new System.EventHandler(this.btnTangente_MouseLeave);
             // 
             // btnTangenteInversa
             // 
@@ -472,6 +493,9 @@ namespace InterfaceUsuario {
             this.btnInversao.Size = new System.Drawing.Size(56, 40);
             this.btnInversao.TabIndex = 27;
             this.btnInversao.UseVisualStyleBackColor = false;
+            this.btnInversao.Click += new System.EventHandler(this.btnInversao_Click);
+            this.btnInversao.MouseEnter += new System.EventHandler(this.btnInversao_MouseEnter);
+            this.btnInversao.MouseLeave += new System.EventHandler(this.btnInversao_MouseLeave);
             // 
             // btnRaizCubica
             // 
@@ -508,6 +532,9 @@ namespace InterfaceUsuario {
             this.btnDivisao.Size = new System.Drawing.Size(56, 40);
             this.btnDivisao.TabIndex = 16;
             this.btnDivisao.UseVisualStyleBackColor = false;
+            this.btnDivisao.Click += new System.EventHandler(this.btnDivisao_Click);
+            this.btnDivisao.MouseEnter += new System.EventHandler(this.btnDivisao_MouseEnter);
+            this.btnDivisao.MouseLeave += new System.EventHandler(this.btnDivisao_MouseLeave);
             // 
             // btnCosseno
             // 
@@ -525,6 +552,9 @@ namespace InterfaceUsuario {
             this.btnCosseno.Size = new System.Drawing.Size(56, 40);
             this.btnCosseno.TabIndex = 33;
             this.btnCosseno.UseVisualStyleBackColor = false;
+            this.btnCosseno.Click += new System.EventHandler(this.btnCosseno_Click);
+            this.btnCosseno.MouseEnter += new System.EventHandler(this.btnCosseno_MouseEnter);
+            this.btnCosseno.MouseLeave += new System.EventHandler(this.btnCosseno_MouseLeave);
             // 
             // btnCossenoInverso
             // 
@@ -561,6 +591,9 @@ namespace InterfaceUsuario {
             this.btnRaizQuadrada.Size = new System.Drawing.Size(56, 40);
             this.btnRaizQuadrada.TabIndex = 28;
             this.btnRaizQuadrada.UseVisualStyleBackColor = false;
+            this.btnRaizQuadrada.Click += new System.EventHandler(this.btnRaizQuadrada_Click);
+            this.btnRaizQuadrada.MouseEnter += new System.EventHandler(this.btnRaizQuadrada_MouseEnter);
+            this.btnRaizQuadrada.MouseLeave += new System.EventHandler(this.btnRaizQuadrada_MouseLeave);
             // 
             // btnXQuadrado
             // 
@@ -597,6 +630,9 @@ namespace InterfaceUsuario {
             this.btn9.Size = new System.Drawing.Size(56, 40);
             this.btn9.TabIndex = 9;
             this.btn9.UseVisualStyleBackColor = false;
+            this.btn9.Click += new System.EventHandler(this.btn9_Click);
+            this.btn9.MouseEnter += new System.EventHandler(this.btn9_MouseEnter);
+            this.btn9.MouseLeave += new System.EventHandler(this.btn9_MouseLeave);
             // 
             // btnSeno
             // 
@@ -614,6 +650,9 @@ namespace InterfaceUsuario {
             this.btnSeno.Size = new System.Drawing.Size(56, 40);
             this.btnSeno.TabIndex = 32;
             this.btnSeno.UseVisualStyleBackColor = false;
+            this.btnSeno.Click += new System.EventHandler(this.btnSeno_Click);
+            this.btnSeno.MouseEnter += new System.EventHandler(this.btnSeno_MouseEnter);
+            this.btnSeno.MouseLeave += new System.EventHandler(this.btnSeno_MouseLeave);
             // 
             // btnSenoInverso
             // 
@@ -650,6 +689,9 @@ namespace InterfaceUsuario {
             this.btnPotenciacao.Size = new System.Drawing.Size(56, 40);
             this.btnPotenciacao.TabIndex = 29;
             this.btnPotenciacao.UseVisualStyleBackColor = false;
+            this.btnPotenciacao.Click += new System.EventHandler(this.btnPotenciacao_Click);
+            this.btnPotenciacao.MouseEnter += new System.EventHandler(this.btnPotenciacao_MouseEnter);
+            this.btnPotenciacao.MouseLeave += new System.EventHandler(this.btnPotenciacao_MouseLeave);
             // 
             // btnRadiciacao
             // 
@@ -686,6 +728,9 @@ namespace InterfaceUsuario {
             this.btn8.Size = new System.Drawing.Size(56, 40);
             this.btn8.TabIndex = 8;
             this.btn8.UseVisualStyleBackColor = false;
+            this.btn8.Click += new System.EventHandler(this.btn8_Click);
+            this.btn8.MouseEnter += new System.EventHandler(this.btn8_MouseEnter);
+            this.btn8.MouseLeave += new System.EventHandler(this.btn8_MouseLeave);
             // 
             // btnDecimalCientifico
             // 
@@ -703,6 +748,9 @@ namespace InterfaceUsuario {
             this.btnDecimalCientifico.Size = new System.Drawing.Size(56, 40);
             this.btnDecimalCientifico.TabIndex = 31;
             this.btnDecimalCientifico.UseVisualStyleBackColor = false;
+            this.btnDecimalCientifico.Click += new System.EventHandler(this.btnDecimalCientifico_Click);
+            this.btnDecimalCientifico.MouseEnter += new System.EventHandler(this.btnDecimalCientifico_MouseEnter);
+            this.btnDecimalCientifico.MouseLeave += new System.EventHandler(this.btnDecimalCientifico_MouseLeave);
             // 
             // btnFatorial
             // 
@@ -739,6 +787,9 @@ namespace InterfaceUsuario {
             this.btnExponencial.Size = new System.Drawing.Size(56, 40);
             this.btnExponencial.TabIndex = 30;
             this.btnExponencial.UseVisualStyleBackColor = false;
+            this.btnExponencial.Click += new System.EventHandler(this.btnExponencial_Click);
+            this.btnExponencial.MouseEnter += new System.EventHandler(this.btnExponencial_MouseEnter);
+            this.btnExponencial.MouseLeave += new System.EventHandler(this.btnExponencial_MouseLeave);
             // 
             // btnPi
             // 
@@ -775,6 +826,9 @@ namespace InterfaceUsuario {
             this.btn7.Size = new System.Drawing.Size(56, 40);
             this.btn7.TabIndex = 7;
             this.btn7.UseVisualStyleBackColor = false;
+            this.btn7.Click += new System.EventHandler(this.btn7_Click);
+            this.btn7.MouseEnter += new System.EventHandler(this.btn7_MouseEnter);
+            this.btn7.MouseLeave += new System.EventHandler(this.btn7_MouseLeave);
             // 
             // btnMediaAritmetica
             // 
@@ -792,6 +846,9 @@ namespace InterfaceUsuario {
             this.btnMediaAritmetica.Size = new System.Drawing.Size(56, 40);
             this.btnMediaAritmetica.TabIndex = 23;
             this.btnMediaAritmetica.UseVisualStyleBackColor = false;
+            this.btnMediaAritmetica.Click += new System.EventHandler(this.btnMediaAritmetica_Click);
+            this.btnMediaAritmetica.MouseEnter += new System.EventHandler(this.btnMediaAritmetica_MouseEnter);
+            this.btnMediaAritmetica.MouseLeave += new System.EventHandler(this.btnMediaAritmetica_MouseLeave);
             // 
             // btnDesvioAmostral
             // 
@@ -809,6 +866,9 @@ namespace InterfaceUsuario {
             this.btnDesvioAmostral.Size = new System.Drawing.Size(56, 40);
             this.btnDesvioAmostral.TabIndex = 22;
             this.btnDesvioAmostral.UseVisualStyleBackColor = false;
+            this.btnDesvioAmostral.Click += new System.EventHandler(this.btnDesvioAmostral_Click);
+            this.btnDesvioAmostral.MouseEnter += new System.EventHandler(this.btnDesvioAmostral_MouseEnter);
+            this.btnDesvioAmostral.MouseLeave += new System.EventHandler(this.btnDesvioAmostral_MouseLeave);
             // 
             // btnDesvioPopulacional
             // 
@@ -845,6 +905,9 @@ namespace InterfaceUsuario {
             this.btnInserirDados.Size = new System.Drawing.Size(56, 40);
             this.btnInserirDados.TabIndex = 21;
             this.btnInserirDados.UseVisualStyleBackColor = false;
+            this.btnInserirDados.Click += new System.EventHandler(this.btnInserirDados_Click);
+            this.btnInserirDados.MouseEnter += new System.EventHandler(this.btnInserirDados_MouseEnter);
+            this.btnInserirDados.MouseLeave += new System.EventHandler(this.btnInserirDados_MouseLeave);
             // 
             // btnLimparDados
             // 
@@ -881,6 +944,9 @@ namespace InterfaceUsuario {
             this.btnMemoriaRecuperar.Size = new System.Drawing.Size(56, 40);
             this.btnMemoriaRecuperar.TabIndex = 19;
             this.btnMemoriaRecuperar.UseVisualStyleBackColor = false;
+            this.btnMemoriaRecuperar.Click += new System.EventHandler(this.btnMemoriaRecuperar_Click);
+            this.btnMemoriaRecuperar.MouseEnter += new System.EventHandler(this.btnMemoriaRecuperar_MouseEnter);
+            this.btnMemoriaRecuperar.MouseLeave += new System.EventHandler(this.btnMemoriaRecuperar_MouseLeave);
             // 
             // btnMemoriaLimpar
             // 
@@ -917,6 +983,9 @@ namespace InterfaceUsuario {
             this.btnMemoriaAdicionar.Size = new System.Drawing.Size(56, 40);
             this.btnMemoriaAdicionar.TabIndex = 18;
             this.btnMemoriaAdicionar.UseVisualStyleBackColor = false;
+            this.btnMemoriaAdicionar.Click += new System.EventHandler(this.btnMemoriaAdicionar_Click);
+            this.btnMemoriaAdicionar.MouseEnter += new System.EventHandler(this.btnMemoriaAdicionar_MouseEnter);
+            this.btnMemoriaAdicionar.MouseLeave += new System.EventHandler(this.btnMemoriaAdicionar_MouseLeave);
             // 
             // btnMemoriaSubtrair
             // 
@@ -953,6 +1022,9 @@ namespace InterfaceUsuario {
             this.btnIgual.Size = new System.Drawing.Size(56, 40);
             this.btnIgual.TabIndex = 17;
             this.btnIgual.UseVisualStyleBackColor = false;
+            this.btnIgual.Click += new System.EventHandler(this.btnIgual_Click);
+            this.btnIgual.MouseEnter += new System.EventHandler(this.btnIgual_MouseEnter);
+            this.btnIgual.MouseLeave += new System.EventHandler(this.btnIgual_MouseLeave);
             // 
             // btnMultiplicacao
             // 
@@ -970,6 +1042,9 @@ namespace InterfaceUsuario {
             this.btnMultiplicacao.Size = new System.Drawing.Size(56, 40);
             this.btnMultiplicacao.TabIndex = 15;
             this.btnMultiplicacao.UseVisualStyleBackColor = false;
+            this.btnMultiplicacao.Click += new System.EventHandler(this.btnMultiplicacao_Click);
+            this.btnMultiplicacao.MouseEnter += new System.EventHandler(this.btnMultiplicacao_MouseEnter);
+            this.btnMultiplicacao.MouseLeave += new System.EventHandler(this.btnMultiplicacao_MouseLeave);
             // 
             // btnSubtracao
             // 
@@ -987,6 +1062,9 @@ namespace InterfaceUsuario {
             this.btnSubtracao.Size = new System.Drawing.Size(56, 40);
             this.btnSubtracao.TabIndex = 14;
             this.btnSubtracao.UseVisualStyleBackColor = false;
+            this.btnSubtracao.Click += new System.EventHandler(this.btnSubtracao_Click);
+            this.btnSubtracao.MouseEnter += new System.EventHandler(this.btnSubtracao_MouseEnter);
+            this.btnSubtracao.MouseLeave += new System.EventHandler(this.btnSubtracao_MouseLeave);
             // 
             // btnSoma
             // 
@@ -1004,6 +1082,9 @@ namespace InterfaceUsuario {
             this.btnSoma.Size = new System.Drawing.Size(56, 40);
             this.btnSoma.TabIndex = 13;
             this.btnSoma.UseVisualStyleBackColor = false;
+            this.btnSoma.Click += new System.EventHandler(this.btnSoma_Click);
+            this.btnSoma.MouseEnter += new System.EventHandler(this.btnSoma_MouseEnter);
+            this.btnSoma.MouseLeave += new System.EventHandler(this.btnSoma_MouseLeave);
             // 
             // btn6
             // 
@@ -1021,6 +1102,9 @@ namespace InterfaceUsuario {
             this.btn6.Size = new System.Drawing.Size(56, 40);
             this.btn6.TabIndex = 6;
             this.btn6.UseVisualStyleBackColor = false;
+            this.btn6.Click += new System.EventHandler(this.btn6_Click);
+            this.btn6.MouseEnter += new System.EventHandler(this.btn6_MouseEnter);
+            this.btn6.MouseLeave += new System.EventHandler(this.btn6_MouseLeave);
             // 
             // btn3
             // 
@@ -1038,6 +1122,9 @@ namespace InterfaceUsuario {
             this.btn3.Size = new System.Drawing.Size(56, 40);
             this.btn3.TabIndex = 3;
             this.btn3.UseVisualStyleBackColor = false;
+            this.btn3.Click += new System.EventHandler(this.btn3_Click);
+            this.btn3.MouseEnter += new System.EventHandler(this.btn3_MouseEnter);
+            this.btn3.MouseLeave += new System.EventHandler(this.btn3_MouseLeave);
             // 
             // btnOposicao
             // 
@@ -1055,6 +1142,9 @@ namespace InterfaceUsuario {
             this.btnOposicao.Size = new System.Drawing.Size(56, 40);
             this.btnOposicao.TabIndex = 12;
             this.btnOposicao.UseVisualStyleBackColor = false;
+            this.btnOposicao.Click += new System.EventHandler(this.btnOposicao_Click);
+            this.btnOposicao.MouseEnter += new System.EventHandler(this.btnOposicao_MouseEnter);
+            this.btnOposicao.MouseLeave += new System.EventHandler(this.btnOposicao_MouseLeave);
             // 
             // btn5
             // 
@@ -1072,6 +1162,9 @@ namespace InterfaceUsuario {
             this.btn5.Size = new System.Drawing.Size(56, 40);
             this.btn5.TabIndex = 5;
             this.btn5.UseVisualStyleBackColor = false;
+            this.btn5.Click += new System.EventHandler(this.btn5_Click);
+            this.btn5.MouseEnter += new System.EventHandler(this.btn5_MouseEnter);
+            this.btn5.MouseLeave += new System.EventHandler(this.btn5_MouseLeave);
             // 
             // btn2
             // 
@@ -1089,6 +1182,9 @@ namespace InterfaceUsuario {
             this.btn2.Size = new System.Drawing.Size(56, 40);
             this.btn2.TabIndex = 2;
             this.btn2.UseVisualStyleBackColor = false;
+            this.btn2.Click += new System.EventHandler(this.btn2_Click);
+            this.btn2.MouseEnter += new System.EventHandler(this.btn2_MouseEnter);
+            this.btn2.MouseLeave += new System.EventHandler(this.btn2_MouseLeave);
             // 
             // btnSeparadorDecimal
             // 
@@ -1106,6 +1202,9 @@ namespace InterfaceUsuario {
             this.btnSeparadorDecimal.Size = new System.Drawing.Size(56, 40);
             this.btnSeparadorDecimal.TabIndex = 11;
             this.btnSeparadorDecimal.UseVisualStyleBackColor = false;
+            this.btnSeparadorDecimal.Click += new System.EventHandler(this.btnSeparadorDecimal_Click);
+            this.btnSeparadorDecimal.MouseEnter += new System.EventHandler(this.btnSeparadorDecimal_MouseEnter);
+            this.btnSeparadorDecimal.MouseLeave += new System.EventHandler(this.btnSeparadorDecimal_MouseLeave);
             // 
             // btn4
             // 
@@ -1123,6 +1222,9 @@ namespace InterfaceUsuario {
             this.btn4.Size = new System.Drawing.Size(56, 40);
             this.btn4.TabIndex = 4;
             this.btn4.UseVisualStyleBackColor = false;
+            this.btn4.Click += new System.EventHandler(this.btn4_Click);
+            this.btn4.MouseEnter += new System.EventHandler(this.btn4_MouseEnter);
+            this.btn4.MouseLeave += new System.EventHandler(this.btn4_MouseLeave);
             // 
             // btn1
             // 
@@ -1140,6 +1242,9 @@ namespace InterfaceUsuario {
             this.btn1.Size = new System.Drawing.Size(56, 40);
             this.btn1.TabIndex = 1;
             this.btn1.UseVisualStyleBackColor = false;
+            this.btn1.Click += new System.EventHandler(this.btn1_Click);
+            this.btn1.MouseEnter += new System.EventHandler(this.btn1_MouseEnter);
+            this.btn1.MouseLeave += new System.EventHandler(this.btn1_MouseLeave);
             // 
             // btn0
             // 
@@ -1157,6 +1262,9 @@ namespace InterfaceUsuario {
             this.btn0.Size = new System.Drawing.Size(56, 40);
             this.btn0.TabIndex = 10;
             this.btn0.UseVisualStyleBackColor = false;
+            this.btn0.Click += new System.EventHandler(this.btn0_Click);
+            this.btn0.MouseEnter += new System.EventHandler(this.btn0_MouseEnter);
+            this.btn0.MouseLeave += new System.EventHandler(this.btn0_MouseLeave);
             // 
             // btnSomaQuadradosValores
             // 
