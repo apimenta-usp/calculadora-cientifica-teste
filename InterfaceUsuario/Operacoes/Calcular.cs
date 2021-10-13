@@ -39,5 +39,12 @@ namespace InterfaceUsuario.Operacoes {
                     break;
             }
         }
+
+        public static double NumeroAleatorio() {
+            Random random = new Random();
+            int aleatorio = random.Next(1, 1000);
+            double numero = aleatorio / 1000.0;
+            return numero;
+        }
     }
 }

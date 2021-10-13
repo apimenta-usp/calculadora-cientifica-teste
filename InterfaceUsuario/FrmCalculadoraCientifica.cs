@@ -239,15 +239,44 @@ namespace InterfaceUsuario {
         }
 
         private void btnMemoriaAdicionar_Click(object sender, EventArgs e) {
-
+            if (!chk2Funcao.Checked) {
+                if (!txtVisor.Text.Trim().Equals(string.Empty)) {
+                    Memoria += Visor.Capturar(txtVisor.Text.Trim());
+                    PressionouMemoria = true;
+                }
+            } else {
+                if (!txtVisor.Text.Trim().Equals(string.Empty)) {
+                    Memoria -= Visor.Capturar(txtVisor.Text.Trim());
+                    PressionouMemoria = true;
+                }
+                chk2Funcao.Checked = false;
+            }
         }
 
         private void btnMemoriaRecuperar_Click(object sender, EventArgs e) {
-
+            if (!chk2Funcao.Checked) {
+                txtVisor.Text = Visor.Exibir(Memoria);
+                PressionouMemoria = true;
+            } else {
+                Memoria = 0;
+                chk2Funcao.Checked = false;
+            }
         }
 
         private void btnMemoriaSubstituir_Click(object sender, EventArgs e) {
-
+            if (!chk2Funcao.Checked) {
+                if (!txtVisor.Text.Trim().Equals(string.Empty)) {
+                    Memoria = Visor.Capturar(txtVisor.Text.Trim());
+                    PressionouMemoria = true;
+                }
+            } else {
+                string valorAleatorio = Calcular.NumeroAleatorio().ToString("F3", CultureInfo.InvariantCulture);
+                if (Virgula) {
+                    valorAleatorio = valorAleatorio.Replace('.', ',');
+                }
+                txtVisor.Text = valorAleatorio;
+                chk2Funcao.Checked = false;
+            }
         }
 
         private void btnInserirDados_Click(object sender, EventArgs e) {
@@ -291,7 +320,9 @@ namespace InterfaceUsuario {
         }
 
         private void btnDecimalCientifico_Click(object sender, EventArgs e) {
-
+            /* Para fazer a conversão, usa-se o método "ToString() 
+               para o formato científico: 
+               (12345.67).ToString(“E”) retorna 1,234567E+ 004 " */
         }
 
         private void btnSeno_Click(object sender, EventArgs e) {
