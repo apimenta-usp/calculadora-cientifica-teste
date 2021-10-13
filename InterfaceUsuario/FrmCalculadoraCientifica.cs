@@ -11,32 +11,33 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Utilities;
 using System.Globalization;
+using InterfaceUsuario.Operacoes;
 
 namespace InterfaceUsuario {
     public partial class FrmCalculadoraCientifica : Form {
-        public bool Virgula { get; private set; }
+        public static bool Virgula { get; private set; }
         public bool Claro { get; private set; }
 
         public FrmCalculadoraCientifica() {
             InitializeComponent();
         }
 
-        private double numero1;
-        private double numero2;
-        private double memoria;
-        private string operacao;
-        private bool pressionouIgual;
-        private bool pressionouPotenciacao;
-        private bool pressionouMemoria;
+        public static double Numero1;
+        public static double Numero2;
+        public static double Memoria;
+        public static string Operacao;
+        public static bool PressionouIgual;
+        public static bool PressionouPotenciacao;
+        public static bool PressionouMemoria;
         globalKeyboardHook gkh = new globalKeyboardHook();
 
         private void LimparCampos() {
             txtVisor.Clear();
-            numero1 = 0;
-            numero2 = 0;
-            operacao = string.Empty;
-            pressionouIgual = false;
-            pressionouPotenciacao = false;
+            Numero1 = 0;
+            Numero2 = 0;
+            Operacao = string.Empty;
+            PressionouIgual = false;
+            PressionouPotenciacao = false;
         }
 
         private void FrmCalculadoraCientifica_Load(object sender, EventArgs e) {
@@ -46,8 +47,8 @@ namespace InterfaceUsuario {
             mnsPonto.Checked = true;
             chk2Funcao.Checked = false;
             LimparCampos();
-            memoria = 0;
-            pressionouMemoria = false;            
+            Memoria = 0;
+            PressionouMemoria = false;            
             //TemaClaro();
             TemaPrincipal(Claro, Virgula);
             gkh.HookedKeys.Add(Keys.Enter);
@@ -58,30 +59,30 @@ namespace InterfaceUsuario {
             e.Handled = true;
         }
 
-        private void AdicionarCaracterNumerico(string caracter) {
-            sbyte tamanho;
-            if (txtVisor.Text.Trim().Contains(",") || txtVisor.Text.Trim().Contains("."))
-                tamanho = 11;
-            else
-                tamanho = 10;
-            if (pressionouIgual || pressionouMemoria) {
-                txtVisor.Clear();
-                pressionouIgual = false;
-                pressionouMemoria = false;
-            }
-            if (txtVisor.Text.Trim().Equals("0") || txtVisor.Text.Trim().Equals("-0"))
-                txtVisor.Text = caracter;
-            else if (txtVisor.Text.Trim().Length < tamanho)
-                txtVisor.Text += caracter;
-        }
+        //private void AdicionarCaracterNumerico(string caracter) {
+        //    sbyte tamanho;
+        //    if (txtVisor.Text.Trim().Contains(",") || txtVisor.Text.Trim().Contains("."))
+        //        tamanho = 11;
+        //    else
+        //        tamanho = 10;
+        //    if (PressionouIgual || PressionouMemoria) {
+        //        txtVisor.Clear();
+        //        PressionouIgual = false;
+        //        PressionouMemoria = false;
+        //    }
+        //    if (txtVisor.Text.Trim().Equals("0") || txtVisor.Text.Trim().Equals("-0"))
+        //        txtVisor.Text = caracter;
+        //    else if (txtVisor.Text.Trim().Length < tamanho)
+        //        txtVisor.Text += caracter;
+        //}
 
-        private void AdicionarCaracterOperacao(string caracter) {
-            if (!txtVisor.Text.Trim().Equals(string.Empty)) {
-                numero1 = Convert.ToDouble(txtVisor.Text.Trim(), CultureInfo.InvariantCulture);
-                operacao = caracter;
-                txtVisor.Clear();
-            }
-        }
+        //private void AdicionarCaracterOperacao(string caracter) {
+        //    if (!txtVisor.Text.Trim().Equals(string.Empty)) {
+        //        Numero1 = Convert.ToDouble(txtVisor.Text.Trim(), CultureInfo.InvariantCulture);
+        //        Operacao = caracter;
+        //        txtVisor.Clear();
+        //    }
+        //}
 
         #region Eventos Click
         private void mnsCopiarVisor_Click(object sender, EventArgs e) {
@@ -131,10 +132,10 @@ namespace InterfaceUsuario {
                 tamanho = 11;
             else
                 tamanho = 10;
-            if (pressionouIgual || pressionouMemoria) {
+            if (PressionouIgual || PressionouMemoria) {
                 txtVisor.Clear();
-                pressionouIgual = false;
-                pressionouMemoria = false;
+                PressionouIgual = false;
+                PressionouMemoria = false;
             }
             if (txtVisor.Text.Trim().Equals("0") || txtVisor.Text.Trim().Equals("-0"))
                 txtVisor.Text = "0";
@@ -143,46 +144,55 @@ namespace InterfaceUsuario {
         }
 
         private void btn1_Click(object sender, EventArgs e) {
-            AdicionarCaracterNumerico("1");
+            //AdicionarCaracterNumerico("1");
+            AdicionarCaracter.Numerico("1", txtVisor);
         }
 
         private void btn2_Click(object sender, EventArgs e) {
-            AdicionarCaracterNumerico("2");
+            //AdicionarCaracterNumerico("2");
+            AdicionarCaracter.Numerico("2", txtVisor);
         }
 
         private void btn3_Click(object sender, EventArgs e) {
-            AdicionarCaracterNumerico("3");
+            //AdicionarCaracterNumerico("3");
+            AdicionarCaracter.Numerico("3", txtVisor);
         }
 
         private void btn4_Click(object sender, EventArgs e) {
-            AdicionarCaracterNumerico("4");
+            //AdicionarCaracterNumerico("4");
+            AdicionarCaracter.Numerico("4", txtVisor);
         }
 
         private void btn5_Click(object sender, EventArgs e) {
-            AdicionarCaracterNumerico("5");
+            //AdicionarCaracterNumerico("5");
+            AdicionarCaracter.Numerico("5", txtVisor);
         }
 
         private void btn6_Click(object sender, EventArgs e) {
-            AdicionarCaracterNumerico("6");
+            //AdicionarCaracterNumerico("6");
+            AdicionarCaracter.Numerico("6", txtVisor);
         }
 
         private void btn7_Click(object sender, EventArgs e) {
-            AdicionarCaracterNumerico("7");
+            //AdicionarCaracterNumerico("7");
+            AdicionarCaracter.Numerico("7", txtVisor);
         }
 
         private void btn8_Click(object sender, EventArgs e) {
-            AdicionarCaracterNumerico("8");
+            //AdicionarCaracterNumerico("8");
+            AdicionarCaracter.Numerico("8", txtVisor);
         }
 
         private void btn9_Click(object sender, EventArgs e) {
-            AdicionarCaracterNumerico("9");
+            //AdicionarCaracterNumerico("9");
+            AdicionarCaracter.Numerico("9", txtVisor);
         }
 
         private void btnSeparadorDecimal_Click(object sender, EventArgs e) {
-            if (pressionouIgual || pressionouMemoria) {
+            if (PressionouIgual || PressionouMemoria) {
                 txtVisor.Clear();
-                pressionouIgual = false;
-                pressionouMemoria = false;
+                PressionouIgual = false;
+                PressionouMemoria = false;
             }
             if (txtVisor.Text.Trim().Equals(string.Empty) || txtVisor.Text.Trim() == "-") {
                 if (!Virgula) txtVisor.Text = "0.";
@@ -199,29 +209,33 @@ namespace InterfaceUsuario {
 
         private void btnOposicao_Click(object sender, EventArgs e) {
             if (!txtVisor.Text.Trim().Equals(string.Empty)) {
-                double visor = (Visor.CapturarVisor(txtVisor.Text.Trim(), Virgula)) * (-1);
-                txtVisor.Text = Visor.MostrarNoVisor(visor, Virgula);
+                double visor = (Visor.Capturar(txtVisor.Text.Trim())) * (-1);
+                txtVisor.Text = Visor.Exibir(visor);
             }
         }
 
         private void btnSoma_Click(object sender, EventArgs e) {
-
+            AdicionarCaracter.Operacao("+", txtVisor);
         }
 
         private void btnSubtracao_Click(object sender, EventArgs e) {
-
+            AdicionarCaracter.Operacao("-", txtVisor);
         }
 
         private void btnMultiplicacao_Click(object sender, EventArgs e) {
-
+            AdicionarCaracter.Operacao("*", txtVisor);
         }
 
         private void btnDivisao_Click(object sender, EventArgs e) {
-
+            AdicionarCaracter.Operacao("/", txtVisor);
         }
 
         private void btnIgual_Click(object sender, EventArgs e) {
-
+            if (!txtVisor.Text.Trim().Equals(string.Empty)) {
+                Numero2 = Visor.Capturar(txtVisor.Text.Trim());
+                Calcular.OperacaoBasica(Operacao, txtVisor, Numero1, Numero2);
+                PressionouIgual = true;
+            }
         }
 
         private void btnMemoriaAdicionar_Click(object sender, EventArgs e) {
@@ -294,7 +308,7 @@ namespace InterfaceUsuario {
 
         private void btnRemover_Click(object sender, EventArgs e) {
             if (!chk2Funcao.Checked) {
-                if (pressionouIgual) {
+                if (PressionouIgual) {
                     LimparCampos();
                     return;
                 }
@@ -312,9 +326,12 @@ namespace InterfaceUsuario {
 
         private void btnApagarVisor_Click(object sender, EventArgs e) {
             if (!chk2Funcao.Checked) {
-                if (operacao.Equals(string.Empty) || pressionouIgual) LimparCampos();
+                if (Operacao.Equals(string.Empty) || PressionouIgual) LimparCampos();
                 else txtVisor.Clear();
-            } else LimparCampos();
+            } else {
+                LimparCampos();
+                chk2Funcao.Checked = false;
+            }
         }
         #endregion
 

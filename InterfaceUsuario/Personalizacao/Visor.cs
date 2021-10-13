@@ -3,16 +3,16 @@ using System.Globalization;
 
 namespace InterfaceUsuario.Personalizacao {
     public class Visor {
-        public static string MostrarNoVisor(double resultado, bool virgula) {            
+        public static string Exibir(double resultado) {            
             string visor = resultado.ToString(CultureInfo.InvariantCulture);
-            if (virgula) {
+            if (FrmCalculadoraCientifica.Virgula) {
                 visor = visor.Replace('.', ',');
             }
             return visor;
         }
 
-        public static double CapturarVisor(string visor, bool virgula) {
-            if (virgula) {
+        public static double Capturar(string visor) {
+            if (FrmCalculadoraCientifica.Virgula) {
                 visor = visor.Replace(',', '.');
             }
             double numero = Convert.ToDouble(visor, CultureInfo.InvariantCulture);
