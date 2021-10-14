@@ -17,19 +17,18 @@ namespace InterfaceUsuario {
     public partial class FrmCalculadoraCientifica : Form {
         public static bool Virgula { get; private set; }
         public bool Claro { get; private set; }
+        public static double Numero1 { get; set; }
+        public static double Numero2 { get; set; }
+        public static double Memoria { get; set; }
+        public static string Operacao { get; set; }
+        public static bool PressionouIgual { get; set; }
+        public static bool PressionouPotenciacao { get; set; }
+        public static bool PressionouMemoria { get; set; }
+        globalKeyboardHook gkh = new globalKeyboardHook();
 
         public FrmCalculadoraCientifica() {
             InitializeComponent();
         }
-
-        public static double Numero1;
-        public static double Numero2;
-        public static double Memoria;
-        public static string Operacao;
-        public static bool PressionouIgual;
-        public static bool PressionouPotenciacao;
-        public static bool PressionouMemoria;
-        globalKeyboardHook gkh = new globalKeyboardHook();
 
         private void LimparCampos() {
             txtVisor.Clear();
@@ -43,6 +42,7 @@ namespace InterfaceUsuario {
         private void FrmCalculadoraCientifica_Load(object sender, EventArgs e) {
             Claro = true;
             Virgula = false;
+            mnsFixar2Funcao.Checked = false;
             mnsClaro.Checked = true;
             mnsPonto.Checked = true;
             chk2Funcao.Checked = false;
@@ -144,47 +144,38 @@ namespace InterfaceUsuario {
         }
 
         private void btn1_Click(object sender, EventArgs e) {
-            //AdicionarCaracterNumerico("1");
             AdicionarCaracter.Numerico("1", txtVisor);
         }
 
         private void btn2_Click(object sender, EventArgs e) {
-            //AdicionarCaracterNumerico("2");
             AdicionarCaracter.Numerico("2", txtVisor);
         }
 
         private void btn3_Click(object sender, EventArgs e) {
-            //AdicionarCaracterNumerico("3");
             AdicionarCaracter.Numerico("3", txtVisor);
         }
 
         private void btn4_Click(object sender, EventArgs e) {
-            //AdicionarCaracterNumerico("4");
             AdicionarCaracter.Numerico("4", txtVisor);
         }
 
         private void btn5_Click(object sender, EventArgs e) {
-            //AdicionarCaracterNumerico("5");
             AdicionarCaracter.Numerico("5", txtVisor);
         }
 
         private void btn6_Click(object sender, EventArgs e) {
-            //AdicionarCaracterNumerico("6");
             AdicionarCaracter.Numerico("6", txtVisor);
         }
 
         private void btn7_Click(object sender, EventArgs e) {
-            //AdicionarCaracterNumerico("7");
             AdicionarCaracter.Numerico("7", txtVisor);
         }
 
         private void btn8_Click(object sender, EventArgs e) {
-            //AdicionarCaracterNumerico("8");
             AdicionarCaracter.Numerico("8", txtVisor);
         }
 
         private void btn9_Click(object sender, EventArgs e) {
-            //AdicionarCaracterNumerico("9");
             AdicionarCaracter.Numerico("9", txtVisor);
         }
 
@@ -249,7 +240,7 @@ namespace InterfaceUsuario {
                     Memoria -= Visor.Capturar(txtVisor.Text.Trim());
                     PressionouMemoria = true;
                 }
-                chk2Funcao.Checked = false;
+                if (!mnsFixar2Funcao.Checked) chk2Funcao.Checked = false;
             }
         }
 
@@ -259,7 +250,7 @@ namespace InterfaceUsuario {
                 PressionouMemoria = true;
             } else {
                 Memoria = 0;
-                chk2Funcao.Checked = false;
+                if (!mnsFixar2Funcao.Checked) chk2Funcao.Checked = false;
             }
         }
 
@@ -275,7 +266,7 @@ namespace InterfaceUsuario {
                     valorAleatorio = valorAleatorio.Replace('.', ',');
                 }
                 txtVisor.Text = valorAleatorio;
-                chk2Funcao.Checked = false;
+                if (!mnsFixar2Funcao.Checked) chk2Funcao.Checked = false;
             }
         }
 
@@ -352,6 +343,8 @@ namespace InterfaceUsuario {
                     sbyte tamanho = (sbyte)txtVisor.Text.Trim().Length;
                     txtVisor.Text = txtVisor.Text.Trim().Remove((tamanho - 1));
                 }
+            } else {
+                if (!mnsFixar2Funcao.Checked) chk2Funcao.Checked = false;
             }
         }
 
@@ -361,17 +354,23 @@ namespace InterfaceUsuario {
                 else txtVisor.Clear();
             } else {
                 LimparCampos();
-                chk2Funcao.Checked = false;
+                if (!mnsFixar2Funcao.Checked) chk2Funcao.Checked = false;
             }
         }
         #endregion
 
         #region Evento CheckedChanged
         private void chk2Funcao_CheckedChanged(object sender, EventArgs e) {
-            TemaBotoesMemoria(Claro, chk2Funcao);
-            TemaBotoesEstatistica(Claro, chk2Funcao);
-            TemaBotoesFuncoes(Claro, chk2Funcao);
-            TemaBotaoLimpeza(Claro, chk2Funcao);
+            bool assinalado = chk2Funcao.Checked;
+            TemaBotoesMemoria(Claro, assinalado);
+            TemaBotoesEstatistica(Claro, assinalado);
+            TemaBotoesFuncoes(Claro, assinalado);
+            TemaBotaoLimpeza(Claro, assinalado);
+            if (!assinalado) mnsFixar2Funcao.Checked = false;
+        }
+
+        private void mnsFixar2Funcao_CheckedChanged(object sender, EventArgs e) {
+            chk2Funcao.Checked = mnsFixar2Funcao.Checked;
         }
         #endregion
 
@@ -953,7 +952,7 @@ namespace InterfaceUsuario {
             // Demais componentes
             TemaComponentesNoButton(claro);
             // Botões
-            TemaBotoes(claro, virgula, chk2Funcao);
+            TemaBotoes(claro, virgula, chk2Funcao.Checked);
         }
 
         //private void TemaClaro() {
@@ -966,7 +965,7 @@ namespace InterfaceUsuario {
         //    // Demais componentes
         //    TemaComponentesNoButton(Claro);
         //    // Botões
-        //    TemaBotoes(Claro, Virgula, chk2Funcao);
+        //    TemaBotoes(Claro, Virgula, chk2Funcao.Checked);
         //}
 
         //private void TemaEscuro() {
@@ -979,7 +978,7 @@ namespace InterfaceUsuario {
         //    // Demais componentes
         //    TemaComponentesNoButton(Claro);
         //    // Botões
-        //    TemaBotoes(Claro, Virgula, chk2Funcao);
+        //    TemaBotoes(Claro, Virgula, chk2Funcao.Checked);
         //}
 
         private void TemaMenu(bool claro) {
@@ -990,6 +989,7 @@ namespace InterfaceUsuario {
                 mnsCopiarVisor.BackColor = Color.White;
                 mnsSair.BackColor = Color.White;
                 mnsPersonalizar.BackColor = Color.White;
+                mnsFixar2Funcao.BackColor = Color.White;
                 mnsSeparadorDecimal.BackColor = Color.White;
                 mnsPonto.BackColor = Color.White;
                 mnsVirgula.BackColor = Color.White;
@@ -1005,6 +1005,7 @@ namespace InterfaceUsuario {
                 mnsCopiarVisor.ForeColor = Color.Black;
                 mnsSair.ForeColor = Color.Black;
                 mnsPersonalizar.ForeColor = Color.Black;
+                mnsFixar2Funcao.ForeColor = Color.Black;
                 mnsSeparadorDecimal.ForeColor = Color.Black;
                 mnsPonto.ForeColor = Color.Black;
                 mnsVirgula.ForeColor = Color.Black;
@@ -1021,6 +1022,7 @@ namespace InterfaceUsuario {
                 mnsCopiarVisor.BackColor = Color.Black;
                 mnsSair.BackColor = Color.Black;
                 mnsPersonalizar.BackColor = Color.Black;
+                mnsFixar2Funcao.BackColor = Color.Black;
                 mnsSeparadorDecimal.BackColor = Color.Black;
                 mnsPonto.BackColor = Color.Black;
                 mnsVirgula.BackColor = Color.Black;
@@ -1036,6 +1038,7 @@ namespace InterfaceUsuario {
                 mnsCopiarVisor.ForeColor = Color.White;
                 mnsSair.ForeColor = Color.White;
                 mnsPersonalizar.ForeColor = Color.White;
+                mnsFixar2Funcao.ForeColor = Color.White;
                 mnsSeparadorDecimal.ForeColor = Color.White;
                 mnsPonto.ForeColor = Color.White;
                 mnsVirgula.ForeColor = Color.White;
@@ -1092,7 +1095,7 @@ namespace InterfaceUsuario {
             }
         }
 
-        private void TemaBotoes(bool claro, bool virgula, CheckBox funcao2) {
+        private void TemaBotoes(bool claro, bool virgula, bool funcao2) {
             TemaBotoesPrincipais(claro, virgula);
             TemaBotoesMemoria(claro, funcao2);
             TemaBotoesEstatistica(claro, funcao2);
@@ -1142,9 +1145,9 @@ namespace InterfaceUsuario {
             }
         }
 
-        private void TemaBotoesMemoria(bool claro, CheckBox funcao2) {
+        private void TemaBotoesMemoria(bool claro, bool funcao2) {
             if (claro) {
-                if (!funcao2.Checked) {
+                if (!funcao2) {
                     ControleDeImagens.DuasImagens(btnMemoriaAdicionar, MemoriaMaisTemaClaroNormal,
                                                     btnMemoriaSubtrair, MemoriaMenosTemaClaro);
                     ControleDeImagens.DuasImagens(btnMemoriaRecuperar, MemoriaRecuperarTemaClaroNormal,
@@ -1160,7 +1163,7 @@ namespace InterfaceUsuario {
                                                     btnRandom, MemoriaSubstituirTemaClaro);
                 }
             } else {
-                if (!funcao2.Checked) {
+                if (!funcao2) {
                     ControleDeImagens.DuasImagens(btnMemoriaAdicionar, MemoriaMaisTemaEscuroNormal,
                                                     btnMemoriaSubtrair, MemoriaMenosTemaEscuro);
                     ControleDeImagens.DuasImagens(btnMemoriaRecuperar, MemoriaRecuperarTemaEscuroNormal,
@@ -1178,9 +1181,9 @@ namespace InterfaceUsuario {
             }
         }
 
-        private void TemaBotoesEstatistica(bool claro, CheckBox funcao2) {
+        private void TemaBotoesEstatistica(bool claro, bool funcao2) {
             if (claro) {
-                if (!funcao2.Checked) {
+                if (!funcao2) {
                     ControleDeImagens.DuasImagens(btnInserirDados, InserirDadosTemaClaroNormal,
                                                     btnLimparDados, LimparDadosTemaClaro);
                     ControleDeImagens.DuasImagens(btnDesvioAmostral, DesvioAmostralTemaClaroNormal,
@@ -1200,7 +1203,7 @@ namespace InterfaceUsuario {
                                                     btnSomaValores, NumeroDadosTemaClaro);
                 }
             } else {
-                if (!funcao2.Checked) {
+                if (!funcao2) {
                     ControleDeImagens.DuasImagens(btnInserirDados, InserirDadosTemaEscuroNormal,
                                                     btnLimparDados, LimparDadosTemaEscuro);
                     ControleDeImagens.DuasImagens(btnDesvioAmostral, DesvioAmostralTemaEscuroNormal,
@@ -1222,9 +1225,9 @@ namespace InterfaceUsuario {
             }
         }
 
-        private void TemaBotoesFuncoes(bool claro, CheckBox funcao2) {
+        private void TemaBotoesFuncoes(bool claro, bool funcao2) {
             if (claro) {
-                if (!funcao2.Checked) {
+                if (!funcao2) {
                     ControleDeImagens.DuasImagens(btnLogaritmoNeperiano, LogaritmoNeperianoTemaClaroNormal,
                                                     btnPotenciaNeperiana, PotenciaNeperianaTemaClaro);
                     ControleDeImagens.DuasImagens(btnLogaritmoDecimal, LogaritmoDecimalTemaClaroNormal,
@@ -1272,7 +1275,7 @@ namespace InterfaceUsuario {
                                                     btnPorcentagem, RemoverTemaClaro);
                 }
             } else {
-                if (!funcao2.Checked) {
+                if (!funcao2) {
                     ControleDeImagens.DuasImagens(btnLogaritmoNeperiano, LogaritmoNeperianoTemaEscuroNormal,
                                                     btnPotenciaNeperiana, PotenciaNeperianaTemaEscuro);
                     ControleDeImagens.DuasImagens(btnLogaritmoDecimal, LogaritmoDecimalTemaEscuroNormal,
@@ -1322,9 +1325,9 @@ namespace InterfaceUsuario {
             }
         }
 
-        private void TemaBotaoLimpeza(bool claro, CheckBox funcao2) {
+        private void TemaBotaoLimpeza(bool claro, bool funcao2) {
             if (claro) {
-                if (!funcao2.Checked) {
+                if (!funcao2) {
                     ControleDeImagens.DuasImagens(btnApagarVisor, ApagarVisorTemaClaroNormal,
                                                     btnLimparTudo, LimparTudoTemaClaro);
                 } else {
@@ -1332,7 +1335,7 @@ namespace InterfaceUsuario {
                                                     btnLimparTudo, ApagarVisorTemaClaro);
                 }
             } else {
-                if (!funcao2.Checked) {
+                if (!funcao2) {
                     ControleDeImagens.DuasImagens(btnApagarVisor, ApagarVisorTemaEscuroNormal,
                                                     btnLimparTudo, LimparTudoTemaEscuro);
                 } else {
