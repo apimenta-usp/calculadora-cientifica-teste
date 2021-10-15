@@ -23,6 +23,7 @@ namespace InterfaceUsuario {
         public static string Operacao { get; set; }
         public static bool PressionouIgual { get; set; }
         public static bool PressionouPotenciacao { get; set; }
+        public static bool PressionouExponencial { get; set; }
         public static bool PressionouMemoria { get; set; }
         globalKeyboardHook gkh = new globalKeyboardHook();
 
@@ -233,12 +234,11 @@ namespace InterfaceUsuario {
             if (!txtVisor.Text.Trim().Equals(string.Empty)) {
                 if (!chk2Funcao.Checked) {
                     Memoria += Visor.Capturar(txtVisor.Text.Trim());
-                    PressionouMemoria = true;
                 } else {
                     Memoria -= Visor.Capturar(txtVisor.Text.Trim());
-                    PressionouMemoria = true;
                     if (!mnsFixar2Funcao.Checked) chk2Funcao.Checked = false;
                 }
+                PressionouMemoria = true;
             }
         }
 
@@ -379,26 +379,37 @@ namespace InterfaceUsuario {
             if (!txtVisor.Text.Trim().Equals(string.Empty)) {
                 if (!chk2Funcao.Checked) {
                     AdicionarCaracter.Operacao("^", txtVisor);
-                    PressionouPotenciacao = true;
                 } else {
                     AdicionarCaracter.Operacao("~", txtVisor);
-                    PressionouPotenciacao = true;
                     if (!mnsFixar2Funcao.Checked) chk2Funcao.Checked = false;
                 }
+                PressionouPotenciacao = true;
             }
         }
 
         private void btnExponencial_Click(object sender, EventArgs e) {
-
+            if (!chk2Funcao.Checked) {
+                if (!txtVisor.Text.Trim().Equals(string.Empty)) {
+                    AdicionarCaracter.Operacao("&", txtVisor);
+                    PressionouExponencial = true;
+                }
+            } else {
+                txtVisor.Text = Visor.Exibir(Math.PI);
+                PressionouIgual = true;
+                if (!mnsFixar2Funcao.Checked) chk2Funcao.Checked = false;
+            }
         }
 
         private void btnDecimalCientifico_Click(object sender, EventArgs e) {
             if (!txtVisor.Text.Trim().Equals(string.Empty)) {
-
+                if (!chk2Funcao.Checked) {
+                    txtVisor.Text = Calcular.DecimalCientifico(txtVisor.Text.Trim());
+                } else {
+                    txtVisor.Text = Calcular.Fatorial(txtVisor.Text.Trim());
+                    if (!mnsFixar2Funcao.Checked) chk2Funcao.Checked = false;
+                }
+                PressionouIgual = true;
             }
-            /* Para fazer a conversão, usa-se o método "ToString() 
-               para o formato científico: 
-               (12345.67).ToString(“E”) retorna 1,234567E+ 004 " */
         }
 
         private void btnSeno_Click(object sender, EventArgs e) {
@@ -434,6 +445,15 @@ namespace InterfaceUsuario {
                     sbyte tamanho = (sbyte)txtVisor.Text.Trim().Length;
                     txtVisor.Text = txtVisor.Text.Trim().Remove((tamanho - 1));
                 } else {
+                    //if (PressionouIgual || PressionouPotenciacao) {
+                    //    Calcular.LimparCampos(txtVisor);
+                    //    return;
+                    //}
+                    //if (!txtVisor.Text.Trim().Equals(string.Empty)) {
+                    //    double porcentagem = Convert.ToDouble(txtVisor.Text.Trim(), CultureInfo.InvariantCulture);
+                    //    porcentagem = porcentagem / 100;
+                    //    txtVisor.Text = (Numero1 * porcentagem).ToString(CultureInfo.InvariantCulture);
+                    //}
                     if (!mnsFixar2Funcao.Checked) chk2Funcao.Checked = false;
                 }
             }

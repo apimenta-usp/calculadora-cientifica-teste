@@ -15,8 +15,7 @@ namespace InterfaceUsuario.Personalizacao {
             if (FrmCalculadoraCientifica.Virgula) {
                 visor = visor.Replace(',', '.');
             }
-            double numero = Convert.ToDouble(visor, CultureInfo.InvariantCulture);
-            return numero;
+            return Convert.ToDouble(visor, CultureInfo.InvariantCulture);            
         }
     }
 }

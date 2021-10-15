@@ -1,6 +1,7 @@
 ﻿using InterfaceUsuario.Personalizacao;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -38,6 +39,9 @@ namespace InterfaceUsuario.Operacoes {
                     break;
                 case "^":
                     Potencia(numero1, numero2, txtVisor);
+                    break;
+                case "&":
+                    Exponencial(numero1, numero2, txtVisor);
                     break;
             }
         }
@@ -118,6 +122,62 @@ namespace InterfaceUsuario.Operacoes {
             return new Tuple<ulong, ulong>(numerador, denominador);
         }
 
+        private static void Exponencial(double valorMultiplicando, double valorExpoente, TextBox txtVisor) {
+            int valorExpoenteInteiro = (int)Math.Floor(valorExpoente);
+            if (valorExpoenteInteiro != valorExpoente) {
+                MessageBox.Show("Use apenas expoentes inteiros!", "Aviso", 
+                                MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                LimparCampos(txtVisor);
+                return;
+            }
+            double resultado = valorMultiplicando * Math.Pow(10, valorExpoenteInteiro);
+            txtVisor.Text = Visor.Exibir(resultado);
+        }
+
+        public static string DecimalCientifico(string visor) {
+            if (visor.Contains('e')) {
+                visor = visor.Replace('e', 'E');
+            }
+
+            if (visor.Contains('E')) {
+                string[] particao = visor.Split('E');
+                double valorMultiplicando = Visor.Capturar(particao[0]);
+                int valorExpoente = Convert.ToInt32(particao[1]);
+                double numero = valorMultiplicando * Math.Pow(10, valorExpoente);
+                if (numero > 9_999_999_999 || numero < 0.000_000_001) {
+                    return visor;
+                } else return Visor.Exibir(numero);
+            } else {
+                double numero = Visor.Capturar(visor);
+                visor = numero.ToString("0.####E+0", CultureInfo.InvariantCulture);
+                if (FrmCalculadoraCientifica.Virgula) {
+                    visor = visor.Replace('.', ',');
+                }
+                return visor;
+            }
+        }
+
+        public static string Fatorial(string visor) {
+            double dNumero = Visor.Capturar(visor);
+            int iNumero = (int)Math.Floor(dNumero);
+            if (iNumero != dNumero || dNumero < 0) {
+                MessageBox.Show("Fatorial somente para números naturais!", "Aviso", 
+                                MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return string.Empty;
+            } else {
+                if (dNumero == 0 || dNumero == 1) {
+                    return "1";
+                } else {
+                    while (iNumero > 1) {
+                        double antecessor = iNumero - 1;
+                        dNumero *= antecessor;
+                        iNumero--;
+                    }
+                    return Visor.Exibir(dNumero);
+                }
+            }
+        }
+
         public static void LimparCampos(TextBox txtVisor) {
             txtVisor.Clear();
             FrmCalculadoraCientifica.Numero1 = 0;
@@ -125,6 +185,7 @@ namespace InterfaceUsuario.Operacoes {
             FrmCalculadoraCientifica.Operacao = string.Empty;
             FrmCalculadoraCientifica.PressionouIgual = false;
             FrmCalculadoraCientifica.PressionouPotenciacao = false;
+            FrmCalculadoraCientifica.PressionouExponencial = false;
         }
     }
 }
