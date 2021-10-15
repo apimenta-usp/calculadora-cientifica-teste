@@ -30,14 +30,14 @@ namespace InterfaceUsuario {
             InitializeComponent();
         }
 
-        private void LimparCampos() {
-            txtVisor.Clear();
-            Numero1 = 0;
-            Numero2 = 0;
-            Operacao = string.Empty;
-            PressionouIgual = false;
-            PressionouPotenciacao = false;
-        }
+        //private void LimparCampos() {
+        //    txtVisor.Clear();
+        //    Numero1 = 0;
+        //    Numero2 = 0;
+        //    Operacao = string.Empty;
+        //    PressionouIgual = false;
+        //    PressionouPotenciacao = false;
+        //}
 
         private void FrmCalculadoraCientifica_Load(object sender, EventArgs e) {
             Claro = true;
@@ -46,7 +46,7 @@ namespace InterfaceUsuario {
             mnsClaro.Checked = true;
             mnsPonto.Checked = true;
             chk2Funcao.Checked = false;
-            LimparCampos();
+            Calcular.LimparCampos(txtVisor);
             Memoria = 0;
             PressionouMemoria = false;            
             //TemaClaro();
@@ -224,23 +224,21 @@ namespace InterfaceUsuario {
         private void btnIgual_Click(object sender, EventArgs e) {
             if (!txtVisor.Text.Trim().Equals(string.Empty)) {
                 Numero2 = Visor.Capturar(txtVisor.Text.Trim());
-                Calcular.OperacaoBasica(Operacao, txtVisor, Numero1, Numero2);
+                Calcular.Operacao(Operacao, txtVisor, Numero1, Numero2);
                 PressionouIgual = true;
             }
         }
 
         private void btnMemoriaAdicionar_Click(object sender, EventArgs e) {
-            if (!chk2Funcao.Checked) {
-                if (!txtVisor.Text.Trim().Equals(string.Empty)) {
+            if (!txtVisor.Text.Trim().Equals(string.Empty)) {
+                if (!chk2Funcao.Checked) {
                     Memoria += Visor.Capturar(txtVisor.Text.Trim());
                     PressionouMemoria = true;
-                }
-            } else {
-                if (!txtVisor.Text.Trim().Equals(string.Empty)) {
+                } else {
                     Memoria -= Visor.Capturar(txtVisor.Text.Trim());
                     PressionouMemoria = true;
+                    if (!mnsFixar2Funcao.Checked) chk2Funcao.Checked = false;
                 }
-                if (!mnsFixar2Funcao.Checked) chk2Funcao.Checked = false;
             }
         }
 
@@ -287,23 +285,107 @@ namespace InterfaceUsuario {
         }
 
         private void btnLogaritmoNeperiano_Click(object sender, EventArgs e) {
-
+            if (!txtVisor.Text.Trim().Equals(string.Empty)) {
+                double resultado = Visor.Capturar(txtVisor.Text.Trim());
+                string visor;
+                if (!chk2Funcao.Checked) {
+                    visor = Math.Log(resultado).ToString();
+                    if (resultado <= 0 || visor.Contains('∞') || visor.ToUpper() == "NAN") {
+                        MessageBox.Show("Logaritmo inexistente!", "Erro!",
+                                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        txtVisor.Clear();
+                    } else
+                        txtVisor.Text = Visor.Exibir(Math.Log(resultado));
+                } else {
+                    visor = Math.Exp(resultado).ToString();
+                    if (visor.Contains('∞') || visor.ToUpper() == "NAN") {
+                        MessageBox.Show("Número muito grande!", "Aviso!",
+                                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        txtVisor.Clear();
+                    } else
+                        txtVisor.Text = Visor.Exibir(Math.Exp(resultado));
+                    if (!mnsFixar2Funcao.Checked) chk2Funcao.Checked = false;
+                }
+                PressionouIgual = true;
+            }
         }
 
         private void btnLogaritmoDecimal_Click(object sender, EventArgs e) {
-
+            if (!txtVisor.Text.Trim().Equals(string.Empty)) {
+                double resultado = Visor.Capturar(txtVisor.Text.Trim());
+                string visor;
+                if (!chk2Funcao.Checked) {
+                    visor = Math.Log10(resultado).ToString();
+                    if (resultado <= 0 || visor.Contains('∞') || visor.ToUpper() == "NAN") {
+                        MessageBox.Show("Logaritmo inexistente!", "Erro!",
+                                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        txtVisor.Clear();
+                    } else
+                        txtVisor.Text = Visor.Exibir(Math.Log10(resultado));
+                } else {
+                    visor = Math.Pow(10, resultado).ToString();
+                    if (visor.Contains('∞') || visor.ToUpper() == "NAN") {
+                        MessageBox.Show("Número muito grande!", "Aviso!",
+                                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        txtVisor.Clear();
+                    } else
+                        txtVisor.Text = Visor.Exibir(Math.Pow(10, resultado));
+                    if (!mnsFixar2Funcao.Checked) chk2Funcao.Checked = false;
+                }
+                PressionouIgual = true;
+            }
         }
 
         private void btnInversao_Click(object sender, EventArgs e) {
-
+            if (!txtVisor.Text.Trim().Equals(string.Empty)) {
+                double numero = Visor.Capturar(txtVisor.Text.Trim());
+                if (!chk2Funcao.Checked) {
+                    if (numero == 0) {
+                        MessageBox.Show("Divisão por zero!", "Erro!",
+                                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        txtVisor.Clear();
+                    } else {
+                        txtVisor.Text = Visor.Exibir(1 / numero);
+                    }
+                } else {
+                    double radicando = 1.0 / 3.0;
+                    txtVisor.Text = Visor.Exibir(Math.Pow(numero, radicando));
+                    if (!mnsFixar2Funcao.Checked) chk2Funcao.Checked = false;
+                }
+                PressionouIgual = true;
+            }
         }
 
         private void btnRaizQuadrada_Click(object sender, EventArgs e) {
-
+            if (!txtVisor.Text.Trim().Equals(string.Empty)) {
+                double numero = Visor.Capturar(txtVisor.Text.Trim());
+                if (!chk2Funcao.Checked) {
+                    if (numero < 0) {
+                        MessageBox.Show("Raiz quadrada de número negativo!", "Erro!",
+                                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        txtVisor.Clear();
+                    } else {
+                        txtVisor.Text = Visor.Exibir(Math.Sqrt(numero));
+                    }
+                } else {
+                    txtVisor.Text = Visor.Exibir(Math.Pow(numero, 2));
+                    if (!mnsFixar2Funcao.Checked) chk2Funcao.Checked = false;
+                }
+                PressionouIgual = true;
+            }
         }
 
         private void btnPotenciacao_Click(object sender, EventArgs e) {
-
+            if (!txtVisor.Text.Trim().Equals(string.Empty)) {
+                if (!chk2Funcao.Checked) {
+                    AdicionarCaracter.Operacao("^", txtVisor);
+                    PressionouPotenciacao = true;
+                } else {
+                    AdicionarCaracter.Operacao("~", txtVisor);
+                    PressionouPotenciacao = true;
+                    if (!mnsFixar2Funcao.Checked) chk2Funcao.Checked = false;
+                }
+            }
         }
 
         private void btnExponencial_Click(object sender, EventArgs e) {
@@ -311,49 +393,58 @@ namespace InterfaceUsuario {
         }
 
         private void btnDecimalCientifico_Click(object sender, EventArgs e) {
+            if (!txtVisor.Text.Trim().Equals(string.Empty)) {
+
+            }
             /* Para fazer a conversão, usa-se o método "ToString() 
                para o formato científico: 
                (12345.67).ToString(“E”) retorna 1,234567E+ 004 " */
         }
 
         private void btnSeno_Click(object sender, EventArgs e) {
+            if (!txtVisor.Text.Trim().Equals(string.Empty)) {
 
+            }
         }
 
         private void btnCosseno_Click(object sender, EventArgs e) {
+            if (!txtVisor.Text.Trim().Equals(string.Empty)) {
 
+            }
         }
 
         private void btnTangente_Click(object sender, EventArgs e) {
+            if (!txtVisor.Text.Trim().Equals(string.Empty)) {
 
+            }
         }
 
         private void btnRemover_Click(object sender, EventArgs e) {
-            if (!chk2Funcao.Checked) {
-                if (PressionouIgual) {
-                    LimparCampos();
-                    return;
-                }
-                if ((txtVisor.Text.Trim().Length == 2 && txtVisor.Text.Trim().Contains("-")) ||
-                    (txtVisor.Text.Trim() == "-0." || txtVisor.Text.Trim() == "-0,")) {
-                    txtVisor.Clear();
-                    return;
-                }
-                if (!txtVisor.Text.Trim().Equals(string.Empty)) {
+            if (!txtVisor.Text.Trim().Equals(string.Empty)) {
+                if (!chk2Funcao.Checked) {
+                    if (PressionouIgual) {
+                        Calcular.LimparCampos(txtVisor);
+                        return;
+                    }
+                    if ((txtVisor.Text.Trim().Length == 2 && txtVisor.Text.Trim().Contains("-")) ||
+                        (txtVisor.Text.Trim() == "-0." || txtVisor.Text.Trim() == "-0,")) {
+                        txtVisor.Clear();
+                        return;
+                    }
                     sbyte tamanho = (sbyte)txtVisor.Text.Trim().Length;
                     txtVisor.Text = txtVisor.Text.Trim().Remove((tamanho - 1));
+                } else {
+                    if (!mnsFixar2Funcao.Checked) chk2Funcao.Checked = false;
                 }
-            } else {
-                if (!mnsFixar2Funcao.Checked) chk2Funcao.Checked = false;
             }
         }
 
         private void btnApagarVisor_Click(object sender, EventArgs e) {
             if (!chk2Funcao.Checked) {
-                if (Operacao.Equals(string.Empty) || PressionouIgual) LimparCampos();
+                if (Operacao.Equals(string.Empty) || PressionouIgual) Calcular.LimparCampos(txtVisor);
                 else txtVisor.Clear();
             } else {
-                LimparCampos();
+                Calcular.LimparCampos(txtVisor);
                 if (!mnsFixar2Funcao.Checked) chk2Funcao.Checked = false;
             }
         }
