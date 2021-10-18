@@ -223,7 +223,8 @@ namespace InterfaceUsuario {
         }
 
         private void btnIgual_Click(object sender, EventArgs e) {
-            if (!txtVisor.Text.Trim().Equals(string.Empty)) {
+            if (!txtVisor.Text.Trim().Equals(string.Empty) 
+                && double.TryParse(txtVisor.Text.Trim(), out double numero)) {
                 Numero2 = Visor.Capturar(txtVisor.Text.Trim());
                 Calcular.Operacao(Operacao, txtVisor, Numero1, Numero2);
                 PressionouIgual = true;
@@ -231,6 +232,9 @@ namespace InterfaceUsuario {
         }
 
         private void btnMemoriaAdicionar_Click(object sender, EventArgs e) {
+            if (!double.TryParse(txtVisor.Text.Trim(), out double numero)) {
+                txtVisor.Clear();
+            }
             if (!txtVisor.Text.Trim().Equals(string.Empty)) {
                 if (!chk2Funcao.Checked) {
                     Memoria += Visor.Capturar(txtVisor.Text.Trim());
@@ -254,6 +258,9 @@ namespace InterfaceUsuario {
 
         private void btnMemoriaSubstituir_Click(object sender, EventArgs e) {
             if (!chk2Funcao.Checked) {
+                if (!double.TryParse(txtVisor.Text.Trim(), out double numero)) {
+                    txtVisor.Clear();
+                }
                 if (!txtVisor.Text.Trim().Equals(string.Empty)) {
                     Memoria = Visor.Capturar(txtVisor.Text.Trim());
                     PressionouMemoria = true;
@@ -285,6 +292,9 @@ namespace InterfaceUsuario {
         }
 
         private void btnLogaritmoNeperiano_Click(object sender, EventArgs e) {
+            if (!double.TryParse(txtVisor.Text.Trim(), out double numero)) {
+                txtVisor.Clear();
+            }
             if (!txtVisor.Text.Trim().Equals(string.Empty)) {
                 double resultado = Visor.Capturar(txtVisor.Text.Trim());
                 string visor;
@@ -311,6 +321,9 @@ namespace InterfaceUsuario {
         }
 
         private void btnLogaritmoDecimal_Click(object sender, EventArgs e) {
+            if (!double.TryParse(txtVisor.Text.Trim(), out double numero)) {
+                txtVisor.Clear();
+            }
             if (!txtVisor.Text.Trim().Equals(string.Empty)) {
                 double resultado = Visor.Capturar(txtVisor.Text.Trim());
                 string visor;
@@ -337,8 +350,11 @@ namespace InterfaceUsuario {
         }
 
         private void btnInversao_Click(object sender, EventArgs e) {
+            if (!double.TryParse(txtVisor.Text.Trim(), out double numero)) {
+                txtVisor.Clear();
+            }
             if (!txtVisor.Text.Trim().Equals(string.Empty)) {
-                double numero = Visor.Capturar(txtVisor.Text.Trim());
+                numero = Visor.Capturar(txtVisor.Text.Trim());
                 if (!chk2Funcao.Checked) {
                     if (numero == 0) {
                         MessageBox.Show("Divisão por zero!", "Erro!",
@@ -357,8 +373,11 @@ namespace InterfaceUsuario {
         }
 
         private void btnRaizQuadrada_Click(object sender, EventArgs e) {
+            if (!double.TryParse(txtVisor.Text.Trim(), out double numero)) {
+                txtVisor.Clear();
+            }
             if (!txtVisor.Text.Trim().Equals(string.Empty)) {
-                double numero = Visor.Capturar(txtVisor.Text.Trim());
+                numero = Visor.Capturar(txtVisor.Text.Trim());
                 if (!chk2Funcao.Checked) {
                     if (numero < 0) {
                         MessageBox.Show("Raiz quadrada de número negativo!", "Erro!",
@@ -376,6 +395,9 @@ namespace InterfaceUsuario {
         }
 
         private void btnPotenciacao_Click(object sender, EventArgs e) {
+            if (!double.TryParse(txtVisor.Text.Trim(), out double numero)) {
+                txtVisor.Clear();
+            }
             if (!txtVisor.Text.Trim().Equals(string.Empty)) {
                 if (!chk2Funcao.Checked) {
                     AdicionarCaracter.Operacao("^", txtVisor);
@@ -389,6 +411,9 @@ namespace InterfaceUsuario {
 
         private void btnExponencial_Click(object sender, EventArgs e) {
             if (!chk2Funcao.Checked) {
+                if (!double.TryParse(txtVisor.Text.Trim(), out double numero)) {
+                    txtVisor.Clear();
+                }
                 if (!txtVisor.Text.Trim().Equals(string.Empty)) {
                     AdicionarCaracter.Operacao("&", txtVisor);
                     PressionouExponencial = true;
@@ -401,6 +426,9 @@ namespace InterfaceUsuario {
         }
 
         private void btnDecimalCientifico_Click(object sender, EventArgs e) {
+            if (!double.TryParse(txtVisor.Text.Trim(), out double numero)) {
+                txtVisor.Clear();
+            }
             if (!txtVisor.Text.Trim().Equals(string.Empty)) {
                 if (!chk2Funcao.Checked) {
                     txtVisor.Text = Calcular.DecimalCientifico(txtVisor.Text.Trim());
@@ -431,6 +459,9 @@ namespace InterfaceUsuario {
         }
 
         private void btnRemover_Click(object sender, EventArgs e) {
+            if (!double.TryParse(txtVisor.Text.Trim(), out double numero)) {
+                txtVisor.Clear();
+            }
             if (!txtVisor.Text.Trim().Equals(string.Empty)) {
                 if (!chk2Funcao.Checked) {
                     if (PressionouIgual) {
@@ -445,15 +476,15 @@ namespace InterfaceUsuario {
                     sbyte tamanho = (sbyte)txtVisor.Text.Trim().Length;
                     txtVisor.Text = txtVisor.Text.Trim().Remove((tamanho - 1));
                 } else {
-                    //if (PressionouIgual || PressionouPotenciacao) {
-                    //    Calcular.LimparCampos(txtVisor);
-                    //    return;
-                    //}
-                    //if (!txtVisor.Text.Trim().Equals(string.Empty)) {
-                    //    double porcentagem = Convert.ToDouble(txtVisor.Text.Trim(), CultureInfo.InvariantCulture);
-                    //    porcentagem = porcentagem / 100;
-                    //    txtVisor.Text = (Numero1 * porcentagem).ToString(CultureInfo.InvariantCulture);
-                    //}
+                    if (PressionouIgual || PressionouPotenciacao) {
+                        Calcular.LimparCampos(txtVisor);
+                        return;
+                    }
+                    if (!txtVisor.Text.Trim().Equals(string.Empty)) {
+                        double porcentagem = Visor.Capturar(txtVisor.Text.Trim());
+                        porcentagem = porcentagem / 100;
+                        txtVisor.Text = Visor.Exibir(Numero1 * porcentagem);
+                    }
                     if (!mnsFixar2Funcao.Checked) chk2Funcao.Checked = false;
                 }
             }
