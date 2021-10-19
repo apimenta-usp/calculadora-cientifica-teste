@@ -25,6 +25,7 @@ namespace InterfaceUsuario {
         public static bool PressionouPotenciacao { get; set; }
         public static bool PressionouExponencial { get; set; }
         public static bool PressionouMemoria { get; set; }
+        public const double Pi = 3.14159265359;
         globalKeyboardHook gkh = new globalKeyboardHook();
 
         public FrmCalculadoraCientifica() {
@@ -419,7 +420,7 @@ namespace InterfaceUsuario {
                     PressionouExponencial = true;
                 }
             } else {
-                txtVisor.Text = Visor.Exibir(Math.PI);
+                txtVisor.Text = Visor.Exibir(Pi);
                 PressionouIgual = true;
                 if (!mnsFixar2Funcao.Checked) chk2Funcao.Checked = false;
             }
@@ -441,21 +442,39 @@ namespace InterfaceUsuario {
         }
 
         private void btnSeno_Click(object sender, EventArgs e) {
+            if (!double.TryParse(txtVisor.Text.Trim(), out double numero)) {
+                txtVisor.Clear();
+            }
             if (!txtVisor.Text.Trim().Equals(string.Empty)) {
-
+                if (!chk2Funcao.Checked) {
+                    txtVisor.Text = Calcular.AnguloDireto("seno", txtVisor.Text.Trim(), optGrau, optGrado);
+                }
+                PressionouIgual = true;
             }
         }
 
         private void btnCosseno_Click(object sender, EventArgs e) {
+            if (!double.TryParse(txtVisor.Text.Trim(), out double numero)) {
+                txtVisor.Clear();
+            }
             if (!txtVisor.Text.Trim().Equals(string.Empty)) {
-
+                if (!chk2Funcao.Checked) {
+                    txtVisor.Text = Calcular.AnguloDireto("cosseno", txtVisor.Text.Trim(), optGrau, optGrado);
+                }
+                PressionouIgual = true;
             }
         }
 
         private void btnTangente_Click(object sender, EventArgs e) {
-            if (!txtVisor.Text.Trim().Equals(string.Empty)) {
-
+            if (!double.TryParse(txtVisor.Text.Trim(), out double numero)) {
+                txtVisor.Clear();
             }
+            if (!txtVisor.Text.Trim().Equals(string.Empty)) {
+                if (!chk2Funcao.Checked) {
+                    txtVisor.Text = Calcular.AnguloDireto("tangente", txtVisor.Text.Trim(), optGrau, optGrado);
+                }
+            }
+            PressionouIgual = true;
         }
 
         private void btnRemover_Click(object sender, EventArgs e) {
