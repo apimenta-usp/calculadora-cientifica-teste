@@ -90,7 +90,8 @@ namespace InterfaceUsuario.Operacoes {
                 txtVisor.Text = Visor.Exibir(resultado);
             } else {
                 resultado = Math.Pow(valorBase, valorExpoente);
-                if (resultado.ToString().Trim().Contains('∞') || resultado.ToString().Trim().ToUpper() == "NAN") {
+                if (resultado.ToString().Trim().Contains('∞') || resultado == double.NaN 
+                    || resultado == double.PositiveInfinity || resultado == double.NegativeInfinity) {
                     MessageBox.Show("Cálculo não implementado ou \nraiz inexistente!", "Erro",
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
                     LimparCampos(txtVisor);
@@ -179,8 +180,8 @@ namespace InterfaceUsuario.Operacoes {
         }
 
         public static string AnguloDireto(string angulo, string visor, RadioButton optGrau, RadioButton optGrado) {
-            double seno = Seno(visor, optGrau, optGrado);
-            double cosseno = Cosseno(visor, optGrau, optGrado);
+            double seno = SenoDoAngulo(visor, optGrau, optGrado);
+            double cosseno = CossenoDoAngulo(visor, optGrau, optGrado);
             double numero = Visor.Capturar(visor);
             if (optGrau.Checked) {
                 if (numero == 90.0) {
@@ -205,13 +206,26 @@ namespace InterfaceUsuario.Operacoes {
                                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return string.Empty;
                 } else {
-                    double tangente = Tangente(visor, optGrau, optGrado);
+                    double tangente = TangenteDoAngulo(visor, optGrau, optGrado);
                     return Visor.Exibir(tangente);
                 }
             }
         }
 
-        private static double Seno(string visor, RadioButton optGrau, RadioButton optGrado) {
+        public static string AnguloInverso(string angulo, string visor, RadioButton optGrau, RadioButton optGrado) {
+            double senoInverso = AnguloDoSeno(visor, optGrau, optGrado);
+            double cossenoInverso = AnguloDoCosseno(visor, optGrau, optGrado);
+            double tangenteInversa = AnguloDaTangente(visor, optGrau, optGrado);
+            if (angulo == "seno") {
+                return Visor.Exibir(senoInverso);
+            } else if (angulo == "cosseno") {
+                return Visor.Exibir(cossenoInverso);
+            } else {
+                return Visor.Exibir(tangenteInversa);
+            }
+        }
+
+        private static double SenoDoAngulo(string visor, RadioButton optGrau, RadioButton optGrado) {
             double numero = Visor.Capturar(visor);
             if (optGrau.Checked) {
                 numero = (numero * FrmCalculadoraCientifica.Pi) / 180.0;
@@ -266,22 +280,9 @@ namespace InterfaceUsuario.Operacoes {
             }
 
             return seno;
-            //if (numero == 0 || numero == FrmCalculadoraCientifica.Pi) {
-            //    seno = 0.0;
-            //} else if (numero == (FrmCalculadoraCientifica.Pi / 6) ||
-            //    numero == ((FrmCalculadoraCientifica.Pi * 5) / 6)) {
-            //    seno = 0.5;
-            //} else if (numero == ((FrmCalculadoraCientifica.Pi * 7) / 6) 
-            //    || numero == ((FrmCalculadoraCientifica.Pi * 11) / 6)) {
-            //    seno = -0.5;
-            //} else if (numero == (FrmCalculadoraCientifica.Pi / 2)) {
-            //    seno = 1.0;
-            //} else if (numero == ((FrmCalculadoraCientifica.Pi * 3) / 2)) {
-            //    seno = -1.0;
-            //}
         }
 
-        private static double Cosseno(string visor, RadioButton optGrau, RadioButton optGrado) {
+        private static double CossenoDoAngulo(string visor, RadioButton optGrau, RadioButton optGrado) {
             double numero = Visor.Capturar(visor);
             if (optGrau.Checked) {
                 numero = (numero * FrmCalculadoraCientifica.Pi) / 180.0;
@@ -338,7 +339,7 @@ namespace InterfaceUsuario.Operacoes {
             return cosseno;
         }
 
-        private static double Tangente(string visor, RadioButton optGrau, RadioButton optGrado) {
+        private static double TangenteDoAngulo(string visor, RadioButton optGrau, RadioButton optGrado) {
             double numero = Visor.Capturar(visor);
             if (optGrau.Checked) {
                 numero = (numero * FrmCalculadoraCientifica.Pi) / 180.0;
@@ -387,6 +388,130 @@ namespace InterfaceUsuario.Operacoes {
             }
 
             return tangente;
+        }
+
+        private static double AnguloDoSeno(string visor, RadioButton optGrau, RadioButton optGrado) {
+            double numero = Visor.Capturar(visor);
+            double senoInverso = Math.Asin(numero);
+
+            if (optGrau.Checked) {
+                senoInverso = (senoInverso * 180.0) / FrmCalculadoraCientifica.Pi;
+                if (numero == 0) {
+                    senoInverso = 0.0;
+                } else if (numero == 0.5){
+                    senoInverso = 30.0;
+                } else if (44.99999999 < senoInverso && senoInverso < 45.000000001) {
+                //} else if (numero == (Visor.Capturar((Math.Sqrt(2) / 2).ToString()))) {
+                    senoInverso = 45.0;
+                } else if (59.99999999 < senoInverso && senoInverso < 60.000000001) {
+                //} else if (numero == (Visor.Capturar((Math.Sqrt(3) / 2).ToString()))) {
+                    senoInverso = 60.0;
+                } else if (numero == 1.0) {
+                    senoInverso = 90.0;
+                //} else {
+                //    senoInverso = senoInverso;
+                    //senoInverso = (senoInverso * 180.0) / FrmCalculadoraCientifica.Pi;
+                }
+            }
+            if (optGrado.Checked) {
+                senoInverso = (senoInverso * 200.0) / FrmCalculadoraCientifica.Pi;
+                if (numero == 0) {
+                    senoInverso = 0.0;
+                } else if (numero == 0.5){
+                    senoInverso = (100.0 / 3.0);
+                } else if (49.99999999 < senoInverso && senoInverso < 50.000000001) {
+                //} else if (numero == (Visor.Capturar((Math.Sqrt(2) / 2).ToString()))) {
+                    senoInverso = 50.0;
+                } else if (numero == (Visor.Capturar((Math.Sqrt(3) / 2).ToString()))) {
+                    senoInverso = (200.0 / 3.0);
+                } else if (numero == 1.0) {
+                    senoInverso = 100.0;
+                //} else {
+                //    senoInverso = (senoInverso * 200.0) / FrmCalculadoraCientifica.Pi;
+                }
+            }
+
+            return senoInverso;
+        }
+
+        private static double AnguloDoCosseno(string visor, RadioButton optGrau, RadioButton optGrado) {
+            double numero = Visor.Capturar(visor);
+            double cossenoInverso = Math.Acos(numero);
+
+            if (optGrau.Checked) {
+                cossenoInverso = (cossenoInverso * 180.0) / FrmCalculadoraCientifica.Pi;
+                if (numero == 1.0) {
+                    cossenoInverso = 0.0;
+                } else if (29.99999999 < cossenoInverso && cossenoInverso < 30.000000001) {
+                //} else if (numero == (Math.Sqrt(3) / 2)) {
+                    cossenoInverso = 30.0;
+                } else if (44.99999999 < cossenoInverso && cossenoInverso < 45.000000001) {
+                //} else if (numero == (Math.Sqrt(2) / 2)) {
+                    cossenoInverso = 45.0;
+                } else if (numero == 0.5) {
+                    cossenoInverso = 60.0;
+                } else if (numero == 0) {
+                    cossenoInverso = 90.0;
+                //} else {
+                //    cossenoInverso = (cossenoInverso * 180.0) / FrmCalculadoraCientifica.Pi;
+                }
+            }
+            if (optGrado.Checked) {
+                cossenoInverso = (cossenoInverso * 200.0) / FrmCalculadoraCientifica.Pi;
+                if (numero == 1.0) {
+                    cossenoInverso = 0.0;
+                } else if (numero == (Math.Sqrt(3) / 2)) {
+                    cossenoInverso = (100.0 / 3.0);
+                } else if (49.99999999 < cossenoInverso && cossenoInverso < 50.000000001) {
+                //} else if (numero == (Math.Sqrt(2) / 2)) {
+                    cossenoInverso = 50.0;
+                } else if (numero == 0.5) {
+                    cossenoInverso = (200.0 / 3.0);
+                } else if (numero == 0) {
+                    cossenoInverso = 100.0;
+                //} else {
+                //    cossenoInverso = (cossenoInverso * 200.0) / FrmCalculadoraCientifica.Pi;
+                }
+            }
+
+            return cossenoInverso;
+        }
+
+        private static double AnguloDaTangente(string visor, RadioButton optGrau, RadioButton optGrado) {
+            double numero = Visor.Capturar(visor);
+            double tangenteInversa = Math.Atan(numero);
+
+            if (optGrau.Checked) {
+                tangenteInversa = (tangenteInversa * 180.0) / FrmCalculadoraCientifica.Pi;
+                if (numero == 0) {
+                    tangenteInversa = 0.0;
+                } else if (29.99999999 < tangenteInversa && tangenteInversa < 30.000000001) {
+                    tangenteInversa = 30.0;
+                } else if (numero == 1.0) {
+                    tangenteInversa = 45.0;
+                } else if (59.99999999 < tangenteInversa && tangenteInversa < 60.000000001) {
+                //} else if (numero == Math.Sqrt(3)) {
+                    tangenteInversa = 60.0;
+                //} else {
+                //    tangenteInversa = (tangenteInversa * 180.0) / FrmCalculadoraCientifica.Pi;
+                }
+            }
+            if (optGrado.Checked) {
+                tangenteInversa = (tangenteInversa * 200.0) / FrmCalculadoraCientifica.Pi;
+                if (numero == 0) {
+                    tangenteInversa = 0.0;
+                } else if (numero == (Math.Sqrt(3) / 3)) {
+                    tangenteInversa = (100.0 / 3.0);
+                } else if (numero == 1.0) {
+                    tangenteInversa = 50.0;
+                } else if (numero == Math.Sqrt(3)) {
+                    tangenteInversa = (200.0 / 3.0);
+                //} else {
+                //    tangenteInversa = (tangenteInversa * 200.0) / FrmCalculadoraCientifica.Pi;
+                }
+            }
+
+            return tangenteInversa;
         }
 
         public static void LimparCampos(TextBox txtVisor) {

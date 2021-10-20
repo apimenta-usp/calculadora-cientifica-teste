@@ -301,7 +301,8 @@ namespace InterfaceUsuario {
                 string visor;
                 if (!chk2Funcao.Checked) {
                     visor = Math.Log(resultado).ToString();
-                    if (resultado <= 0 || visor.Contains('∞') || visor.ToUpper() == "NAN") {
+                    if (resultado <= 0 || visor.Contains('∞') || resultado == double.NaN 
+                        || resultado == double.PositiveInfinity || resultado == double.NegativeInfinity) {
                         MessageBox.Show("Logaritmo inexistente!", "Erro!",
                                         MessageBoxButtons.OK, MessageBoxIcon.Error);
                         txtVisor.Clear();
@@ -309,7 +310,8 @@ namespace InterfaceUsuario {
                         txtVisor.Text = Visor.Exibir(Math.Log(resultado));
                 } else {
                     visor = Math.Exp(resultado).ToString();
-                    if (visor.Contains('∞') || visor.ToUpper() == "NAN") {
+                    if (visor.Contains('∞') || resultado == double.NaN 
+                        || resultado == double.PositiveInfinity || resultado == double.NegativeInfinity) {
                         MessageBox.Show("Número muito grande!", "Aviso!",
                                         MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         txtVisor.Clear();
@@ -330,7 +332,8 @@ namespace InterfaceUsuario {
                 string visor;
                 if (!chk2Funcao.Checked) {
                     visor = Math.Log10(resultado).ToString();
-                    if (resultado <= 0 || visor.Contains('∞') || visor.ToUpper() == "NAN") {
+                    if (resultado <= 0 || visor.Contains('∞') || resultado == double.NaN 
+                        || resultado == double.PositiveInfinity || resultado == double.NegativeInfinity) {
                         MessageBox.Show("Logaritmo inexistente!", "Erro!",
                                         MessageBoxButtons.OK, MessageBoxIcon.Error);
                         txtVisor.Clear();
@@ -338,7 +341,8 @@ namespace InterfaceUsuario {
                         txtVisor.Text = Visor.Exibir(Math.Log10(resultado));
                 } else {
                     visor = Math.Pow(10, resultado).ToString();
-                    if (visor.Contains('∞') || visor.ToUpper() == "NAN") {
+                    if (visor.Contains('∞') || resultado == double.NaN 
+                        || resultado == double.PositiveInfinity || resultado == double.NegativeInfinity) {
                         MessageBox.Show("Número muito grande!", "Aviso!",
                                         MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         txtVisor.Clear();
@@ -448,6 +452,9 @@ namespace InterfaceUsuario {
             if (!txtVisor.Text.Trim().Equals(string.Empty)) {
                 if (!chk2Funcao.Checked) {
                     txtVisor.Text = Calcular.AnguloDireto("seno", txtVisor.Text.Trim(), optGrau, optGrado);
+                } else {
+                    txtVisor.Text = Calcular.AnguloInverso("seno", txtVisor.Text.Trim(), optGrau, optGrado);
+                    if (!mnsFixar2Funcao.Checked) chk2Funcao.Checked = false;
                 }
                 PressionouIgual = true;
             }
@@ -460,6 +467,9 @@ namespace InterfaceUsuario {
             if (!txtVisor.Text.Trim().Equals(string.Empty)) {
                 if (!chk2Funcao.Checked) {
                     txtVisor.Text = Calcular.AnguloDireto("cosseno", txtVisor.Text.Trim(), optGrau, optGrado);
+                } else {
+                    txtVisor.Text = Calcular.AnguloInverso("cosseno", txtVisor.Text.Trim(), optGrau, optGrado);
+                    if (!mnsFixar2Funcao.Checked) chk2Funcao.Checked = false;
                 }
                 PressionouIgual = true;
             }
@@ -472,6 +482,9 @@ namespace InterfaceUsuario {
             if (!txtVisor.Text.Trim().Equals(string.Empty)) {
                 if (!chk2Funcao.Checked) {
                     txtVisor.Text = Calcular.AnguloDireto("tangente", txtVisor.Text.Trim(), optGrau, optGrado);
+                } else {
+                    txtVisor.Text = Calcular.AnguloInverso("tangente", txtVisor.Text.Trim(), optGrau, optGrado);
+                    if (!mnsFixar2Funcao.Checked) chk2Funcao.Checked = false;
                 }
             }
             PressionouIgual = true;
