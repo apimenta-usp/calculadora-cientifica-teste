@@ -3,8 +3,6 @@ using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace InterfaceUsuario.Operacoes {
@@ -51,6 +49,51 @@ namespace InterfaceUsuario.Operacoes {
             int aleatorio = random.Next(1, 1000);
             double numero = aleatorio / 1000.0;
             return numero;
+        }
+
+        public static string DesvioAmostral(List<double> dados) {
+            double resultado;
+            double somatoriaDesvio;
+            if (dados.Count == 0) {
+                MessageBox.Show("Não há dados inseridos!", "Aviso",
+                                MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return string.Empty;
+            } else if (dados.Count == 1) {
+                MessageBox.Show("Dados insuficientes para o cálculo!", "Aviso", 
+                                MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return string.Empty;
+            } else {
+                somatoriaDesvio = SomatoriaDesvioQuadrado(dados);
+                resultado = Math.Sqrt(somatoriaDesvio / (dados.Count - 1));
+                return Visor.Exibir(resultado);
+            }
+        }
+
+        public static string DesvioPopulacional(List<double> dados) {
+            double resultado;
+            double somatoriaDesvio;
+            if (dados.Count == 0) {
+                MessageBox.Show("Não há dados inseridos!", "Aviso",
+                                MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return string.Empty;
+            } else {
+                somatoriaDesvio = SomatoriaDesvioQuadrado(dados);
+                resultado = Math.Sqrt(somatoriaDesvio / dados.Count);
+                return Visor.Exibir(resultado);
+            }
+        }
+
+        private static double SomatoriaDesvioQuadrado(List<double> dados) {
+            double somatoriaDesvio = 0;
+            double somaValores = 0;
+            foreach (double valor in dados) {
+                somaValores += valor;
+            }
+            double mediaAritmetica = somaValores / dados.Count;
+            foreach (double valor in dados) {
+                somatoriaDesvio += (valor - mediaAritmetica) * (valor - mediaAritmetica);
+            }
+            return somatoriaDesvio;
         }
 
         private static void Radiciacao(double valorRadicando, double valorIndice, TextBox txtVisor) {
@@ -213,13 +256,23 @@ namespace InterfaceUsuario.Operacoes {
         }
 
         public static string AnguloInverso(string angulo, string visor, RadioButton optGrau, RadioButton optGrado) {
-            double senoInverso = AnguloDoSeno(visor, optGrau, optGrado);
-            double cossenoInverso = AnguloDoCosseno(visor, optGrau, optGrado);
+            double? senoInverso = AnguloDoSeno(visor, optGrau, optGrado);
+            double? cossenoInverso = AnguloDoCosseno(visor, optGrau, optGrado);
             double tangenteInversa = AnguloDaTangente(visor, optGrau, optGrado);
             if (angulo == "seno") {
-                return Visor.Exibir(senoInverso);
+                if (senoInverso == null) {
+                    MessageBox.Show("Seno inexistente!", "Aviso",
+                                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return string.Empty;
+                } else
+                return Visor.Exibir((double)senoInverso);
             } else if (angulo == "cosseno") {
-                return Visor.Exibir(cossenoInverso);
+                if (cossenoInverso == null) {
+                    MessageBox.Show("Cosseno inexistente!", "Aviso",
+                                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return string.Empty;
+                } else
+                return Visor.Exibir((double)cossenoInverso);
             } else {
                 return Visor.Exibir(tangenteInversa);
             }
@@ -390,9 +443,13 @@ namespace InterfaceUsuario.Operacoes {
             return tangente;
         }
 
-        private static double AnguloDoSeno(string visor, RadioButton optGrau, RadioButton optGrado) {
+        private static double? AnguloDoSeno(string visor, RadioButton optGrau, RadioButton optGrado) {
             double numero = Visor.Capturar(visor);
-            double senoInverso = Math.Asin(numero);
+            double? senoInverso;
+            if (numero < -1 || numero > 1) {
+                senoInverso = null;
+            } else
+            senoInverso = Math.Asin(numero);
 
             if (optGrau.Checked) {
                 senoInverso = (senoInverso * 180.0) / FrmCalculadoraCientifica.Pi;
@@ -434,9 +491,13 @@ namespace InterfaceUsuario.Operacoes {
             return senoInverso;
         }
 
-        private static double AnguloDoCosseno(string visor, RadioButton optGrau, RadioButton optGrado) {
+        private static double? AnguloDoCosseno(string visor, RadioButton optGrau, RadioButton optGrado) {
             double numero = Visor.Capturar(visor);
-            double cossenoInverso = Math.Acos(numero);
+            double? cossenoInverso;
+            if (numero < -1 || numero > 1) {
+                cossenoInverso = null;
+            } else
+                cossenoInverso = Math.Acos(numero);
 
             if (optGrau.Checked) {
                 cossenoInverso = (cossenoInverso * 180.0) / FrmCalculadoraCientifica.Pi;

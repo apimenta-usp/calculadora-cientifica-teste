@@ -1,13 +1,9 @@
 ﻿using InterfaceUsuario.Personalizacao;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using static InterfaceUsuario.Properties.Resources;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Utilities;
 using System.Globalization;
@@ -16,7 +12,8 @@ using InterfaceUsuario.Operacoes;
 namespace InterfaceUsuario {
     public partial class FrmCalculadoraCientifica : Form {
         public static bool Virgula { get; private set; }
-        public bool Claro { get; private set; }
+        private bool Claro { get; set; }
+        private List<double> Estatistica { get; set; }
         public static double Numero1 { get; set; }
         public static double Numero2 { get; set; }
         public static double Memoria { get; set; }
@@ -30,20 +27,13 @@ namespace InterfaceUsuario {
 
         public FrmCalculadoraCientifica() {
             InitializeComponent();
+            Estatistica = new List<double>();
         }
-
-        //private void LimparCampos() {
-        //    txtVisor.Clear();
-        //    Numero1 = 0;
-        //    Numero2 = 0;
-        //    Operacao = string.Empty;
-        //    PressionouIgual = false;
-        //    PressionouPotenciacao = false;
-        //}
 
         private void FrmCalculadoraCientifica_Load(object sender, EventArgs e) {
             Claro = true;
             Virgula = false;
+            Estatistica.Clear();
             mnsFixar2Funcao.Checked = false;
             mnsClaro.Checked = true;
             mnsPonto.Checked = true;
@@ -51,40 +41,10 @@ namespace InterfaceUsuario {
             Calcular.LimparCampos(txtVisor);
             Memoria = 0;
             PressionouMemoria = false;            
-            //TemaClaro();
             TemaPrincipal(Claro, Virgula);
             gkh.HookedKeys.Add(Keys.Enter);
             gkh.KeyDown += new KeyEventHandler(gkh_KeyDown);
         }
-
-        void gkh_KeyDown(object sender, KeyEventArgs e) {
-            e.Handled = true;
-        }
-
-        //private void AdicionarCaracterNumerico(string caracter) {
-        //    sbyte tamanho;
-        //    if (txtVisor.Text.Trim().Contains(",") || txtVisor.Text.Trim().Contains("."))
-        //        tamanho = 11;
-        //    else
-        //        tamanho = 10;
-        //    if (PressionouIgual || PressionouMemoria) {
-        //        txtVisor.Clear();
-        //        PressionouIgual = false;
-        //        PressionouMemoria = false;
-        //    }
-        //    if (txtVisor.Text.Trim().Equals("0") || txtVisor.Text.Trim().Equals("-0"))
-        //        txtVisor.Text = caracter;
-        //    else if (txtVisor.Text.Trim().Length < tamanho)
-        //        txtVisor.Text += caracter;
-        //}
-
-        //private void AdicionarCaracterOperacao(string caracter) {
-        //    if (!txtVisor.Text.Trim().Equals(string.Empty)) {
-        //        Numero1 = Convert.ToDouble(txtVisor.Text.Trim(), CultureInfo.InvariantCulture);
-        //        Operacao = caracter;
-        //        txtVisor.Clear();
-        //    }
-        //}
 
         #region Eventos Click
         private void mnsCopiarVisor_Click(object sender, EventArgs e) {
@@ -277,19 +237,93 @@ namespace InterfaceUsuario {
         }
 
         private void btnInserirDados_Click(object sender, EventArgs e) {
-
+            if (!double.TryParse(txtVisor.Text.Trim(), out double numero)) {
+                txtVisor.Clear();
+            }
+            if (!txtVisor.Text.Trim().Equals(string.Empty)) {
+                double valor = Visor.Capturar(txtVisor.Text.Trim());
+                if (!chk2Funcao.Checked) {
+                    Estatistica.Add(valor);
+                } else {
+                    if (Estatistica.Count == 0) {
+                        MessageBox.Show("Não há dados inseridos!", "Aviso",
+                                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    } else if (Estatistica.Contains(valor)) {
+                        Estatistica.Remove(valor);
+                    } else
+                        MessageBox.Show("Valor não encontrado!", "Aviso",
+                                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    if (!mnsFixar2Funcao.Checked) chk2Funcao.Checked = false;
+                }
+            }
+            PressionouIgual = true;
         }
 
         private void btnDesvioAmostral_Click(object sender, EventArgs e) {
-
+            if (!chk2Funcao.Checked) {
+                txtVisor.Text = Calcular.DesvioAmostral(Estatistica);
+            } else {
+                txtVisor.Text = Calcular.DesvioPopulacional(Estatistica);
+                if (!mnsFixar2Funcao.Checked) chk2Funcao.Checked = false;
+            }
+            PressionouIgual = true;
         }
 
         private void btnMediaAritmetica_Click(object sender, EventArgs e) {
-
+            if (!chk2Funcao.Checked) {
+                double somaValores = 0;
+                if (Estatistica.Count == 0) {
+                    MessageBox.Show("Não há dados inseridos!", "Aviso",
+                                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    txtVisor.Text = string.Empty;
+                } else {
+                    foreach (double valor in Estatistica) {
+                        somaValores += valor;
+                    }
+                    double mediaAritmetica = somaValores / Estatistica.Count;
+                    txtVisor.Text = Visor.Exibir(mediaAritmetica);
+                }
+            } else {
+                double somaQuadrado = 0;
+                if (Estatistica.Count == 0) {
+                    MessageBox.Show("Não há dados inseridos!", "Aviso",
+                                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    txtVisor.Text = string.Empty;
+                } else {
+                    foreach (double valor in Estatistica) {
+                        somaQuadrado += valor * valor;
+                    }
+                    txtVisor.Text = Visor.Exibir(somaQuadrado);
+                }
+                if (!mnsFixar2Funcao.Checked) chk2Funcao.Checked = false;
+            }
+            PressionouIgual = true;
         }
 
         private void btnNumeroDados_Click(object sender, EventArgs e) {
-
+            if (!chk2Funcao.Checked) {
+                if (Estatistica.Count == 0) {
+                    MessageBox.Show("Não há dados inseridos!", "Aviso",
+                                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    txtVisor.Text = string.Empty;
+                } else {
+                    txtVisor.Text = Visor.Exibir(Estatistica.Count);
+                }
+            } else {
+                double somaSimples = 0;
+                if (Estatistica.Count == 0) {
+                    MessageBox.Show("Não há dados inseridos!", "Aviso",
+                                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    txtVisor.Text = string.Empty;
+                } else {
+                    foreach (double valor in Estatistica) {
+                        somaSimples += valor;
+                    }
+                    txtVisor.Text = Visor.Exibir(somaSimples);
+                }
+                if (!mnsFixar2Funcao.Checked) chk2Funcao.Checked = false;
+            }
+            PressionouIgual = true;
         }
 
         private void btnLogaritmoNeperiano_Click(object sender, EventArgs e) {
@@ -533,7 +567,7 @@ namespace InterfaceUsuario {
         }
         #endregion
 
-        #region Evento CheckedChanged
+        #region Eventos CheckedChanged
         private void chk2Funcao_CheckedChanged(object sender, EventArgs e) {
             bool assinalado = chk2Funcao.Checked;
             TemaBotoesMemoria(Claro, assinalado);
@@ -1117,6 +1151,10 @@ namespace InterfaceUsuario {
         #endregion
 
         #region Outros Métodos
+        private void gkh_KeyDown(object sender, KeyEventArgs e) {
+            e.Handled = true;
+        }
+
         private void TemaPrincipal(bool claro, bool virgula) {
             // Formulário
             if (claro) BackColor = Color.Moccasin;
