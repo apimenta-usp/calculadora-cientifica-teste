@@ -133,8 +133,9 @@ namespace InterfaceUsuario.Operacoes {
                 txtVisor.Text = Visor.Exibir(resultado);
             } else {
                 resultado = Math.Pow(valorBase, valorExpoente);
-                if (resultado.ToString().Trim().Contains('∞') || resultado == double.NaN 
-                    || resultado == double.PositiveInfinity || resultado == double.NegativeInfinity) {
+                if (resultado.ToString().Trim().Contains('∞')
+                    || double.IsNaN(resultado) || double.IsInfinity(resultado)
+                    || double.IsPositiveInfinity(resultado) || double.IsNegativeInfinity(resultado) ) {
                     MessageBox.Show("Cálculo não implementado ou \nraiz inexistente!", "Erro",
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
                     LimparCampos(txtVisor);
@@ -175,7 +176,11 @@ namespace InterfaceUsuario.Operacoes {
                 return;
             }
             double resultado = valorMultiplicando * Math.Pow(10, valorExpoenteInteiro);
-            txtVisor.Text = Visor.Exibir(resultado);
+            string visor = resultado.ToString("0.####E+0", CultureInfo.InvariantCulture);
+            if (FrmCalculadoraCientifica.Virgula) {
+                visor = visor.Replace('.', ',');
+            }
+            txtVisor.Text = visor;
         }
 
         public static string DecimalCientifico(string visor) {

@@ -94,6 +94,7 @@ namespace InterfaceUsuario {
             this.mnsCopiarVisor = new System.Windows.Forms.ToolStripMenuItem();
             this.mnsSair = new System.Windows.Forms.ToolStripMenuItem();
             this.mnsPersonalizar = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnsFixar2Funcao = new System.Windows.Forms.ToolStripMenuItem();
             this.mnsSeparadorDecimal = new System.Windows.Forms.ToolStripMenuItem();
             this.mnsPonto = new System.Windows.Forms.ToolStripMenuItem();
             this.mnsVirgula = new System.Windows.Forms.ToolStripMenuItem();
@@ -103,7 +104,6 @@ namespace InterfaceUsuario {
             this.mnsAjuda = new System.Windows.Forms.ToolStripMenuItem();
             this.mnsManual = new System.Windows.Forms.ToolStripMenuItem();
             this.mnsSobre = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnsFixar2Funcao = new System.Windows.Forms.ToolStripMenuItem();
             this.panel3.SuspendLayout();
             this.mnsMenuPrincipal.SuspendLayout();
             this.SuspendLayout();
@@ -1344,6 +1344,15 @@ namespace InterfaceUsuario {
             this.mnsPersonalizar.Size = new System.Drawing.Size(82, 20);
             this.mnsPersonalizar.Text = "Personalizar";
             // 
+            // mnsFixar2Funcao
+            // 
+            this.mnsFixar2Funcao.CheckOnClick = true;
+            this.mnsFixar2Funcao.Name = "mnsFixar2Funcao";
+            this.mnsFixar2Funcao.ShowShortcutKeys = false;
+            this.mnsFixar2Funcao.Size = new System.Drawing.Size(166, 22);
+            this.mnsFixar2Funcao.Text = "Fixar 2ª Função";
+            this.mnsFixar2Funcao.CheckedChanged += new System.EventHandler(this.mnsFixar2Funcao_CheckedChanged);
+            // 
             // mnsSeparadorDecimal
             // 
             this.mnsSeparadorDecimal.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -1351,7 +1360,7 @@ namespace InterfaceUsuario {
             this.mnsVirgula});
             this.mnsSeparadorDecimal.Name = "mnsSeparadorDecimal";
             this.mnsSeparadorDecimal.ShowShortcutKeys = false;
-            this.mnsSeparadorDecimal.Size = new System.Drawing.Size(180, 22);
+            this.mnsSeparadorDecimal.Size = new System.Drawing.Size(166, 22);
             this.mnsSeparadorDecimal.Text = "Separador Decimal";
             // 
             // mnsPonto
@@ -1360,7 +1369,7 @@ namespace InterfaceUsuario {
             this.mnsPonto.CheckState = System.Windows.Forms.CheckState.Checked;
             this.mnsPonto.Name = "mnsPonto";
             this.mnsPonto.ShowShortcutKeys = false;
-            this.mnsPonto.Size = new System.Drawing.Size(180, 22);
+            this.mnsPonto.Size = new System.Drawing.Size(104, 22);
             this.mnsPonto.Text = "Ponto";
             this.mnsPonto.Click += new System.EventHandler(this.mnsPonto_Click);
             // 
@@ -1368,7 +1377,7 @@ namespace InterfaceUsuario {
             // 
             this.mnsVirgula.Name = "mnsVirgula";
             this.mnsVirgula.ShowShortcutKeys = false;
-            this.mnsVirgula.Size = new System.Drawing.Size(180, 22);
+            this.mnsVirgula.Size = new System.Drawing.Size(104, 22);
             this.mnsVirgula.Text = "Vírgula";
             this.mnsVirgula.Click += new System.EventHandler(this.mnsVirgula_Click);
             // 
@@ -1379,7 +1388,7 @@ namespace InterfaceUsuario {
             this.mnsEscuro});
             this.mnsTema.Name = "mnsTema";
             this.mnsTema.ShowShortcutKeys = false;
-            this.mnsTema.Size = new System.Drawing.Size(180, 22);
+            this.mnsTema.Size = new System.Drawing.Size(166, 22);
             this.mnsTema.Text = "Tema";
             // 
             // mnsClaro
@@ -1414,24 +1423,17 @@ namespace InterfaceUsuario {
             // 
             this.mnsManual.Name = "mnsManual";
             this.mnsManual.ShowShortcutKeys = false;
-            this.mnsManual.Size = new System.Drawing.Size(107, 22);
+            this.mnsManual.Size = new System.Drawing.Size(180, 22);
             this.mnsManual.Text = "Manual";
+            this.mnsManual.Click += new System.EventHandler(this.mnsManual_Click);
             // 
             // mnsSobre
             // 
             this.mnsSobre.Name = "mnsSobre";
             this.mnsSobre.ShowShortcutKeys = false;
-            this.mnsSobre.Size = new System.Drawing.Size(107, 22);
+            this.mnsSobre.Size = new System.Drawing.Size(180, 22);
             this.mnsSobre.Text = "Sobre";
-            // 
-            // mnsFixar2Funcao
-            // 
-            this.mnsFixar2Funcao.CheckOnClick = true;
-            this.mnsFixar2Funcao.Name = "mnsFixar2Funcao";
-            this.mnsFixar2Funcao.ShowShortcutKeys = false;
-            this.mnsFixar2Funcao.Size = new System.Drawing.Size(180, 22);
-            this.mnsFixar2Funcao.Text = "Fixar 2ª função";
-            this.mnsFixar2Funcao.CheckedChanged += new System.EventHandler(this.mnsFixar2Funcao_CheckedChanged);
+            this.mnsSobre.Click += new System.EventHandler(this.mnsSobre_Click);
             // 
             // FrmCalculadoraCientifica
             // 

@@ -8,12 +8,15 @@ using System.Windows.Forms;
 using Utilities;
 using System.Globalization;
 using InterfaceUsuario.Operacoes;
+using InterfaceUsuario.Ajuda;
+using System.Reflection;
 
 namespace InterfaceUsuario {
     public partial class FrmCalculadoraCientifica : Form {
         public static bool Virgula { get; private set; }
         private bool Claro { get; set; }
         private List<double> Estatistica { get; set; }
+        private FrmManual Manual { get; set; }
         public static double Numero1 { get; set; }
         public static double Numero2 { get; set; }
         public static double Memoria { get; set; }
@@ -23,11 +26,13 @@ namespace InterfaceUsuario {
         public static bool PressionouExponencial { get; set; }
         public static bool PressionouMemoria { get; set; }
         public const double Pi = 3.14159265359;
+        //private FrmManual Manual { get; set; }
         globalKeyboardHook gkh = new globalKeyboardHook();
 
         public FrmCalculadoraCientifica() {
             InitializeComponent();
             Estatistica = new List<double>();
+            Manual = new FrmManual();
         }
 
         private void FrmCalculadoraCientifica_Load(object sender, EventArgs e) {
@@ -78,14 +83,35 @@ namespace InterfaceUsuario {
 
         private void mnsClaro_Click(object sender, EventArgs e) {
             Claro = true;
-            //TemaClaro();
             TemaPrincipal(Claro, Virgula);
         }
 
         private void mnsEscuro_Click(object sender, EventArgs e) {
             Claro = false;
-            //TemaEscuro();
             TemaPrincipal(Claro, Virgula);
+        }
+
+        private void mnsManual_Click(object sender, EventArgs e) {
+            if (Manual.IsDisposed) {
+                Manual = new FrmManual();
+            }
+            Manual.Show();
+        }
+
+        private void mnsSobre_Click(object sender, EventArgs e) {
+            var version = Assembly.GetExecutingAssembly().GetName().Version;
+            string revision = "." + version.Revision.ToString();
+            string build = "." + version.Build.ToString();
+            if (version.Revision == 0) {
+                revision = string.Empty;
+                if (version.Build == 0) {
+                    build = string.Empty;
+                }
+            }
+
+            string versao = $"Versão {version.Major}.{version.Minor}{build}{revision}";
+            MessageBox.Show("Calculadora Científica\n" + versao + 
+                "\nCopyright Adriano Pimenta", "Versão", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void btn0_Click(object sender, EventArgs e) {
@@ -335,8 +361,9 @@ namespace InterfaceUsuario {
                 string visor;
                 if (!chk2Funcao.Checked) {
                     visor = Math.Log(resultado).ToString();
-                    if (resultado <= 0 || visor.Contains('∞') || resultado == double.NaN 
-                        || resultado == double.PositiveInfinity || resultado == double.NegativeInfinity) {
+                    if (resultado <= 0 || visor.Contains('∞') 
+                        || double.IsNaN(resultado) || double.IsInfinity(resultado) 
+                        || double.IsPositiveInfinity(resultado) || double.IsNegativeInfinity(resultado)) {
                         MessageBox.Show("Logaritmo inexistente!", "Erro!",
                                         MessageBoxButtons.OK, MessageBoxIcon.Error);
                         txtVisor.Clear();
@@ -344,8 +371,9 @@ namespace InterfaceUsuario {
                         txtVisor.Text = Visor.Exibir(Math.Log(resultado));
                 } else {
                     visor = Math.Exp(resultado).ToString();
-                    if (visor.Contains('∞') || resultado == double.NaN 
-                        || resultado == double.PositiveInfinity || resultado == double.NegativeInfinity) {
+                    if (visor.Contains('∞') 
+                        || double.IsNaN(resultado) || double.IsInfinity(resultado)
+                        || double.IsPositiveInfinity(resultado) || double.IsNegativeInfinity(resultado)) {
                         MessageBox.Show("Número muito grande!", "Aviso!",
                                         MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         txtVisor.Clear();
@@ -366,8 +394,9 @@ namespace InterfaceUsuario {
                 string visor;
                 if (!chk2Funcao.Checked) {
                     visor = Math.Log10(resultado).ToString();
-                    if (resultado <= 0 || visor.Contains('∞') || resultado == double.NaN 
-                        || resultado == double.PositiveInfinity || resultado == double.NegativeInfinity) {
+                    if (resultado <= 0 || visor.Contains('∞')
+                        || double.IsNaN(resultado) || double.IsInfinity(resultado)
+                        || double.IsPositiveInfinity(resultado) || double.IsNegativeInfinity(resultado) ) {
                         MessageBox.Show("Logaritmo inexistente!", "Erro!",
                                         MessageBoxButtons.OK, MessageBoxIcon.Error);
                         txtVisor.Clear();
@@ -375,8 +404,9 @@ namespace InterfaceUsuario {
                         txtVisor.Text = Visor.Exibir(Math.Log10(resultado));
                 } else {
                     visor = Math.Pow(10, resultado).ToString();
-                    if (visor.Contains('∞') || resultado == double.NaN 
-                        || resultado == double.PositiveInfinity || resultado == double.NegativeInfinity) {
+                    if (visor.Contains('∞')
+                        || double.IsNaN(resultado) || double.IsInfinity(resultado)
+                        || double.IsPositiveInfinity(resultado) || double.IsNegativeInfinity(resultado) ) {
                         MessageBox.Show("Número muito grande!", "Aviso!",
                                         MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         txtVisor.Clear();
