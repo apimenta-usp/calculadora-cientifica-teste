@@ -26,7 +26,6 @@ namespace InterfaceUsuario {
         public static bool PressionouExponencial { get; set; }
         public static bool PressionouMemoria { get; set; }
         public const double Pi = 3.14159265359;
-        //private FrmManual Manual { get; set; }
         globalKeyboardHook gkh = new globalKeyboardHook();
 
         public FrmCalculadoraCientifica() {
@@ -36,8 +35,10 @@ namespace InterfaceUsuario {
         }
 
         private void FrmCalculadoraCientifica_Load(object sender, EventArgs e) {
-            Claro = true;
-            Virgula = false;
+            //Claro = true;
+            //Virgula = false;
+            Claro = Properties.Settings.Default.TemaClaro;
+            Virgula = Properties.Settings.Default.SeparadorVirgula;
             Estatistica.Clear();
             mnsFixar2Funcao.Checked = false;
             mnsClaro.Checked = true;
@@ -65,6 +66,8 @@ namespace InterfaceUsuario {
 
         private void mnsPonto_Click(object sender, EventArgs e) {
             Virgula = false;
+            Properties.Settings.Default.SeparadorVirgula = false;
+            Properties.Settings.Default.Save();
             txtVisor.Text = txtVisor.Text.Trim().Replace(',', '.');
             if (Claro) ControleDeImagens.UmaImagem(btnSeparadorDecimal, PontoTemaClaroNormal);
             else ControleDeImagens.UmaImagem(btnSeparadorDecimal, PontoTemaEscuroNormal);
@@ -74,6 +77,8 @@ namespace InterfaceUsuario {
 
         private void mnsVirgula_Click(object sender, EventArgs e) {
             Virgula = true;
+            Properties.Settings.Default.SeparadorVirgula = true;
+            Properties.Settings.Default.Save();
             txtVisor.Text = txtVisor.Text.Trim().Replace('.', ',');
             if (Claro) ControleDeImagens.UmaImagem(btnSeparadorDecimal, VirgulaTemaClaroNormal);
             else ControleDeImagens.UmaImagem(btnSeparadorDecimal, VirgulaTemaEscuroNormal);
@@ -83,11 +88,15 @@ namespace InterfaceUsuario {
 
         private void mnsClaro_Click(object sender, EventArgs e) {
             Claro = true;
+            Properties.Settings.Default.TemaClaro = true;
+            Properties.Settings.Default.Save();
             TemaPrincipal(Claro, Virgula);
         }
 
         private void mnsEscuro_Click(object sender, EventArgs e) {
             Claro = false;
+            Properties.Settings.Default.TemaClaro = false;
+            Properties.Settings.Default.Save();
             TemaPrincipal(Claro, Virgula);
         }
 

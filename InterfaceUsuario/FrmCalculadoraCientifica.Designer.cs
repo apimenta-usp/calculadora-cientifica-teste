@@ -182,10 +182,13 @@ namespace InterfaceUsuario {
             // txtVisor
             // 
             this.txtVisor.BackColor = System.Drawing.Color.White;
+            this.txtVisor.Enabled = false;
             this.txtVisor.Font = new System.Drawing.Font("Microsoft Sans Serif", 45F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtVisor.ForeColor = System.Drawing.Color.Black;
             this.txtVisor.Location = new System.Drawing.Point(12, 38);
             this.txtVisor.MaxLength = 10;
             this.txtVisor.Name = "txtVisor";
+            this.txtVisor.ReadOnly = true;
             this.txtVisor.Size = new System.Drawing.Size(366, 75);
             this.txtVisor.TabIndex = 120;
             this.txtVisor.TabStop = false;
@@ -1423,7 +1426,7 @@ namespace InterfaceUsuario {
             // 
             this.mnsManual.Name = "mnsManual";
             this.mnsManual.ShowShortcutKeys = false;
-            this.mnsManual.Size = new System.Drawing.Size(180, 22);
+            this.mnsManual.Size = new System.Drawing.Size(107, 22);
             this.mnsManual.Text = "Manual";
             this.mnsManual.Click += new System.EventHandler(this.mnsManual_Click);
             // 
@@ -1431,7 +1434,7 @@ namespace InterfaceUsuario {
             // 
             this.mnsSobre.Name = "mnsSobre";
             this.mnsSobre.ShowShortcutKeys = false;
-            this.mnsSobre.Size = new System.Drawing.Size(180, 22);
+            this.mnsSobre.Size = new System.Drawing.Size(107, 22);
             this.mnsSobre.Text = "Sobre";
             this.mnsSobre.Click += new System.EventHandler(this.mnsSobre_Click);
             // 
